@@ -12,4 +12,4 @@ Para este proyecto he decidido usar [Raku](https://raku.org/), ya que considero 
 
 ## Documentacion
 
-[Configuracion de git, github y perfil](/InmobilIV/docs/config.md)
+[Configuracion de git, github y perfil](docs/config.md)
