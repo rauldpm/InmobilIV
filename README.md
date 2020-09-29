@@ -13,3 +13,7 @@ Para este proyecto he decidido usar [Raku](https://raku.org/), ya que considero 
 ## Documentacion
 
 [Configuracion de git, github y perfil](docs/config.md)
+
+### Autor
+
+Raúl Del Pozo Moreno
