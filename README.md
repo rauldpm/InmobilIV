@@ -2,18 +2,22 @@
 
 ## Descripcion
 
-En este proyecto quiero gestionar la busqueda e informacion de pisos en venta y alquiler en cualquier zona de España según los criterios de un usuario.
+En este proyecto quiero gestionar la busqueda e informacion de pisos en venta y alquiler en cualquier zona de España según los criterios de un usuario, los cuales van a ser capaces de registrarse y ofertar o solicitar un inmueble.
 
-
+---
 ## Herramientas
 
+Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md)
 
-Para este proyecto he decidido usar [Raku](https://raku.org/), ya que considero interesante aprender un nuevo lenguaje que no se enseña de forma activa en la universidad.
-
+---
 ## Documentacion
 
-[Configuracion de git, github y perfil](docs/config.md)
-
+Puedes consultar las configuraciones realizadas en los siguientes enlaces:
+- Configuracion de [git y GitHub](docs/config.md#claves)
+- Configuracion del [perfil de GitHub](./docs/config.md#perfil)
+- Configuracion de [gh (Cliente GitHub)](docs/config.md#gh)
+ 
+---
 ### Autor
 
 Raúl Del Pozo Moreno
