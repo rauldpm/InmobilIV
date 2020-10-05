@@ -1,2 +1,2 @@
-entidad: src/usuario.p6
-entidad: src/vivienda.p6
+entidad: src/usuario.js
+entidad: src/vivienda.js
