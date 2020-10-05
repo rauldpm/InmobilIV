@@ -1,2 +1,2 @@
-entidad: src/usuario.pl
-entidad: src/vivienda.pl
+entidad: src/usuario.p6
+entidad: src/vivienda.p6
