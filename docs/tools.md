@@ -2,7 +2,7 @@
 ## Herramientas usadas en este proyecto
 
 - Lenguaje de programacion: [Raku](https://raku.org/)
-- Base de datos: MySQL
+- Base de datos: [MySQL](https://www.mysql.com/)
 
 ## ¿Porque estas herramientas?
 
