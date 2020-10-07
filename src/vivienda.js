@@ -1,7 +1,10 @@
-function vivienda () {
-    var superficie;
-    var habitaciones;
-    var precio;
-    var direccion;
-    var propietario;
+
+class Vivienda {
+    constructor() {
+        this.superficie = 0;
+        this.habitaciones = 0;
+        this.precio = 0;
+        this.direccion = '';
+        this.propietario = '';
+    }
 }
