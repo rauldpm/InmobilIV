@@ -8,6 +8,7 @@
 
 Para este proyecto he decidido usar Node.js, ya que considero interesante aprender un nuevo lenguaje que no me han enseñado de forma activa en la universidad, asi mismo.
 
+*En principio voy a usar node.js, pero esta sujeto a cambios debido a que parece que hay mucha gente usando este lenguaje y sigo mirando otros tipos de lenguaje*
 
 ## Justificacion sobre cambio de lenguaje a usar en el proyecto
 
