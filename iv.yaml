@@ -1,2 +1,2 @@
-entidad: src/usuario.js
-entidad: src/vivienda.js
+entidad: src/usuario.kt
+entidad: src/vivienda.kt
