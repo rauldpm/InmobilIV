@@ -18,6 +18,13 @@ Puedes consultar las configuraciones realizadas en los siguientes enlaces:
 - Configuracion de [gh (Cliente GitHub)](docs/config.md#gh)
  
 ---
+
+- Directorio de documentacion: [docs](https://github.com/rauldpm/InmobilIV/tree/master/docs)
+- Enlace a las historias de usuario mediante issues: [HU](https://github.com/rauldpm/InmobilIV/issues)
+- Enlace a los milestones creados [Milestones](https://github.com/rauldpm/InmobilIV/milestones)
+- Fichero [iv.yaml](https://github.com/rauldpm/InmobilIV/blob/master/iv.yaml)
+
+---
 ### Autor
 
 Raúl Del Pozo Moreno
