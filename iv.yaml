@@ -1,2 +1,6 @@
 entidad: src/usuario.kt
 entidad: src/vivienda.kt
+
+lenguaje: kotlin
+test:
+taskfile:
