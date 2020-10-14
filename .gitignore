@@ -26,6 +26,7 @@ hs_err_pid*
 .gradle
 gradle/wrapper/gradle-wrapper.properties
 gradlew.bat
+gradlew
 
 # Ignore Gradle build output directory
 build
