@@ -2,30 +2,25 @@
 
 ## Descripción
 
-En este proyecto quiero gestionar la búsqueda e información de pisos en venta y alquiler en cualquier zona de España según los criterios de un usuario, los cuales van a ser capaces de registrarse y ofertar o solicitar un inmueble.
+En este proyecto quiero gestionar la búsqueda e información de pisos en venta y alquiler en cualquier zona de España según los criterios de un usuario, los cuales van a ser capaces de ver los inmuebles registrados y realizar gestiones sobre ellos.
+
+Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dichos inmuebles, ya que encontrar vivienda puede llegar a ser una tarea tediosa.
 
 ---
 ## Herramientas
 
-Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md)
+- Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md)
 
 ---
 ## Documentación
 
-Puedes consultar las configuraciones realizadas en los siguientes enlaces:
-- Configuración de [git y GitHub](docs/config.md#claves)
-- Configuración del [perfil de GitHub](docs/config.md#perfil)
-- Configuración de [gh (Cliente GitHub)](docs/config.md#gh)
+- En este [enlace](docs/config.md) se pueden observar las distintas configuraciones realizadas hasta el momento, entre las cuales, por ejemplo, se encuentra la configuración de claves SSH para git y GitHub.
+- En este [enlace](docs/codigo.md) se pueden observar los ficheros de código (tanto fuentes como de configuración) usados y la estructura del proyecto.
+- En este [enlace](docs/rubricas.md) se pueden observar los pasos realizados hasta el momento en la realización del proyecto. 
 
----
 
-- Directorio de documentación: [docs](https://github.com/rauldpm/InmobilIV/tree/master/docs)
-- Enlace a las historias de usuario mediante issues: [HU](https://github.com/rauldpm/InmobilIV/issues)
-- Enlace a los milestones creados [Milestones](https://github.com/rauldpm/InmobilIV/milestones)
-- Fichero [iv.yaml](https://github.com/rauldpm/InmobilIV/blob/master/iv.yaml)
-- Ficheros [fuentes](https://github.com/rauldpm/InmobilIV/tree/master/src)
 
 ---
 ### Autor
 
-Raúl Del Pozo Moreno
+Raúl Del Pozo Moreno - [GitHub Pages](https://rauldpm.github.io/InmobilIV/)
