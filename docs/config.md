@@ -1,5 +1,16 @@
 
-## Creación de claves y subida a GitHub <a id="claves"></a>
+## Fichero de configuración general
+
+Este fichero contiene diversa información sobre la configuracion llevada a cabo en los siguientes puntos
+
+### Indice
+
+1. [Claves SSH git/GitHub](#id1)
+2. [Perfil de GitHub](#id2)
+3. [Cliente de GitHub *gh-cli*](#id3)
+
+---
+### 1. Claves SSH git/GitHub <a id="id1"></a>
 
 Mediante esta configuración se conseguirá que git no pida el correo ni la contraseña cada vez que se quiera gestionar el repositorio, para ello, primero hay que crear una clave en la máquina local mediante el comando:
 
@@ -23,13 +34,15 @@ Así, al realizar un push no pedirá el email ni la contraseña:
 
 ![git push sin password](img/git_push.png)
 
-## Configuración del perfil de GitHub <a id="perfil"></a>
+---
+### 2. Perfil de GitHub <a id="id2"></a>
 
 Para configurar el perfil simplemente hay que ir a "Settings" y en la pestaña "Profile" rellenar los datos que se pidan.
 
 ![profile](img/perfil.png)
 
-## Configuración del cliente de GitHub <a id="gh"></a>
+---
+### 3. Cliente de GitHub <a id="id3"></a>
 
 Mediante este cliente se podrá disponer de un comando para interactuar con GitHub sin necesidad de la web.
 
