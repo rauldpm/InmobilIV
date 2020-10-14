@@ -1,6 +1,5 @@
-entidad: src/usuario.kt
-entidad: src/vivienda.kt
+entidad: src/main/kotlin/com/inmobiliv/vivienda.kt
 
 lenguaje: kotlin
-test:
-taskfile:
+test: src/test/kotlin/com/inmobiliv/testJUnit.kt
+taskfile: build.gradle.kts
