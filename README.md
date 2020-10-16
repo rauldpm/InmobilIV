@@ -15,7 +15,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Uso
 
-Sobre el proyecto se pueden ejecutar distintas tareas, tanto propias como integradas.
+Sobre el proyecto se pueden ejecutar distintas tareas, tanto propias como integradas. Se recomienda seguir este [enlace](docs/instalacion.md) antes de usar dichas tareas.
 
 La herramienta Gradle dispone de algunas tareas integradas que permiten diversas funciones:
 
