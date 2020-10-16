@@ -7,15 +7,36 @@ En este proyecto quiero gestionar la búsqueda e información de pisos en venta 
 Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dichos inmuebles, ya que encontrar vivienda puede llegar a ser una tarea tediosa.
 
 ---
-## Uso
-
-- Si quieres saber como usar este repositorio localmente para realizar tus propias pruebas/test, mira en este [enlace](docs/uso.md).
-
----
 ## Herramientas
 
 - Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md).
 - Puedes consultar la forma de instalar dichas herramientas en el siguiente [enlace](docs/instalacion.md).
+
+---
+## Uso
+
+Sobre el proyecto se pueden ejecutar distintas tareas, tanto propias como integradas.
+
+La herramienta Gradle dispone de algunas tareas integradas que permiten diversas funciones:
+
+- Compilar sin necesidad de construir ni realizar tests
+  - Compilar archivos principales
+    > gradle compileKotlin
+  - Compilar archivos test
+    > gradle compileTestKotlin
+- Construir el proyecto
+  > gradle build
+- Ejecutar tests propios
+  - gradle "tarea"
+    > gradle test -> Ejecuta los test implementados sobre la clase Vivienda
+
+    > gradle compila -> Ejecuta la compilación de la clase Vivienda y la clase testJUnit
+
+    > gradle pregunta -> Hace una pregunta
+    
+    > gradle respuesta -> Hace una respuesta (lanza la ejecución previa de la pregunta)
+
+
 ---
 ## Documentación
 
