@@ -12,8 +12,8 @@ En este fichero se pretende dar una explicación general de los ficheros usados 
 Dichos archivos fuente se pueden encontrar en la carpeta [*src*](../docs/) en la raíz del repositorio.
 
 Dicha carpeta se divide en dos subcarpetas
-- Carpeta *main*, que contiene las clases principales (clases a testear), la cual solo contiene una única [clase](../src/main/kotlin/com/inmobiliv/vivienda.kt) por ahora.
-- Carpeta *test*, que contiene la clase que ejecuta los test sobre la clase principal, la cual se puede ver [aquí](../src/test/kotlin/com/inmobiliv/TestJUnit.kt).
+- Carpeta *main*, que contiene las clases principales (clases a testear).
+- Carpeta *test*, que contiene las clases que ejecutan los test sobre las clases de la rama *main*.
 
 ---
 ### 2. Ficheros de configuración <a id="id2"></a>
