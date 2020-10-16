@@ -31,9 +31,6 @@ class Inmueble {
         this.propietario = pro
     }
 
-    // Mensaje para testear la creacion del objeto inmueble
-    fun getMessage(): String { return "Soy un inmueble" }
-
     // Getters
     fun getSup() = this.superficie
     fun getHab() = this.habitaciones
