@@ -7,9 +7,14 @@ En este proyecto quiero gestionar la búsqueda e información de pisos en venta 
 Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dichos inmuebles, ya que encontrar vivienda puede llegar a ser una tarea tediosa.
 
 ---
+## Uso
+
+- Si quieres saber como usar este repositorio localmente para realizar tus propias pruebas/test, mira en este [enlace](docs/instalacion.md).
+
+---
 ## Herramientas
 
-- Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md)
+- Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md).
 
 ---
 ## Documentación
