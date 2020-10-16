@@ -26,6 +26,8 @@ La herramienta Gradle dispone de algunas tareas integradas que permiten diversas
     > gradle compileTestKotlin
 - Construir el proyecto
   > gradle build
+- Limpiar el proyecto
+  > gradle clean
 - Ejecutar tests propios
   - gradle "tarea"
     > gradle test -> Ejecuta los test implementados sobre la clase Vivienda
@@ -33,7 +35,7 @@ La herramienta Gradle dispone de algunas tareas integradas que permiten diversas
     > gradle compila -> Ejecuta la compilación de la clase Vivienda y la clase testJUnit
 
     > gradle pregunta -> Hace una pregunta
-    
+
     > gradle respuesta -> Hace una respuesta (lanza la ejecución previa de la pregunta)
 
 
