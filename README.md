@@ -24,13 +24,13 @@ La herramienta Gradle dispone de algunas tareas integradas que permiten diversas
     > gradle compileKotlin
   - Compilar archivos test
     > gradle compileTestKotlin
-- Construir el proyecto
+- Construir el proyecto (también ejecuta los test)
   > gradle build
 - Limpiar el proyecto
   > gradle clean
 - Ejecutar tests propios
   - gradle "tarea"
-    > gradle test -> Ejecuta los test implementados
+    > gradle test -> Ejecuta los test implementados, una vez que pasa los test no los realiza de nuevo hasta que no haya cambios en el código o no pase algún test
 
     > gradle compila -> Ejecuta la compilación del proyecto
 
