@@ -45,6 +45,9 @@ En este fichero se pretende mostrar qué se ha ido realizando en el proyecto dif
 - Se han creado diversas tareas como se puede ver en el fichero:
   - [build.gradle.kts](../build.gradle.kts)
   - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aqui](../src/test/kotlin/com/inmobiliv/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
+- Se ha añadido la clase [Inmuebles](../src/main/kotlin/com/inmobiliv/inmuebles.kt) que agrupa un conjunto de objetos [Inmueble](../src/main/kotlin/com/inmobiliv/inmueble.kt).
+- La clase [Inmueble](../src/main/kotlin/com/inmobiliv/inmueble.kt) se ha modularizado dividiendo la clase en dos (una de ellas busca emular un struct, ya que en kotlin no hay). 
+  - Ahora hay una clase "Vivienda" que hace referencia a los datos de la vivienda (dirección, piso, letra...) y una clase "Inmueble" que referencia la Vivienda con una serie de características (superficie, precio, propietario...)
 - Se ha implementado tres clases de testeo:
   - [testVivienda.kt](../src/test/kotlin/com/inmobiliv/testVivienda.kt)
   - [testInmueble.kt](../src/test/kotlin/com/inmobiliv/testInmueble.kt)
