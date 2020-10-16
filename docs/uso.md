@@ -1,5 +1,6 @@
 ## Uso 
 
+Es recomendable realizar, si no se han hecho, la instalación de las herramientas indicadas [aquí](instalacion.md).
 
 ### 1. Cómo ejecutar tareas sobre el proyecto 
 
