@@ -38,7 +38,7 @@ En este fichero se pretende mostrar qué se ha ido realizando en el proyecto dif
 - Se ha configurado el gestor de tareas Gradle, como se puede ver en los ficheros:
   - [build.gradle.kts](../build.gradle.kts)
   - [settings.gradle.jts](../settings.gradle.kts)
-- Este gestor incorpora un sistema de dependencias en el archivo [build.gradle.kts](../build.gradle.kts) bajo la etiqueta **dependencies**, por lo cual, no hace falta instalarlas localmente.
+- Este gestor incorpora un sistema de dependencias en el archivo [build.gradle.kts](../build.gradle.kts) bajo la etiqueta **dependencies**, por lo cual, no hace falta instalarlas localmente ni realizar ninguna tarea para instalarlas.
 - También trae una serie de tareas por defecto para compilar el código sin tener que hacer un build o ejecutar test, que son:
     - gradle compileKotlin
     - gradle compileTestKotlin
