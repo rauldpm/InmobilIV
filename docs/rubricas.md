@@ -33,3 +33,25 @@ En este fichero se pretende mostrar qué se ha ido realizando en el proyecto dif
 
 ---
 ### 3. Hito 2 <a id="id2"></a>
+- Se ha actualizado el fichero de configuración de test [iv.yaml](../iv.yaml) con los nuevos campos necesarios.
+- Se ha instalado el gestor de tareas Gradle como se puede ver [aqui](../docs/instalacion.md).
+- Se ha configurado el gestor de tareas Gradle, como se puede ver en los ficheros:
+  - [build.gradle.kts](../build.gradle.kts)
+  - [settings.gradle.jts](../settings.gradle.kts)
+- Este gestor incorpora un sistema de dependencias en el archivo [build.gradle.kts](../build.gradle.kts) bajo la etiqueta **dependencies**, por lo cual, no hace falta instalarlas localmente.
+- También trae una serie de tareas por defecto para compilar el código sin tener que hacer un build o ejecutar test, que son:
+    - gradle compileKotlin
+    - gradle compileTestKotlin
+- Se han creado diversas tareas como se puede ver en el fichero:
+  - [build.gradle.kts](../build.gradle.kts)
+  - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aqui](../src/test/kotlin/com/inmobiliv/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
+- Se ha implementado tres clases de testeo:
+  - [testVivienda.kt](../src/test/kotlin/com/inmobiliv/testVivienda.kt)
+  - [testInmueble.kt](../src/test/kotlin/com/inmobiliv/testInmueble.kt)
+  - [testInmuebles.kt](../src/test/kotlin/com/inmobiliv/testInmuebles.kt)
+- Se puede ver en la siguiente imagen los test realizados al ejecutar el comando **gradle test**:
+![tests_funcionando](../docs/img/test_funcionando.png)
+- No se han cerrado issues debido a que están aun en desarrollo.
+- Se han abierto dos nuevas historias de usuario:
+  - [#12 [HU3] Como desarrollador, quiero ser capaz de poder testear las clases relacionadas con Inmuebles](https://github.com/rauldpm/InmobilIV/issues/12)
+  - [#13 [HU4] Como usuario, quiero ser capaz de ver los inmuebles disponibles](https://github.com/rauldpm/InmobilIV/issues/13)
