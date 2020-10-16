@@ -30,21 +30,20 @@ La herramienta Gradle dispone de algunas tareas integradas que permiten diversas
   > gradle clean
 - Ejecutar tests propios
   - gradle "tarea"
-    > gradle test -> Ejecuta los test implementados sobre la clase Vivienda
+    > gradle test -> Ejecuta los test implementados
 
-    > gradle compila -> Ejecuta la compilación de la clase Vivienda y la clase testJUnit
+    > gradle compila -> Ejecuta la compilación del proyecto
 
     > gradle pregunta -> Hace una pregunta
 
     > gradle respuesta -> Hace una respuesta (lanza la ejecución previa de la pregunta)
 
-
 ---
 ## Documentación
 
 - En este [enlace](docs/config.md) se pueden observar las distintas configuraciones realizadas hasta el momento, entre las cuales, por ejemplo, se encuentra la configuración de claves SSH para git y GitHub.
-- En este [enlace](docs/codigo.md) se puede observar una explicacion de cada fichero de código (tanto fuentes como de configuración) usados y la estructura del proyecto.
-- En este [enlace](docs/rubricas.md) se pueden observar los pasos realizados hasta el momento en la realización del proyecto. 
+- En este [enlace](docs/codigo.md) se puede observar una explicación de cada fichero de código (tanto fuentes como de configuración) usados y la estructura del proyecto.
+- **En este [enlace](docs/rubricas.md) se pueden observar los pasos realizados hasta el momento en la realización del proyecto**. 
 
 ---
 ### Autor
