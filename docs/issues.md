@@ -17,11 +17,12 @@ Se pueden consultar en el siguiente [enlace](https://github.com/rauldpm/InmobilI
 He creado las siguientes historias de usuario:
 - [#4 HU1](https://github.com/rauldpm/InmobilIV/issues/4) Como usuario, quiero poder almacenar mis datos 
   - Cerrada debido a que la clase Usuario se ha eliminado, ya que no hace falta para el proyecto almacenar usuarios.
-- [#5 HU2](https://github.com/rauldpm/InmobilIV/issues/5) Como usuario, quiero poder obtener información sobre las viviendas
+- [#5 HU2](https://github.com/rauldpm/InmobilIV/issues/5) Como usuario, quiero poder obtener informacion sobre los inmuebles.
   - En proceso, mediante esta HU se quiere dotar al usuario de obtener información de las viviendas, como pueden ser precios, metros cuadrados... y también obtener estadísticas globales sobre ellas.
-- [#12 HU3](https://github.com/rauldpm/InmobilIV/issues/12) Como desarrollador, quiero ser capaz de poder testear la clase Vivienda.
+- [#12 HU3](https://github.com/rauldpm/InmobilIV/issues/12) Como desarrollador, quiero ser capaz de poder testear las clases relacionadas con Inmuebles.
   - En proceso, mediante esta HU voy a añadir funcionalidades para realizar diferentes test sobre la clase Vivienda.
-
+- [#13 HU4](https://github.com/rauldpm/InmobilIV/issues/13)  Como usuario, quiero ser capaz de ver los inmuebles disponibles.
+  - En proceso, con esto se quiere dotar al usuario de capacidad para ver los inmuebles que estén registrados en el sistema.
 
 ---
 ### 2. Issues <a id="id2"></a>
@@ -45,3 +46,4 @@ Por ahora las historias de usuario se reparten de la siguiente manera:
   
 - Hito 2
   - [#12 HU3](https://github.com/rauldpm/InmobilIV/issues/12)
+  - [#13 HU4](https://github.com/rauldpm/InmobilIV/issues/13)
