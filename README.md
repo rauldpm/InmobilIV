@@ -9,8 +9,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Herramientas
 
-- Puedes consultar las herramientas usadas en el siguiente [enlace](docs/tools.md).
-- Puedes consultar la forma de instalar dichas herramientas en el siguiente [enlace](docs/instalacion.md).
+- Puedes consultar las herramientas usadas y la justificación de su elección en el siguiente [enlace](docs/tools.md).
 
 ---
 ## Uso
