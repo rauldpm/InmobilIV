@@ -22,11 +22,15 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# Ficheros relacionados con Gradle
+# Ignora carpeta wrapper
+gradle
+
+# Ignora carpeta de configuracion de gradle
 .gradle
-gradle/wrapper/gradle-wrapper.properties
+
+# Ignora ficheros para ejecucion wrapper generados en init
 gradlew.bat
 gradlew
 
-# Ignore Gradle build output directory
+# Ignora la carpeta que almacena la construccion de gradle
 build
