@@ -1,10 +1,10 @@
 entidad: 
-  - src/main/kotlin/com/inmobiliv/inmueble.kt
-  - src/main/kotlin/com/inmobiliv/inmuebles.kt
+  - app/src/main/kotlin/Inmobiliv/inmueble.kt
+  - app/src/main/kotlin/Inmobiliv/inmuebles.kt
 
 lenguaje: kotlin
 test:
-  - src/test/kotlin/com/inmobiliv/testVivienda.kt
-  - src/test/kotlin/com/inmobiliv/testInmueble.kt
-  - src/test/kotlin/com/inmobiliv/testInmuebles.kt
-taskfile: build.gradle.kts
+  - app/src/test/kotlin/Inmobiliv/testVivienda.kt
+  - app/src/test/kotlin/Inmobiliv/testInmueble.kt
+  - app/src/test/kotlin/Inmobiliv/testInmuebles.kt
+taskfile: app/build.gradle.kts
