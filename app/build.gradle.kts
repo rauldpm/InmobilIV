@@ -44,10 +44,10 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.12.2")
 }
 
-application {
+//application {
     // Define the main class for the application.
-    mainClass.set("InmobilIV.AppKt")
-}
+//    mainClass.set("InmobilIV.AppKt")
+//}
 
 // Tarea que ejecuta el test principal
 tasks {
