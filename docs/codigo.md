@@ -9,7 +9,7 @@ En este fichero se pretende dar una explicación general de los ficheros usados 
 
 ### 1. Ficheros fuente <a id="id1"></a>
 
-Dichos archivos fuente se pueden encontrar en la carpeta [*app/src/*](../docs/) en la raíz del repositorio.
+Dichos archivos fuente se pueden encontrar en la carpeta [*app/src/*](../app/src) en la raíz del repositorio.
 
 Dicha carpeta se divide en dos subcarpetas:
 - Carpeta [*main*](../app/src/main/kotlin/InmobilIV/), que contiene las clases principales (clases a testear).
