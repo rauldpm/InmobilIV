@@ -26,7 +26,7 @@ En este fichero se pretende mostrar qué se ha ido realizando en el proyecto dif
 - Se ha añadido un fichero [iv.yaml](../iv.yaml) con parámetros de configuración para tests, con el campo entidad apuntando a la clase creada.
 - Se ha actualizado el fichero [.gitignore](../.gitignore) con los ficheros a excluir del lenguaje *Kotlin*
 - Se puede encontrar la documentación en el fichero [README.md](../README.md) del repositorio y en la [carpeta de documentación](../docs/).
-- Se ha creado una clase básica llamada [vivienda.kt](../src/main/kotlin/com/inmobiliv/vivienda.kt)
+- Se ha creado una clase básica llamada [inmueble.kt](../app/src/main/kotlin/InmobilIV/inmueble.kt)
 - Se pueden encontrar las historias de usuario, issues y milestones creados en el siguiente [enlace](issues.md), así como en la propia pestaña de [issues](https://github.com/rauldpm/InmobilIV/issues) del repositorio de GitHub.
 
 
@@ -35,23 +35,23 @@ En este fichero se pretende mostrar qué se ha ido realizando en el proyecto dif
 
 - Se ha actualizado el fichero de configuración de test [iv.yaml](../iv.yaml) con los nuevos campos necesarios.
 - Se ha configurado el gestor de tareas **Gradle**, como se puede ver en los ficheros:
-  - [build.gradle.kts](../build.gradle.kts)
+  - [build.gradle.kts](../app/build.gradle.kts)
   - [settings.gradle.jts](../settings.gradle.kts)
-- Este gestor incorpora un sistema de dependencias en el archivo [build.gradle.kts](../build.gradle.kts) bajo la etiqueta **dependencies**, por lo cual, no hace falta instalarlas localmente ni realizar ninguna tarea para instalarlas, la justificación de su elección se puede ver [aquí](./tools.md).
-- Se ha incluido el framework de test **JUnit5** en las dependencias del archivo [build.gradle.kts](../build.gradle.kts), su instalación se realiza automáticamente por el gestor de tareas, la justificación de su elección se puede ver [aquí](./tools.md).
+- Este gestor incorpora un sistema de dependencias en el archivo [build.gradle.kts](../app/build.gradle.kts) bajo la etiqueta **dependencies**, por lo cual, no hace falta instalarlas localmente ni realizar ninguna tarea para instalarlas, la justificación de su elección se puede ver [aquí](./tools.md).
+- Se ha incluido el framework de test **JUnit5** en las dependencias del archivo [build.gradle.kts](../app/build.gradle.kts), su instalación se realiza automáticamente por el gestor de tareas, la justificación de su elección se puede ver [aquí](./tools.md).
 - Gradle trae una serie de tareas por defecto para compilar el código sin tener que hacer un build o ejecutar test, que son:
     - gradle compileKotlin
     - gradle compileTestKotlin
 - Se han creado diversas tareas como se puede ver en el fichero:
-  - [build.gradle.kts](../build.gradle.kts)
-  - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aquí](../src/test/kotlin/com/inmobiliv/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
-- Se ha añadido la clase [Inmuebles](../src/main/kotlin/com/inmobiliv/inmuebles.kt) que agrupa un conjunto de objetos [Inmueble](../src/main/kotlin/com/inmobiliv/inmueble.kt).
-- La clase [Inmueble](../src/main/kotlin/com/inmobiliv/inmueble.kt) se ha modularizado dividiendo la clase en dos (una de ellas busca emular un struct, ya que en kotlin no hay). 
+  - [build.gradle.kts](../app/build.gradle.kts)
+  - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aquí](../app/src/test/kotlin/InmobilIV/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
+- Se ha añadido la clase [Inmuebles](../app/src/main/kotlin/InmobilIV/inmuebles.kt) que agrupa un conjunto de objetos [Inmueble](../app/src/main/kotlin/InmobilIV/inmueble.kt).
+- La clase [Inmueble](../app/src/main/kotlin/InmobilIV/inmueble.kt) se ha modularizado dividiendo la clase en dos (una de ellas busca emular un struct, ya que en kotlin no hay). 
   - Ahora hay una clase "Vivienda" que hace referencia a los datos de la vivienda (dirección, piso, letra...) y una clase "Inmueble" que referencia la Vivienda con una serie de características (superficie, precio, propietario...)
 - Se ha implementado tres clases de testeo:
-  - [testVivienda.kt](../src/test/kotlin/com/inmobiliv/testVivienda.kt)
-  - [testInmueble.kt](../src/test/kotlin/com/inmobiliv/testInmueble.kt)
-  - [testInmuebles.kt](../src/test/kotlin/com/inmobiliv/testInmuebles.kt)
+  - [testVivienda.kt](../app/src/test/kotlin/InmobilIV/testVivienda.kt)
+  - [testInmueble.kt](../app/src/test/kotlin/InmobilIV/testInmueble.kt)
+  - [testInmuebles.kt](../app/src/test/kotlin/InmobilIV/testInmuebles.kt)
 - Se puede ver en la siguiente imagen los test realizados al ejecutar el comando **gradle test**:
 ![tests_funcionando](../docs/img/test_funcionando.png)
 - No se han cerrado issues debido a que están aun en desarrollo.
