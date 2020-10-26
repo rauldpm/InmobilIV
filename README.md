@@ -11,38 +11,25 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 
 - Puedes consultar las herramientas usadas y la justificación de su elección en el siguiente [enlace](docs/tools.md).
 
----
-## Uso
-
-Sobre el proyecto se pueden ejecutar distintas tareas, tanto propias como integradas. Se recomienda seguir este [enlace](docs/instalacion.md) antes de usar dichas tareas.
-
-La herramienta Gradle dispone de algunas tareas integradas que permiten diversas funciones:
-
-- Compilar sin necesidad de construir ni realizar tests
-  - Compilar archivos principales
-    > gradle compileKotlin
-  - Compilar archivos test
-    > gradle compileTestKotlin
-- Construir el proyecto (también ejecuta los test)
-  > gradle build
-- Limpiar el proyecto
-  > gradle clean
-- Ejecutar tests propios
-  - gradle "tarea"
-    > gradle test -> Ejecuta los test implementados, una vez que pasa los test no los realiza de nuevo hasta que no haya cambios en el código o no pase algún test
-
-    > gradle compila -> Ejecuta la compilación del proyecto
-
-    > gradle pregunta -> Hace una pregunta
-
-    > gradle respuesta -> Hace una respuesta (lanza la ejecución previa de la pregunta)
+- Puedes consultar un uso mas extendido de las herramientas en el siguiente [enlace](docs/uso.md).
 
 ---
-## Documentación
+## Rúbricas
+
+- Rúbrica 1: Despliegue del contenedor en plataforma.
+- Rúbrica 2: Pasos para el despliegue y automatización.
+- Rúbrica 3: Funcionamiento del fichero Dockerfile. 
+- Rúbrica 4: Documentación del fichero Dockerfile
+- Rúbrica 5:
+
+**En este [enlace](docs/rubricas.md) se pueden consultar las rúbricas anteriores**. 
+
+---
+## Documentación adicional
 
 - En este [enlace](docs/config.md) se pueden observar las distintas configuraciones realizadas hasta el momento, entre las cuales, por ejemplo, se encuentra la configuración de claves SSH para git y GitHub.
 - En este [enlace](docs/codigo.md) se explica la estructura del proyecto, de los archivos principales, de tests y de configuración.
-- **En este [enlace](docs/rubricas.md) se pueden observar los pasos realizados hasta el momento en la realización del proyecto**. 
+
 
 ---
 ### Autor
