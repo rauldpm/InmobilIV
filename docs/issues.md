@@ -25,12 +25,25 @@ He creado las siguientes historias de usuario:
 ---
 ### 2. Issues <a id="id2"></a>
 
-He creado varias issues, algunas duplicadas (cerradas mediante comentario indicando "Duplicado de #") y otras issues básicas referenciando a la incorporación de clases. Por el momento, solo tengo 2 issues activas que son:
+#### Issues activas
+
 - [#10](https://github.com/rauldpm/InmobilIV/issues/10) Añadir ficheros principales para el proyecto.
   - Esta issue pretende englobar aquellas incorporaciones de archivos que no están relacionadas con código fuente del proyecto sino con la configuración.
 - [#8](https://github.com/rauldpm/InmobilIV/issues/8) Añadir documentación del proyecto
   - Como su propio titulo indica, esta issue hace referencia a toda modificación relacionada con la documentación del proyecto.
-- [#12](https://github.com/rauldpm/InmobilIV/issues/12) Mediante esta issue se va a intentar añadir las funcionalidades necesarias para poder testear correctamente la clase Vivienda, Inmueble e Inmuebles.
+- [#12](https://github.com/rauldpm/InmobilIV/issues/12) Como desarrollador, quiero ser capaz de poder testear las clases relacionadas con Inmuebles
+  - Mediante esta issue se va a intentar añadir las funcionalidades necesarias para poder testear correctamente la clase Vivienda, Inmueble e Inmuebles.
+- [#15](https://github.com/rauldpm/InmobilIV/issues/15) Configurar correctamente Dockerfile
+  - Este issue trata de englobar todas aquellas modificaciones realizadas al dichero Dockerfile para que tenga una correcta configuración.
+
+#### Issues cerradas
+
+- [#14](https://github.com/rauldpm/InmobilIV/issues/14) Reorganizar estructura de aplicación
+- [#11](https://github.com/rauldpm/InmobilIV/issues/11) Migración proyecto a Kotlin
+- [#6](https://github.com/rauldpm/InmobilIV/issues/6) Añadir fichero de herramientas usadas en el proyecto
+- [#3](https://github.com/rauldpm/InmobilIV/issues/3) Añadir clase de vivienda
+- [#2](https://github.com/rauldpm/InmobilIV/issues/2) Añadir clase de usuario
+- [#1](https://github.com/rauldpm/InmobilIV/issues/1) Añadir fichero iv.yaml
 
 ---
 ### 3. Milestones <a id="id3"></a>
