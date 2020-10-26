@@ -1,4 +1,4 @@
-## Guia de instalación
+## Guía de instalación
 
 Si quieres usar este repositorio para probar o testear debes tener instalado en tu sistema lo siguiente:
 
