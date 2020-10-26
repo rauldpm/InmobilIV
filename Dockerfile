@@ -19,11 +19,15 @@ ENV GRADLE_HOME /opt/gradle-$GRADLE_VERSION
 ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
 # Crea carpeta de trabajo en contenedor
-RUN mkdir /app
-# Copia el contenido a la carpeta de trabajo
-COPY . /app
-# Establece el directorio de trabajo
-WORKDIR /app
+RUN mkdir /InmobilIV
+RUN mkdir /InmobilIV/app
 
-# Establee la accion a realizar al ejecutar docker
+# Copia los ficheros de configuracion de gradle
+COPY settings.gradle.kts /InmobilIV
+COPY app/build.gradle.kts /InmobilIV/app
+
+# Establece el directorio de trabajo
+WORKDIR /InmobilIV/app
+
+# Establece la accion a realizar al ejecutar docker
 CMD ["gradle", "--no-daemon", "test"]
