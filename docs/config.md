@@ -1,7 +1,7 @@
 
 ## Fichero de configuración general
 
-Este fichero contiene diversa información sobre la configuracion llevada a cabo en los siguientes puntos
+Este fichero contiene diversa información sobre la configuración llevada a cabo en los siguientes puntos
 
 ### Indice
 
