@@ -36,4 +36,4 @@ COPY app/build.gradle.kts /InmobilIV/app
 WORKDIR /InmobilIV/app
 
 # Establece la accion a realizar al ejecutar docker
-CMD ["gradle", "--no-daemon", "--no-rebuild", "test"]
+CMD ["gradle", "--no-daemon", "test"]
