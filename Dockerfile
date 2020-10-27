@@ -33,5 +33,5 @@ COPY build.gradle.kts ./
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD cp /build.gradle.kts /test && gradle test
+CMD gradle test
 
