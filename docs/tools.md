@@ -5,6 +5,7 @@
 - Gestor de versiones de Kotlin y Gradle: [SDKMAN](https://sdkman.io/)
 - Herramienta para realización de tests: [JUnit5](https://junit.org/junit5/)
 - Gestor de tareas: [Gradle](https://gradle.org/)
+- Contenedor: [Docker](https://www.docker.com/)
 
 La instalación de dichas herramientas y su uso se puede consultar en el siguiente [enlace](instalacion.md)
 
