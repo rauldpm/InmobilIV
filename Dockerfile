@@ -23,11 +23,7 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 # Crea usuario normal sin contraseña
 RUN adduser -D userIV
 
-# Crea el directorio donde se trabajara
-RUN mkdir /test
-# Da permisos de usuario
-RUN chown -R userIV /test
-# Indica que a partir de ahora se ejecutada como usuario non-root
+# Indica que a partir de ahora se ejecutara como usuario non-root
 USER userIV
 
 # Copia el taskrunner
