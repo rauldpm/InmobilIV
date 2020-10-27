@@ -33,5 +33,5 @@ USER userIV
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD cp /build.gradle.kts /test && gradle test
+CMD cp -f /build.gradle.kts /test && gradle test
 
