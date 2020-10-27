@@ -4,7 +4,7 @@ En este fichero se va a explicar el porque de la elección de un contenedor base
 
 En la siguiente [página](https://hub.docker.com/search?q=&type=image&category=base) se puede ver el listado de imágenes base disponibles.
 
-Hay que tener en cuenta que la parte principal es que se disponga de JVM en su version jdk8, por lo que he contemplados estos contenedores base:
+Hay que tener en cuenta que la parte principal es que se disponga de JVM en su version jdk8, por lo que he contemplado estos contenedores base:
 
 Como se puede ver en la tabla, son contenedores pesados ya que incluyen el jdk8.
 
