@@ -1,6 +1,8 @@
 
+# Contenedor base
 FROM openjdk:8-jdk-alpine
 
+# Informacion de autor
 LABEL autor="Raul Del Pozo Moreno"
 LABEL email="rauldpm@correo.ugr.es"
 
