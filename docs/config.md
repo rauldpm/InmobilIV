@@ -18,11 +18,11 @@ Mediante esta configuración se conseguirá que git no pida el correo ni la cont
 
 Esto generará un par de claves pública/privada, donde hay que indicar el nombre del fichero que albergará las claves (por defecto: id_rsa) y una contraseña.
 
-![Creación claves](img/generated_key.png)
+![Creación claves](img/SSH_key/generated_key.png)
 
 En GitHub hay que almacenar la clave pública creada, para ello, hay que ir a "Settings" --> "SSH and GPG keys", donde se pulsará sobre "New SSH key", se pondrá un título y la clave ubicada en el fichero "id_rsa.pub" (o como se haya llamado).
 
-![SSH key GitHub](img/github_key.png)
+![SSH key GitHub](img/SSH_key/github_key.png)
 
 Una vez hecho esto hay que establecer que el repositorio remoto sea mediante ssh, para ello, se elimina el repositorio mediante:
 
@@ -32,7 +32,7 @@ Una vez hecho esto hay que establecer que el repositorio remoto sea mediante ssh
 
 Así, al realizar un push no pedirá el email ni la contraseña:
 
-![git push sin password](img/git_push.png)
+![git push sin password](img/SSH_key/git_push.png)
 
 ---
 ### 2. Perfil de GitHub <a id="id2"></a>
