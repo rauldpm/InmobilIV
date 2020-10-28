@@ -23,9 +23,13 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 # Copia el taskrunner
 COPY build.gradle.kts /
 
+# Comandos de creacion de usuario comentados debido a un problema con la ejecucion 
+# en el repositorio de evaluacion.
+# El problema es de permisos ya que necesita sobrescribir el fichero build.gradle.kts 
+# que ya existe al montarlo y da error.
+
 # Crea usuario normal sin contraseña
 #RUN adduser -D userIV
-
 # Indica que a partir de ahora se ejecutara como usuario non-root
 #USER userIV
 
