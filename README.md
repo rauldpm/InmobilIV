@@ -14,7 +14,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Rúbricas
 
-- Rúbrica 1: [Elección y justificación de contenedor base](docs/contenedorBase.md).
+- Rúbrica 1: [Elección y justificación de contenedor base](docs/contenedorBase.md#id1).
   
 - Rúbrica 2: Dockerfile correcto, explicación de cada parte del dockerfile
   - En el fichero [Dockerfile](Dockerfile) se puede observar encima de cada linea un comentario explicando la función que realiza dicha linea.
@@ -31,8 +31,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
   - Comando de descarga: 
     > *docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv:latest*
   
-- Rúbrica 5: Documentación buenas practicas en optimización de tamaño/velocidad de contenedor comparando distintas imágenes.
-  - Esta rúbrica se puede encontrar en el enlace de la rúbrica 1.
+- Rúbrica 5: [Documentación buenas practicas en optimización de tamaño/velocidad de contenedor comparando distintas imágenes](docs/contenedorBase.md#id2)
 
 
 **En este [enlace](docs/rubricas.md) se pueden consultar las rúbricas anteriores**. 
