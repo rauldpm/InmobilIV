@@ -20,9 +20,6 @@ RUN rm -f gradle-$GRADLE_VERSION-bin.zip
 ENV GRADLE_HOME /opt/gradle-$GRADLE_VERSION
 ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
-# Copia el taskrunner
-COPY build.gradle.kts /
-
 # Crea usuario normal sin contraseña
 RUN adduser -D userIV
 
@@ -33,5 +30,5 @@ USER userIV
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD cp -u /build.gradle.kts /test && gradle test
+CMD gradle test
 
