@@ -25,7 +25,7 @@ COPY build.gradle.kts /
 
 # Crea usuario normal sin contraseña
 RUN adduser -D userIV
-
+RUN chown userIV build.gradle.kts
 # Indica que a partir de ahora se ejecutara como usuario non-root
 USER userIV
 
@@ -33,5 +33,5 @@ USER userIV
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD yes Y | cp /build.gradle.kts /test && gradle test
+CMD cp /build.gradle.kts /test && gradle test
 
