@@ -1,4 +1,4 @@
-## Elección de contenedor base <a id="id1"></a>
+## R1 - Elección de contenedor base <a id="id1"></a>
 
 En este fichero se va a explicar la elección de un contenedor base para Docker y la explicación de la elección de una imagen de dicho contenedor mediante una comparación de prestaciones entre las imágenes.
 
@@ -24,7 +24,7 @@ Contenedores base con JVM
 Como se puede ver, el tiempo de build del contenedor con jdk es mucho mas rápido que si hay que instalarlo en el dockerfile, aunque el peso es muy similar, por esto, considero que ya que el peso es similar pero el tiempo es mucho mejor, elijo como contenedor base "openJDK".
 
 ---
-## Elección de imagen <a id="id2"></a>
+## R5 - Elección de imagen <a id="id2"></a>
 
 De este contenedor base voy a comprobar tres imágenes, que son:
 
