@@ -3,8 +3,10 @@ entidad:
   - main/inmuebles.kt
 
 lenguaje: kotlin
+
 test:
   - tests/testVivienda.kt
   - tests/testInmueble.kt
   - tests/testInmuebles.kt
+  
 taskfile: build.gradle.kts
