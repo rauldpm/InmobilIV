@@ -14,25 +14,11 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Rúbricas
 
-- Rúbrica 1: [Elección y justificación de contenedor base](docs/contenedorBase.md#id1).
-  
-- Rúbrica 2: Dockerfile correcto, explicación de cada parte del dockerfile
-  - En el fichero [Dockerfile](Dockerfile) se puede observar encima de cada linea un comentario explicando la función que realiza dicha linea.
-  - Ejecutando la orden: **docker build -t="rauldpm/inmobiliv" .** se puede observar que no ha habido ningún error en la ejecución, por lo que el fichero Dockerfile no contiene errores, esto se puede ver en esta [imagen](docs/img/DockerHub/docker_build.png).
-
-- Rúbrica 3: Contenedor subido a DockerHub y documentación
-  - Se puede ver el contenedor subido en DockerHub [aquí](https://hub.docker.com/r/rauldpm/inmobiliv).
-  - Documentación sobre DockerHub [aquí](docs/dockerhub.md).
-  - Comando para descargar imagen: 
-    > *docker pull rauldpm/inmobiliv*
-  
-- Rúbrica 4: Uso de registros alternativos. GitHub Container Registry
-  - Documentación del proceso [aquí](docs/github_registry.md).
-  - Comando de descarga: 
-    > *docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv:latest*
-  
-- Rúbrica 5: [Documentación buenas practicas en optimización de tamaño/velocidad de contenedor comparando distintas imágenes](docs/contenedorBase.md#id2)
-
+- Rúbrica 1: Integración continua funcionando y correcta justificación de la misma.
+- Rúbrica 2: Configuración de algún sistema de integración continua adicional (justificado de la misma forma).
+- Rúbrica 3: Uso correcto del gestor de tareas en todos los casos anteriores.
+- Rúbrica 4: Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo.
+- Rúbrica 5: Tests significativos y/o avance del proyecto en sí más allá del hito anterior.
 
 **En este [enlace](docs/rubricas.md) se pueden consultar las rúbricas anteriores**. 
 
