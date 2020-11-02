@@ -31,6 +31,8 @@ USER userIV
 # Establece el directorio de trabajo
 WORKDIR /test
 
+RUN mkdir /test/.gradle
+
 # Establece la accion a realizar al ejecutar docker
 CMD gradle test
 
