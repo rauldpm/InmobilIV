@@ -32,5 +32,5 @@ RUN adduser -D userIV
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD gradle --no-build-cache test
+CMD gradle test
 
