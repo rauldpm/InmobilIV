@@ -1,7 +1,26 @@
 
 # Fichero para CI con Travis
 
+# Indica el lenguaje a usar
 language: java
 
+# Especifica el SO y la distribución a usar
+arch: amd64
+os: linux
+dist: xenial
+
+# Indica la version de jdk a usar
 jdk:
     - openjdk8
+
+# Especifica que no se usen permisos root 
+sudo: false
+
+# Especifica la cache
+cache:
+    directories:
+        - $HOME/.gradle
+
+# Ejecuta el test
+script:
+    - gradle test
