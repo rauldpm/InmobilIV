@@ -23,13 +23,13 @@ ENV GRADLE_HOME /opt/gradle-$GRADLE_VERSION
 ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
 # Crea usuario normal sin contraseña
-RUN adduser -D userIV
+#RUN adduser -D userIV
 
 # Crea las carpetas basicas necesarias
-RUN mkdir /test /test/.gradle
+#RUN mkdir /test /test/.gradle
 
 # Indica que a partir de ahora se ejecutara como usuario non-root
-USER userIV
+#USER userIV
 
 # Establece el directorio de trabajo
 WORKDIR /test
