@@ -1,5 +1,8 @@
 # InmobilIV
 
+[![Build Status](https://travis-ci.org/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.org/rauldpm/InmobilIV)
+
+
 ## Descripción
 
 En este proyecto quiero gestionar la búsqueda e información de pisos en venta y alquiler en cualquier zona de España según los criterios de un usuario, los cuales van a ser capaces de ver los inmuebles registrados y realizar gestiones sobre ellos.
