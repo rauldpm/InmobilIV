@@ -9,8 +9,8 @@ jdk:
     - openjdk8
 
 # Especifica que se va a usar docker
-services:
-    - docker
+#services:
+#    - docker
 
 # Especifica el SO y la distribución a usar
 arch: amd64
@@ -18,9 +18,9 @@ os: linux
 dist: xenial
 
 # Descarga la imagen y la ejecuta
-before_install:
-    - docker pull rauldpm/inmobiliv
-    - docker run -t -v `pwd`:/test rauldpm/inmobiliv
+#before_install:
+#    - docker pull rauldpm/inmobiliv
+#    - docker run -t -v `pwd`:/test rauldpm/inmobiliv
 
 # Ejecuta el test
 script:
