@@ -1,6 +1,6 @@
 # InmobilIV
 
-[![Build Status](https://travis-ci.org/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.org/rauldpm/InmobilIV)
+<!-- [![Build Status](https://travis-ci.org/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.org/rauldpm/InmobilIV)-->
 
 
 ## Descripción
