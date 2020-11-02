@@ -1,0 +1,9 @@
+
+# Fichero para CI
+
+languaje: java
+
+jdk:
+    - openjdk8
+
+script: gradle test
