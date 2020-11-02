@@ -20,7 +20,6 @@ services:
 # Descarga la imagen y la ejecuta
 before_install:
     - docker pull rauldpm/inmobiliv
-
-# Ejecuta el test
-script:
     - docker run -t -v `pwd`:/test rauldpm/inmobiliv
+
+    
