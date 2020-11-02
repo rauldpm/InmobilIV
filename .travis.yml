@@ -4,22 +4,23 @@
 # Indica el lenguaje a usar
 language: java
 
+# Especifica la version de jdk
+jdk:
+    - openjdk8
+
+# Especifica que se va a usar docker
+services:
+    - docker
+
 # Especifica el SO y la distribución a usar
 arch: amd64
 os: linux
 dist: xenial
 
-# Indica la version de jdk a usar
-jdk:
-    - openjdk8
-
-# Especifica que no se usen permisos root 
-sudo: false
-
-# Especifica la cache
-cache:
-    directories:
-        - $HOME/.gradle
+# Descarga la imagen y la ejecuta
+before_install:
+    - docker pull rauldpm/inmobiliv
+    - docker run -t -v `pwd`:/test rauldpm/inmobiliv
 
 # Ejecuta el test
 script:
