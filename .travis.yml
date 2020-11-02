@@ -2,3 +2,6 @@
 # Fichero para CI con Travis
 
 language: java
+
+jdk:
+    - openjdk8
