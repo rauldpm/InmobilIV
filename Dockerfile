@@ -25,13 +25,10 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 COPY build.gradle.kts /
 
 # Crea usuario normal sin contraseña
-#RUN adduser -D userIV
-
-# Crea las carpetas basicas necesarias
-#RUN mkdir /test /test/.gradle
+RUN adduser -D userIV
 
 # Indica que a partir de ahora se ejecutara como usuario non-root
-#USER userIV
+USER userIV
 
 # Establece el directorio de trabajo
 WORKDIR /test
