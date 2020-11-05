@@ -17,4 +17,6 @@ script:
     - docker build -t="rauldpm/inmobiliv" .
     - docker run -t -v `pwd`:/test rauldpm/inmobiliv 
 
-    
+after_success:
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+    - docker push rauldpm/inmobiliv
