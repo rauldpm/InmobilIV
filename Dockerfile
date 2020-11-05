@@ -13,12 +13,9 @@ ENV GRADLE_VERSION 6.7
 # Establece el directorio de trabajo para la instalacion de Gradle
 WORKDIR /opt
 # Descarga zip de gradle
-RUN wget  https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip
+RUN wget https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip
 # Descomprime la descarga en /opt para su uso directo
 RUN unzip gradle-$GRADLE_VERSION-bin.zip -d /opt
-RUN wget https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip
-# Descomprime la descarga en /opt para su uso directo. Mejora tiempo de ejecucion ya que evitar copiar despues de descomprimir
-RUN unzip gradle-$GRADLE_VERSION-bin.zip
 # Elimina el zip de descarga
 RUN rm -f gradle-$GRADLE_VERSION-bin.zip
 
