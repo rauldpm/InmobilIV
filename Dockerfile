@@ -27,18 +27,17 @@ RUN adduser -D userIV
 
 # Copia el fichero taskrunner
 
+USER userIV
 
-RUN mkdir /test
-COPY build.gradle.kts /test
-WORKDIR /test
+RUN mkdir /home/userIV/gradleBuild
+COPY build.gradle.kts /home/userIV/gradleBuild
+WORKDIR /home/userIV/gradleBuild
+
 RUN gradle assemble
 RUN rm build.gradle.kts
 
-# Indica que a partir de ahora se ejecutara como usuario non-root
-USER userIV
 
+WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-#CMD gradle --no-rebuild test
-#cp /home/userIV/build.gradle.kts /test  && 
-CMD ls -la
+CMD cp -r /home/userIV/gradleBuild/* /test && gradle --no-build-cache test
