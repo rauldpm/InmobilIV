@@ -1,8 +1,6 @@
 
 pipeline {
 
-    def image
-
     // Especifica el uso de dockerfile
     agent none
 
