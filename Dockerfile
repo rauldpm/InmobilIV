@@ -27,7 +27,7 @@ RUN adduser -D userIV
 
 # Copia el fichero taskrunner
 
-USER userIV
+#USER userIV
 
 RUN mkdir /home/userIV/gradleBuild
 COPY build.gradle.kts /home/userIV/gradleBuild
