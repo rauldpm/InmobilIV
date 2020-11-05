@@ -12,7 +12,7 @@ WORKDIR /home/gradle/tmpa
 COPY build.gradle.kts .
 RUN gradle assemble
 RUN rm build.gradle.kts
-
+RUN chown gradle /home/gradle/tmpa
 
 #RUN chown gradle .
 USER gradle
