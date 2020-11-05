@@ -37,10 +37,8 @@ RUN rm build.gradle.kts
 # Indica que a partir de ahora se ejecutara como usuario non-root
 USER userIV
 
-# Establece el directorio de trabajo
-
-
 
 # Establece la accion a realizar al ejecutar docker
-CMD gradle --no-rebuild test
+#CMD gradle --no-rebuild test
 #cp /home/userIV/build.gradle.kts /test  && 
+CMD ls -la
