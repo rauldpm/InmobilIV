@@ -1,5 +1,4 @@
 
-# Fichero para CI con Travis
 
 # Especifica el SO y la distribución a usar
 arch: amd64
@@ -8,10 +7,6 @@ dist: xenial
 
 # Indica el lenguaje a usar
 language: java
-
-# Especifica la version de jdk
-jdk:
-    - openjdk8
 
 # Especifica que se va a usar docker
 services:
