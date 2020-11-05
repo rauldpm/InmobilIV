@@ -14,5 +14,5 @@ services:
 
 # Descarga la imagen y la ejecuta
 script:
-    - docker build -t="rauldpm/inmobiliv" .
+    - docker build -t rauldpm/inmobiliv .
     - docker run -t -v `pwd`:/test rauldpm/inmobiliv 
