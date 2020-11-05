@@ -54,11 +54,11 @@ De esta forma cuando se realice un "push" hacia GitHub, lo enlazará con DockerH
 
 ![Webhooks GitHub](../docs/img/DockerHub/dockerhub_7.png)
 
-Así, al realizar un push en DockerHub se verá que el estado de builds automaticos, pasará al estado "PENDING".
+Así, al realizar un push en DockerHub se verá que el estado de builds automáticos, pasará al estado "PENDING".
 
 ![Automated Build Pending](../docs/img/DockerHub/dockerhub_8.png)
 
-Unos momentos despues, dicho estado cambiará a "IN PROGRESS", que quiere decir que esta realizando el build.
+Unos momentos después, dicho estado cambiará a "IN PROGRESS", que quiere decir que esta realizando el build.
 
 ![Automated Build Progress](../docs/img/DockerHub/dockerhub_9.png)
 
