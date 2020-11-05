@@ -26,7 +26,7 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 RUN adduser -D userIV
 
 # Copia el fichero taskrunner
-COPY build.gradle.kts /home/userIV/
+#COPY build.gradle.kts /home/userIV/
 
 # Indica que a partir de ahora se ejecutara como usuario non-root
 USER userIV
@@ -35,5 +35,5 @@ USER userIV
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD cp /home/userIV/build.gradle.kts /test && gradle test
-
+CMD gradle test
+#cp /home/userIV/build.gradle.kts /test  && 
