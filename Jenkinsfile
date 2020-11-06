@@ -4,8 +4,10 @@ pipeline {
     // Especifica el uso de dockerfile
     agent none
 
+    // Especifica las etapas de ejecucion
     stages {
 
+        // Etapa que construye la imagen docker
         stage('build') {
             agent any
             steps {
@@ -13,6 +15,7 @@ pipeline {
             }    
         }
 
+        // Etapa que ejecuta los test de la imagen docker
         stage('test') {
             agent any
             steps {
