@@ -1,6 +1,9 @@
 # InmobilIV
 
- [![Build Status](https://travis-ci.org/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.org/rauldpm/InmobilIV)
+
+|Travis-CI|[![Build Status](https://travis-ci.com/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.com/rauldpm/InmobilIV)|
+|:-:|:-:|
+
 
 
 ## Descripción
@@ -18,14 +21,17 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ## Rúbricas
 
 - Rúbrica 1: [Integración continua funcionando y correcta justificación de la misma](docs/ci_funcionando.md#id1).
-- Rúbrica 2: Configuración de algún sistema de integración continua adicional (justificado de la misma forma).
+- Rúbrica 2: [Configuración de algún sistema de integración continua adicional (justificado de la misma forma)](docs/jenkins.md).
+  - Para esta rúbrica he usado el CI Jenkins.
+  - Se puede comprobar directamente el correcto funcionamiento [al final del documento](docs/jenkins.md#id4).
 - Rúbrica 3: Uso correcto del gestor de tareas en todos los casos anteriores.
   - Como se puede ver en las rúbricas 1, 2 y 4, el gestor de tareas se ha utilizado correctamente ya que:
     - Solo se ha especificado la orden del taskrunner en el caso de que no se use Docker, como se puede ver [aquí](https://github.com/rauldpm/Ejercicios-IV-20-21/blob/main/docs/tema2.md).
     - En el caso de que se use Docker, no hace falta especificar nada del taskrunner ya que ya esta todo especificado dentro del contenedor.
       - En el caso de Travis-CI, [aquí](./.travis.yml).
-      - En el caso de Jenkins, [aquí]()
+      - En el caso de Jenkins, [aquí](./Jenkinsfile)
 - Rúbrica 4: [Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo](docs/ci_funcionando.md#id4).
+  - Adicionalmente también se ha aprovechado en el sistema de integración continua adicional como se puede comprobar en la rubrica 2.
 
 
 **En este [enlace](docs/rubricas.md) se pueden consultar las rúbricas anteriores**. 
