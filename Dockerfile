@@ -27,4 +27,4 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 WORKDIR /test
 
 # Establece la accion a realizar al ejecutar docker
-CMD gradle test && gadle clean
+CMD gradle test && gradle clean
