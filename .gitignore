@@ -36,3 +36,6 @@ gradlew
 
 # Ignora la carpeta que almacena la construccion de gradle
 build
+
+# Ignora script propio para webhook Jenkins
+iniciarSmee.sh
