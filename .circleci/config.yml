@@ -3,8 +3,9 @@ version: 2.1
 
 jobs:
     build:
-        machine: true
-        - docker build -t rauldpm/inmobiliv .
-    run:
-        machine: true
-        - docker run -t -v `pwd`:/test rauldpm/inmobiliv 
+        steps:
+            machine: true
+            - run:
+                command: |
+                    docker build -t rauldpm/inmobiliv .
+                    docker run -t -v `pwd`:/test rauldpm/inmobiliv 
