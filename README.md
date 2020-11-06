@@ -55,7 +55,7 @@ Se puede saltar la CI usando en el commit:
       - En el caso de Jenkins, [aquí](./Jenkinsfile)
       - En el caso de Circle-CI, [aquí](./.circleci/config.yml)
   
-- Rúbrica 4: [Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo](docs/ci_funcionando.md#id4).
+- Rúbrica 4: [Aprovechamiento del contenedor de Docker generado en la entrega anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo](docs/ci_funcionando.md#id4).
   - Adicionalmente también se ha aprovechado en el sistema de integración continua adicional como se puede comprobar en la rubrica 2.
 
 
