@@ -1,6 +1,5 @@
-## Hito 4 R2 - Configuración de algún sistema de integración continua adicional (justificado de la misma forma).
 
-Para el segundo sistema de CI he decidido usar Jenkins.
+## Intregación continua con Jenkins
 
 ### Indice
 1. [Instalación Jenkins](#id1)
