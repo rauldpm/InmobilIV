@@ -1,11 +1,9 @@
 # InmobilIV
 
-
+|||
+|:-:|:-:|
 |Travis-CI|[![Build Status](https://travis-ci.com/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.com/rauldpm/InmobilIV)|
-|:-:|:-:|
-
 |Circle-CI|[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)|
-|:-:|:-:|
 
 
 ## Descripción
@@ -31,13 +29,17 @@ Los tiempos normales de construcción suelen rondar de 3 a 4 minutos y en alguno
 Imagen de tiempos [aquí](docs/img/tiempos_dockerhub.png).
 
 Se puede saltar la CI usando en el commit:
-  - Travis: [skip travis]
-  - Jenkins: [skip jenkins]
-  - Circle-CI: [skip ci]
+
+|Sistema|Orden Commit|
+|:-:|:-:|
+|Travis|[skip travis]|
+|Jenkins|[skip jenkins]|
+|Circle-CI|[skip ci]|
+
 
 - Rúbrica 1: [Integración continua funcionando y correcta justificación de la misma](docs/ci_funcionando.md#id1).
   
-- Rúbrica 2: [Configuración de algún sistema de integración continua adicional (justificado de la misma forma)](docs/ci-adicional.md).
+- Rúbrica 2: [Configuración de algún sistema de integración continua adicional (justificado de la misma forma)](docs/ci_adicional.md).
   
   - Debido a que Jenkins es un sistema local y hay que estar cambiando el webhook continuamente he decidido integrar también Circle-CI.
   - Para esta rúbrica he usado Jenkins y Circle-CI.
