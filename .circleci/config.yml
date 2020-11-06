@@ -1,0 +1,8 @@
+
+version: 2.1
+
+jobs:
+    build:
+        - docker build -t rauldpm/inmobiliv .
+    run:
+        - docker run -t -v `pwd`:/test rauldpm/inmobiliv 
