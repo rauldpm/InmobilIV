@@ -3,8 +3,8 @@ version: 2.1
 
 jobs:
     build:
+        machine: true
         steps:
-            machine: true
             - run:
                 command: |
                     docker build -t rauldpm/inmobiliv .
