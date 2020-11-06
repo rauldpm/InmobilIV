@@ -16,7 +16,7 @@ En este [enlace](https://github.com/rauldpm/Ejercicios-IV-20-21/blob/main/docs/t
 
 He realizado dos versiones, la primera usando directamente el gestor de tareas y la segunda reutilizando el contenedor de docker.
 
-La primera version se puede ver en el siguiente [enlace](https://github.com/rauldpm/Ejercicios-IV-20-21/blob/main/docs/files/tema2/.travis.yml).
+La primera version se puede ver en el siguiente [enlace](https://github.com/rauldpm/InmobilIV/blob/673b1e476373b2f6c44ac3adcc4015f6456c3944/.travis.yml).
 
 En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/197199265) se puede observar el correcto funcionamiento de Travis, pasando los test unitarios.
 
@@ -24,7 +24,7 @@ En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/197199265
 
 ![travis passed](img/Travis/travis_normal_1.png)
 
-La configuración travis para el uso de Docker se puede ver a continuación.
+La configuración travis para el uso de Docker se puede ver en el siguiente punto.
 
 ---
 ## Hito 4 R4 - Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo. <a id="id4"></a>
