@@ -5,6 +5,7 @@ jobs:
     build:
         machine: true
         steps:
+            - checkout
             - run:
                 command: |
                     docker build -t rauldpm/inmobiliv .
