@@ -1,12 +1,8 @@
 # InmobilIV
 
-<center>
-
-
 [![TravisCI](https://travis-ci.com/rauldpm/InmobilIV.svg?branch=master)](https://travis-ci.com/rauldpm/InmobilIV) [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
 
-</center>
 
 ## Descripción
 
@@ -32,15 +28,11 @@ Imagen de tiempos [aquí](docs/img/tiempos_dockerhub.png).
 
 Se puede saltar la CI usando en el commit:
 
-<center>
-
 |Sistema|Orden Commit|
 |:-:|:-:|
 |Travis|[skip travis]|
 |Jenkins|[skip jenkins]|
 |Circle-CI|[skip ci]|
-
-</center>
 
 - Rúbrica 1: [Integración continua funcionando y correcta justificación de la misma](docs/ci_funcionando.md#id1).
   
