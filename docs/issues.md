@@ -19,28 +19,32 @@ He creado las siguientes historias de usuario:
   - Cerrada debido a que la clase Usuario se ha eliminado, ya que no hace falta para el proyecto almacenar usuarios.
 - [#5 HU2](https://github.com/rauldpm/InmobilIV/issues/5) Como usuario, quiero poder obtener información sobre los inmuebles.
   - En proceso, mediante esta HU se quiere dotar al usuario de obtener información de las viviendas, como pueden ser precios, metros cuadrados... y también obtener estadísticas globales sobre ellas.
-- [#13 HU4](https://github.com/rauldpm/InmobilIV/issues/13)  Como usuario, quiero ser capaz de ver los inmuebles disponibles.
+- [#13 HU4](https://github.com/rauldpm/InmobilIV/issues/13) Como usuario, quiero ser capaz de ver los inmuebles disponibles.
   - En proceso, con esto se quiere dotar al usuario de capacidad para ver los inmuebles que estén registrados en el sistema.
 
 ---
 ### 2. Issues <a id="id2"></a>
 
-#### Issues activas
+#### [Issues activas](https://github.com/rauldpm/InmobilIV/issues)
 
-- [#10](https://github.com/rauldpm/InmobilIV/issues/10) Añadir ficheros principales para el proyecto.
-  - Esta issue pretende englobar aquellas incorporaciones de archivos que no están relacionadas con código fuente del proyecto sino con la configuración.
-- [#8](https://github.com/rauldpm/InmobilIV/issues/8) Añadir documentación del proyecto
-  - Como su propio titulo indica, esta issue hace referencia a toda modificación relacionada con la documentación del proyecto.
+- [#18](https://github.com/rauldpm/InmobilIV/issues/18) Corregir error de permisos en Dockerfile al ejecutar en Travis CI.
+- [#13](https://github.com/rauldpm/InmobilIV/issues/13) Como usuario, quiero ser capaz de ver los inmuebles disponibles.
 - [#12](https://github.com/rauldpm/InmobilIV/issues/12) Como desarrollador, quiero ser capaz de poder testear las clases relacionadas con Inmuebles
-  - Mediante esta issue se va a intentar añadir las funcionalidades necesarias para poder testear correctamente la clase Vivienda, Inmueble e Inmuebles.
-- [#15](https://github.com/rauldpm/InmobilIV/issues/15) Configurar correctamente Dockerfile
-  - Este issue trata de englobar todas aquellas modificaciones realizadas al dichero Dockerfile para que tenga una correcta configuración.
+- [#10](https://github.com/rauldpm/InmobilIV/issues/10) Añadir ficheros principales para el proyecto.
+- [#8](https://github.com/rauldpm/InmobilIV/issues/8) Añadir documentación del proyecto.
+- [#5](https://github.com/rauldpm/InmobilIV/issues/5) Como usuario, quiero poder obtener información sobre los inmuebles.
 
-#### Issues cerradas
+#### [Issues cerradas](https://github.com/rauldpm/InmobilIV/issues?q=is%3Aissue+is%3Aclosed)
 
+- [#21](https://github.com/rauldpm/InmobilIV/issues/21) Incorporar CI con Circle-CI.
+- [#20](https://github.com/rauldpm/InmobilIV/issues/20) Incorporar CI con Jenkins.
+- [#19](https://github.com/rauldpm/InmobilIV/issues/19) Remodelar fichero travis.yml para que testee imagen docker.
+- [#16](https://github.com/rauldpm/InmobilIV/issues/16) Incorporar CI con Travis.
+- [#15](https://github.com/rauldpm/InmobilIV/issues/15) Configurar correctamente Dockerfile.
 - [#14](https://github.com/rauldpm/InmobilIV/issues/14) Reorganizar estructura de aplicación
 - [#11](https://github.com/rauldpm/InmobilIV/issues/11) Migración proyecto a Kotlin
 - [#6](https://github.com/rauldpm/InmobilIV/issues/6) Añadir fichero de herramientas usadas en el proyecto
+- [#4](https://github.com/rauldpm/InmobilIV/issues/4) Como usuario, quiero poder almacenar mis datos.
 - [#3](https://github.com/rauldpm/InmobilIV/issues/3) Añadir clase de vivienda
 - [#2](https://github.com/rauldpm/InmobilIV/issues/2) Añadir clase de usuario
 - [#1](https://github.com/rauldpm/InmobilIV/issues/1) Añadir fichero iv.yaml
@@ -48,7 +52,12 @@ He creado las siguientes historias de usuario:
 ---
 ### 3. Milestones <a id="id3"></a>
 
-He creado tres milestones, uno correspondiendo a cada hito, en los que iré añadiendo historias de usuario conforme vaya avanzando el proyecto.
+Los milestones creados corresponden a cada hito realizado:
+
+- Hito1
+- Hito2
+- Hito3
+- Hito4
 
 Por ahora las historias de usuario se reparten de la siguiente manera:
 
