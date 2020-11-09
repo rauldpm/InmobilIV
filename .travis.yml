@@ -1,14 +1,33 @@
+# Fichero para CI con Travis
+
+# Indica el lenguaje a usar
+language: java
 
 # Especifica el SO y la distribución a usar
 arch: amd64
 os: linux
 dist: xenial
 
-# Especifica que se va a usar docker
-services:
-    - docker
+# Indica la matrix de jdk
+jdk:
+    - openjdk7
+    - openjdk8
+    - openjdk10
+    - openjdk11
+    - oraclejdk7
+    - oraclejdk8
+    - oraclejdk10
+    - oraclejdk11
+    - openjdk-ea
 
-# Descarga la imagen y la ejecuta
+# Especifica que no se usen permisos root 
+sudo: false
+
+# Especifica la cache
+cache:
+    directories:
+        - $HOME/.gradle
+
+# Ejecuta el test
 script:
-    - docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
-    - docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+    - gradle test
