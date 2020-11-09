@@ -2,30 +2,24 @@ name: Docker image
 
 on:
     push:
-        paths:
-            - 'Dockerfile'
+        branches:
+            - master
 
 jobs:
     push:
+
         runs-on: ubuntu-latest
+        if: github.event_name == 'push'
 
         steps:
+            - uses: actions/checkout@v2
 
-            - 
-              name: Checkout
-              uses: actions/checkout@v2
+            - name: Build image
+            run: docker build ghcr.io/rauldpm/inmobiliv/inmobiliv-con .
 
-            -
-              name: Docker buildx
-              uses: docker/setup-buildx-action@v1
+            - name: Log into registry
+            run: echo "${{ secrets.GHCR }}" | docker login ghcr.io -u rauldpm --password-stdin
 
-            -
-              name: LOGIN
-              run: echo "${{ secrets.DOCKER_PASS }}" | docker login ghcr.io -u ${{ secrets.DOCKER_USER }} --password-stdin
+            - name: Push image
+            run: docker push ghcr.io/rauldpm/inmobiliv/inmobiliv-con
 
-            -
-              name: BUILD and PUSH
-              uses: docker/build-push-action@v2
-              with:
-                tags: ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
-                push: true
