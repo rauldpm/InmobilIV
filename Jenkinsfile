@@ -11,7 +11,7 @@ pipeline {
         stage('build') {
             agent any
             steps {
-                sh 'docker build -t rauldpm/inmobiliv .'
+                sh 'docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest'
             }    
         }
 
@@ -19,7 +19,7 @@ pipeline {
         stage('test') {
             agent any
             steps {
-                sh 'docker run -t -v `pwd`:/test rauldpm/inmobiliv'
+                sh 'docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest'
             }
         }
     }
