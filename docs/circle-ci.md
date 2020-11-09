@@ -7,15 +7,15 @@
 2. [Funcionamiento correcto](#id2)
 
 ---
-## 1. Configuración <a id="id1"></a
->
+## 1. Configuración <a id="id1"></a>
+
 Primero hay que identificarse en la [Web](https://circleci.com/integrations/github/) con las credenciales de GitHub.
 
 Cuando entre, se podrán ver los repositorios en propiedad, en el que habrá que pulsar "Set Up Project" del repositorio deseado.
 
 ![circle_1](img/Circle/circle_1.png)
 
-Al pulsar mostrara una configuración inicial preguntando si se desea pushear al repositorio el archivo configuración predeterminado, esto no es lo deseado, ya que he creado una configuración propia para ejecutar docker, se puede consultar [aquí](../.circleci/config.yml)
+Al pulsar mostrará una configuración inicial preguntando si se desea pushear al repositorio el archivo configuración predeterminado, esto no es lo deseado, ya que he creado una configuración propia para ejecutar docker, se puede consultar [aquí](../.circleci/config.yml)
 
 ![circle_2](img/Circle/circle_2.png)
 
