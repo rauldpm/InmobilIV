@@ -20,11 +20,8 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 
 **Importante**
 
-Debido al tiempo excesivo que tarda DockerHub en construir la imagen automáticamente, he tenido que realizar un build de la imagen local en la CI, ya que si utilizo pull para descargar la imagen, descarga la ultima terminada, que como se puede ver en la imagen enlazada a continuación, no termina por el tiempo excesivo.
 
-Los tiempos normales de construcción suelen rondar de 3 a 4 minutos y en algunos casos hasta 200 minutos, todo este tiempo extra es en cola, ya que el "build time" promedio es de 1 minuto.
-
-Imagen de tiempos [aquí](docs/img/tiempos_dockerhub.png).
+**Se ha modificado para que los sitemas de integracion continua usen ghcr**
 
 Se puede saltar la CI usando en el commit:
 
