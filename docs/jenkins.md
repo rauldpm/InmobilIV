@@ -115,12 +115,8 @@ Si finaliza correctamente aparecerá en verde con el tiempo que ha tardado:
 
 ![jenkins_12](img/Jenkins/jenkins_12.png)
 
-Si se entra en el log de consola de dicha ejecución, se podrá observar las acciones que realiza:
+Si se entra en el log se puede ver que se ha ejecutado correctamente:
 
-1. Build correcto de la imagen
-
-![jenkins_build](img/Jenkins/jenkins_build.png)
-
-2. Test correctos en docker
+1. Test correctos en docker
 
 ![jenkins_run](img/Jenkins/jenkins_run.png)
