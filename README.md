@@ -68,19 +68,14 @@ Se puede saltar la CI usando en el commit:
 
 > docker pull rauldpm/inmobiliv
 
-> docker run --rm -t -v \`pwd\`:/test rauldpm/inmobiliv
+> docker run -t -v \`pwd\`:/test rauldpm/inmobiliv
 
 ---
 ## Desplegar y testear contenedor GHCR
 
 > docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
 
-> docker run --rm -t -v \`pwd\`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
-
----
-## Descargar imagen GHCR
-
-> docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv:latest
+> docker run -t -v \`pwd\`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
 
 ---
 ### Autor
