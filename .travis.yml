@@ -1,12 +1,8 @@
 
-
 # Especifica el SO y la distribución a usar
 arch: amd64
 os: linux
 dist: xenial
-
-# Indica el lenguaje a usar
-language: java
 
 # Especifica que se va a usar docker
 services:
@@ -14,5 +10,5 @@ services:
 
 # Descarga la imagen y la ejecuta
 script:
-    - docker build -t rauldpm/inmobiliv .
-    - docker run -t -v `pwd`:/test rauldpm/inmobiliv 
+    - docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+    - docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
