@@ -33,30 +33,12 @@ Este fichero corresponde con el fichero actual en uso, el cual se puede consulta
 
 Para este caso, solamente habría que indicar que se va a usar Docker mediante el tag "services:" y realizar las ordenes correspondientes de docker.
 
-También he indicado la arquitectura, el sistema operativo, la distribución, y el lenguaje (aunque no se use), por que me parece algo necesario. Sobre todo el lenguaje, ya que si no se indica, Travis establece el lenguaje como Ruby (es lenguaje por defecto) y eso podría confundir, ya que el lenguaje usado es Kotlin (que como no aparece en la lista de lenguajes soportados de Travis se indica Java).
+Para el uso de la imagen del contenedor he reutilizado la imagen subida a GHCR.
 
-Aquí hay dos opciones para trabajar con Docker:
-
-1. Descargar la imagen desde DockerHub
-2. Realizar un build de la imagen
-
-De estas dos opciones me he decantado por la segunda, ya que actualmente al realizar un push al repositorio, la imagen se construye en DockerHub, pero tiene el problema de que (en mi caso) he visto que Travis realiza el pull de la imagen de DockerHub antes de que termine el build de DockerHub, por lo que utiliza la imagen anterior.
-
-Como no he encontrado una solución a esta condición de carrera, he preferido realizar un build de la imagen dentro de Travis y asi de paso aprovechar para que compruebe que la imagen se construya correctamente.
-
-En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/jobs/429060887) se puede observar el correcto funcionamiento de la integración continua utilizando Docker.
+En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/199334735) se puede observar el correcto funcionamiento de la integración continua utilizando Docker.
 
 En la siguiente imagen se puede ver la ejecución del comando:
 
-> docker build -t rauldpm/inmobiliv .
-
-![docker build](img/Travis/travis_docker_build_1.png)
-
-Y su finalización correcta:
-
-![docker build success](img/Travis/travis_docker_build_2.png)
-
-También se puede ver el inicio de la ejecución del contenedor en la linea 477, con su finalizacion correcta de los test unitarios:
 
 ![docker run](img/Travis/travis_docker_run_1.png)
 
