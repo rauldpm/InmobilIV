@@ -1,0 +1,25 @@
+name: Docker image 
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    push:
+
+        runs-on: ubuntu-latest
+        if: github.event_name == 'push'
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Build image
+            run: docker build ghrc.io/rauldpm/inmobiliv/inmobiliv-con .
+
+            - name: Log into registry
+            run: echo "${{ secrets.GHCR }}" | docker login ghcr.io -u rauldpm --password-stdin
+
+            - name: Push image
+            run: docker push ghrc.io/rauldpm/inmobiliv/inmobiliv-con
+
