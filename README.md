@@ -64,11 +64,18 @@ Se puede saltar la CI usando en el commit:
 - En este [enlace](docs/issues.md) se puede observar las issues, historias de usuario y milestones usados.
 
 ---
-## Desplegar y testear contenedor docker
+## Desplegar y testear contenedor DockerHub
 
 > docker pull rauldpm/inmobiliv
 
 > docker run --rm -t -v \`pwd\`:/test rauldpm/inmobiliv
+
+---
+## Desplegar y testear contenedor GHCR
+
+> docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+
+> docker run --rm -t -v \`pwd\`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
 
 ---
 ## Descargar imagen GHCR
