@@ -15,5 +15,5 @@ jobs:
             # Comandos a ejecutar
             - run:
                 command: |
-                    docker build -t rauldpm/inmobiliv .
-                    docker run -t -v `pwd`:/test rauldpm/inmobiliv 
+                    docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+                    docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
