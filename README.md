@@ -21,7 +21,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 **Importante**
 
 
-**Se ha modificado para que los sitemas de integracion continua usen ghcr**
+**Se ha modificado para que los sistemas de integración continua usen ghcr**
 
 Se puede saltar la CI usando en el commit:
 
