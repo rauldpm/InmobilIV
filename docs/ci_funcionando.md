@@ -16,13 +16,17 @@ En este [enlace](https://github.com/rauldpm/Ejercicios-IV-20-21/blob/main/docs/t
 
 He realizado dos versiones, la primera usando directamente el gestor de tareas y la segunda reutilizando el contenedor de docker.
 
-La primera version se puede ver en el siguiente [enlace](https://github.com/rauldpm/InmobilIV/blob/673b1e476373b2f6c44ac3adcc4015f6456c3944/.travis.yml).
+La primera version se puede ver en el siguiente [enlace](https://github.com/rauldpm/InmobilIV/blob/d1ead7cb9543cca3a1be5f91283726ffd8b459f6/.travis.yml).
 
-En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/197199265) se puede observar el correcto funcionamiento de Travis, pasando los test unitarios.
+Adicionalmente, se puede observar que se han establecido varias versiones de jdk.
 
-![travis taskrunner](img/Travis/travis_normal.png)
+Se puede ver que algunas versiones indicadas en la primera version, no son soportadas ya que fallan:
 
-![travis passed](img/Travis/travis_normal_1.png)
+![travis taskrunner](img/Travis/travis_matrix_1.png)
+
+En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/199342845) se puede observar el correcto funcionamiento de Travis, pasando los test unitarios para las versiones jdk indicadas.
+
+![travis taskrunner](img/Travis/travis_matrix_3.png)
 
 La configuración travis para el uso de Docker se puede ver en el siguiente punto.
 
