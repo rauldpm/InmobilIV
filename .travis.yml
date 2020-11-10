@@ -10,5 +10,4 @@ services:
 
 # Descarga la imagen y la ejecuta
 script:
-    - docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
-    - docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+    - docker run -t -v $TRAVIS_BUILD_DIR:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
