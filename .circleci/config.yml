@@ -15,6 +15,4 @@ jobs:
             # Comandos a ejecutar
             - run:
                 # Usa ghcr.io
-                command: |
-                    docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
-                    docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+                command: docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
