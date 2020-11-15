@@ -1,5 +1,5 @@
 
-# Fichero configuracion Circle-CI
+# Fichero configuración Circle-CI
 
 version: 2.1
 
@@ -7,12 +7,12 @@ version: 2.1
 jobs:
     build:
         docker:
-            - image: cimg/base:stable
+            - image: ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
         # Especifica las acciones a realizar
         steps:
             # Clona el repositorio en local
             - checkout
             # Comandos a ejecutar
             - run:
-                # Usa ghcr.io
-                command: docker run -t -v `pwd`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+                # Ejecuta los test
+                command: gradle test
