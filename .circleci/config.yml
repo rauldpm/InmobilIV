@@ -6,6 +6,8 @@ version: 2.1
 # Representa la lista de trabajos a ejecutarse
 jobs:
     build:
+        docker:
+            - image: ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
         # Especifica las acciones a realizar
         steps:
             # Clona el repositorio en local
