@@ -6,8 +6,6 @@ version: 2.1
 # Representa la lista de trabajos a ejecutarse
 jobs:
     build:
-        # Indica que es una maquina linux
-        machine: true
         # Especifica las acciones a realizar
         steps:
             # Clona el repositorio en local
