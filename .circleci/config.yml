@@ -6,6 +6,7 @@ version: 2.1
 # Representa la lista de trabajos a ejecutarse
 jobs:
     build:
+        # Especifica el uso del contenedor
         docker:
             - image: ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
         # Especifica las acciones a realizar
