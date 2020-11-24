@@ -1,11 +1,11 @@
 
 name: AWS
 
-# Salta cuando hay un push a la rama master
+# Salta cuando hay un cambio en el fichero con la funcion serverless
 on:
   push:
-    branches:
-      - master
+    paths:
+      - 'main/functions.kt'
 
 jobs:
   deploy:
