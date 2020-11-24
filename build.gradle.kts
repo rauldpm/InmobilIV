@@ -3,14 +3,11 @@ import io.kotless.plugin.gradle.dsl.kotless
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.3.72"
     id("io.kotless") version "0.1.6"
 }
 
-// Cambia la localizacion de las carpetas de codigo predefinidas
-// Fuentes en carpeta "main" en raiz
-// Test en carpeta "tests" en raiz
+
 sourceSets {
     main {
         java {
@@ -30,6 +27,7 @@ repositories {
 }
 
 dependencies {
+
     // Align versions of all Kotlin components
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
@@ -53,6 +51,7 @@ dependencies {
     // Usado para las aserciones de los test
     testImplementation("org.assertj:assertj-core:3.12.2")
 
+    // para kotless
     implementation(kotlin("stdlib"))
     implementation("io.kotless", "kotless-lang", "0.1.6")
 
@@ -67,11 +66,19 @@ kotless {
            region = "eu-west-2"
        }
    }
-    extensions {
+   webapp {
+       lambda {
+           kotless {
+               packages = setOf("com.inmobiliv")
+           }
+       }
+   }
+   extensions {
         local {
             useAWSEmulation = true
         }
     }
+
 }
 
 
@@ -86,26 +93,3 @@ tasks {
     }
 }
 
-// Tarea que comprueba si el proyecto compila, tanto las clases como sus test
-tasks.register("compila") {
-    println("Compilando ficheros principales...")
-    dependsOn("compileKotlin")
-    println("Compilando ficheros test...")
-    dependsOn("compileTestKotlin")
-
-}
-
-// Tarea que pregunta
-tasks.register("pregunta") {
-    doLast {
-        println("¿Quien eres?")
-    }
-}
-
-// Tarea que responde -> tiene dependencia de la tarea "pregunta"
-tasks.register("respuesta") {
-    dependsOn("pregunta")
-    doFirst {
-        println("Soy Gradle")
-    }
-}
