@@ -12,7 +12,7 @@ class TestFunctions {
         var mensaje = "InmobilIV Serverless Function v3"
         var mensajeServerless = serverless()
         // Llama al metodo "serverless"
-        assertThat(mensajeServerless).isEqualTo("InmobilIV Serverless Function v3")
+        assertThat(mensajeServerless).isEqualTo("InmobilIV Serverless Function v4")
     }
 
 }
