@@ -4,4 +4,4 @@ package com.inmobiliv
 import io.kotless.dsl.lang.http.Get
 
 @Get("/")
-fun serverless() = "InmobilIV Serverless Function v3"
+fun serverless() = "InmobilIV Serverless Function v4"
