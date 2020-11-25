@@ -5,7 +5,7 @@ name: AWS
 on:
   push:
     paths:
-      - 'main/functions.kt'
+      - 'main/function_aws.kt'
 
 jobs:
   deploy:
