@@ -49,6 +49,18 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 - En este [enlace](docs/uso.md) se puede consultar algunos comandos importantes en el uso de las herramientas.
 - En este [enlace](docs/issues.md) se puede observar las issues, historias de usuario y milestones usados.
 
+
+---
+## Bot de Telegram
+
+Si quieres usar el bot desarrollado para su integración con este proyecto, inicia una conversación con el Bot: @rauldpm_bot, después introduce el comando /start y ya estas listo para su uso:
+
+Comandos útiles:
+
+- /autor -> Te dice el autor del bot
+- /cantidad -> Te dice la cantidad de viviendas disponibles
+- /todo -> Te proporciona información de todas las viviendas 
+  
 ---
 ## Desplegar y testear contenedor DockerHub
 
