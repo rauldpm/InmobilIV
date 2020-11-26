@@ -36,6 +36,8 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
   - Netlify: Lo que he encontrado al respecto de kotlin es para documentar código en Orchid, no para despliegue, ademas en su documentación no hay nada de referencia a Kotlin.
   - Azure: No puedo registrarme ya que no puedo identificarme con mi cuenta de github ni con mis emails personales ya que son de dominio privado, imágenes de error [aquí](docs/img/azure/azure.png) y [aquí](docs/img/azure/azure_1.png).
 
+  Estoy buscando la manera de integrar en mi proyecto otro lenguaje para posibilitar ampliar la cobertura, estoy probando con una integración Kotlin/JS pero estoy teniendo algún problema de compatibilidad para integrarlo con la configuración actual del taskrunner Gradle.
+
 
 4. [En conjunción con la rúbrica 2, se asigna por originalidad, buena integración dentro del proyecto, tener que programarlos en un lenguaje diferente al resto del proyecto (si es que el lenguaje en que está este no está soportado en el sistema serverless), integración con un front-end web/bot de Telegram/webhook de cualquier tipo que funcione en la práctica](docs/entrega5/rubrica4.md).
 
