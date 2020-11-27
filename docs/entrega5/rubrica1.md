@@ -10,8 +10,10 @@ También me he encontrado que sitios serverless como Firebase, sí que permite e
 Asi he decidido usar el plugin de kotless ya que es el oficial y que me ha permitido realizar un despliegue en AWS (desgraciadamente solo permite el despliegue aquí como se indica en su pagina).
 
 Para realizar esto primero he tenido que registrarme indicando una tarjeta de débito/crédito (por si se sobrepasa lo gratuito) 
-
+ 
 El primer paso ha sido crear un par de funciones serverless, para ello, he creado un fichero [function_aws.kt](../../main/function_aws.kt) el cual contiene el import del plugin kotless y las funciones serverless, que en este caso devuelve un string y un json.
+
+Después de indicar la ruta en la que se sirve solamente hay que crear una función de la forma que se ve en el fichero.
 
 Para indicar la ruta en la que se va a servir la función, kotless proporciona una forma muy sencilla de hacerlo, y es mediante la forma **@Get("/")** y **@Get("/json")**, donde en las comillas se indica la ruta en la que se servirá, en este caso, en la raíz y /json.
 
@@ -45,6 +47,8 @@ También he tenido que indicar la configuración de kotless en tres apartados:
 3. Una extension mediante la cual puedo emular el despliegue tanto el local (false) como en aws (true), de esta forma evito pasarme del limite de despliegues.
 
 También he configurado un workflow de github actions llamado [aws.yml](../../.github/workflows/aws.yml) mediante el cual realiza el despliegue desde github cuando hay una modificación en el fichero con la función serverless (para que desplegar todo si solo va a usar dicha función).
+
+Este workflow realiza la descarga del repositorio, se autentifica mediante una aws-actions con las credenciales almacenadas en los secretos de GitHub, se identifica en AWS y realiza el despliegue.
 
 Dicho despliegue lo hace mediante el comando del taskrunner "gradle deploy", que es una tarea que añade el plugin "kotless" (hay que darse cuenta como se nota que dicho plugin es oficial, ya que modifica el taskrunner internamente)
 
