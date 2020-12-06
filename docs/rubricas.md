@@ -10,5 +10,6 @@ En este fichero se enlazan las rúbricas de los hitos completados hasta el momen
 2. [Hito 2](rubricas/hito2.md) - Tests unitarios para la clase/s diseñadas.
 3. [Hito 3](rubricas/hito3.md) - Creación de un contenedor para pruebas.
 4. [Hito 4](rubricas/hito4.md) - Integración continua.
+5. [Hito 5](rubricas/hito5.md) - Serverless computing.
 
 
