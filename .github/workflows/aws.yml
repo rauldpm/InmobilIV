@@ -5,7 +5,7 @@ name: AWS
 on:
   push:
     paths:
-      - 'main/function_aws.kt'
+      - 'app/src/main/kotlin/function_aws.kt'
 
 jobs:
   deploy:
