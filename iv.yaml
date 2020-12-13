@@ -1,14 +1,17 @@
 entidad: 
-  - main/inmueble.kt
-  - main/inmuebles.kt
+  - app/src/main/kotlin/inmueble.kt
+  - app/src/main/kotlin/inmuebles.kt
+  - app/src/main/kotlin/function_aws.kt
+  - app/src/main/kotlin/Main.kt
 
 lenguaje: kotlin
 
 test:
-  - tests/testVivienda.kt
-  - tests/testInmueble.kt
-  - tests/testInmuebles.kt
+  - app/src/test/kotlin/testVivienda.kt
+  - app/src/test/kotlin/testInmueble.kt
+  - app/src/test/kotlin/testInmuebles.kt
+  - app/src/test/kotlin/testFunctions.kt
   
-taskfile: build.gradle.kts
+taskfile: app/build.gradle.kts
 
 URL: https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json
