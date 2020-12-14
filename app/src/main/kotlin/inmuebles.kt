@@ -32,5 +32,14 @@ class Inmuebles {
     fun getSize() = this.cantidad
     fun getInm() = this.inmuebles
 
+    override fun toString(): String {
+  
+        var array : String = ""
+        
+        for (item in inmuebles) 
+            array += "Inmueble: " + item.toString() + "\n"
+    
+        return array
+	}
 
 }
