@@ -14,6 +14,11 @@ class Vivienda {
         this.piso = piso
         this.letra = letra
     }
+
+    override fun toString(): String {
+        return "[calle: ${this.calle}, portal: ${this.portal}, piso: ${this.piso}, letra: ${this.letra}]"
+    }
+
 }
 
 class Inmueble {
@@ -45,7 +50,9 @@ class Inmueble {
     fun setViv(viv: Vivienda) { vivienda = viv }
     fun setPro(pro: String) { propietario = pro }
 
-    
+    override fun toString() : String {
+        return "[superficie: ${this.superficie}, habitaciones: ${this.habitaciones}, precio: ${this.precio}, vivienda: ${this.vivienda}, propietario: ${this.propietario}]"
+    }
 
 
 }
