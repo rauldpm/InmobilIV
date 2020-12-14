@@ -15,3 +15,5 @@ test:
 taskfile: app/build.gradle.kts
 
 URL: https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json
+
+make: gradle test
