@@ -28,7 +28,7 @@ Las cabeceras por defecto, instaladas mediante la siguiente orden, añade una se
 install(DefaultHeaders)
 ```
 
-Los estados de pagina, permiten especificar codigos de respuesta en las peticiones de las rutas, como pueden ser el error 500 (Internal Server Error) o un codigo 200 (OK).
+Los estados de pagina, permiten especificar códigos de respuesta en las peticiones de las rutas, como pueden ser el error 500 (Internal Server Error) o un código 200 (OK).
 
 Su instalación se realiza mediante la orden:
 
@@ -61,7 +61,7 @@ Por ahora he especificado tres rutas:
 2. /getInmuebles
 3. /addInmueble
 
-La primera ruta / sirve el contenido de un fichero llamado "[index.ftl](../../app/build/resources/main/templates/index.ftl)", que contiene una sola frase: "InmobilIV Main Page", que tiene el propósito de servir la pagina principal.
+La primera ruta / sirve el contenido de un fichero llamado "[index.ftl](../../app/src/main/resources/templates/index.ftl)", que contiene una sola frase: "InmobilIV Main Page", que tiene el propósito de servir la pagina principal.
 
 En dicha ruta primero se realiza una llamada al logger para registrar una llamada a esta ruta mediante:
 
