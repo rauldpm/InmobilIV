@@ -11,9 +11,10 @@ test:
   - app/src/test/kotlin/testInmueble.kt
   - app/src/test/kotlin/testInmuebles.kt
   - app/src/test/kotlin/testFunctions.kt
+  - app/src/test/kotlin/testRoutes.kt
   
 taskfile: app/build.gradle.kts
 
 URL: https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json
 
-make: gradle test
+make: gradle
