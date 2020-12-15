@@ -33,6 +33,15 @@ class TestRoutes {
         }
     }
 
-
+    @Test
+    @DisplayName("Comprueba la ruta /addInmueble")
+    fun testRouteAdd() = withTestApplication(Application::module){
+        with ( 
+            handleRequest(HttpMethod.Get, "/addInmueble/150.3/3/456.16/alhondiga/3/4/c/juan") 
+        ) {
+            assertEquals(HttpStatusCode.Created, response.status())
+            assertEquals("Inmueble creado con exito", response.content)
+        }
+    }
     
 }
