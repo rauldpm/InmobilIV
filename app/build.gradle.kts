@@ -67,6 +67,12 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-freemarker:$ktor_version")
 
+    // Usado para los test de integracion, simula el servidor sin iniciarlo
+    testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
+
+    // Lectura/Escritura json
+    implementation("com.google.code.gson:gson:2.8.5")
+
     // Loggin
     compile("ch.qos.logback:logback-classic:$logback_version")
 
