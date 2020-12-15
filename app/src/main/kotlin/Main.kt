@@ -36,6 +36,27 @@ fun Application.module() {
             call.response.status(HttpStatusCode.OK)
             call.respond(FreeMarkerContent("index.ftl", null))
         }
+        get("/getInmuebles") {
+            logger.info("\nLLamada /getInmuebles")
+        
+            try {
+                val gson = Gson()
+                val inmuebles: Inmuebles = gson.fromJson(FileReader("src/main/resources/data/data.json"), Inmuebles::class.java)
+
+                logger.info("\nInmuebles creado desde fichero\n" + inmuebles)
+
+                call.response.header("Location", "/inmuebles")
+                call.response.status(HttpStatusCode.OK)
+                call.respondText(inmuebles.toString(), ContentType.Text.Html)
+
+            } catch (e : Exception) {
+                logger.info("\nExcepcion encontrada /inmuebles\n" + e)
+
+                call.response.header("Location", "/inmuebles")
+                call.response.status(HttpStatusCode.InternalServerError)
+                call.respondText("Excepcion '" + e + "'")
+            }
+        }
     }
 }
 
