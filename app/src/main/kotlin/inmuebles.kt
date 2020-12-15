@@ -34,12 +34,12 @@ class Inmuebles {
 
     override fun toString(): String {
   
-        var array : String = ""
+        var arrayInmuebles : String = ""
         
         for (item in inmuebles) 
-            array += "Inmueble: " + item.toString() + "\n"
+            arrayInmuebles += "Inmueble: " + item.toString() + "\n"
     
-        return array
+        return arrayInmuebles
 	}
-
+ 
 }
