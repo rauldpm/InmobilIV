@@ -57,6 +57,40 @@ fun Application.module() {
                 call.respondText("Excepcion '" + e + "'")
             }
         }
+        get("/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}") {
+            logger.info("\nLLamada /addInmueble")
+
+            try {
+                val sup = call.parameters["sup"].toString().toDouble()
+                val hab = call.parameters["hab"].toString().toInt()
+                val pre = call.parameters["pre"].toString().toDouble()
+                val cal = call.parameters["cal"].toString()
+                val por = call.parameters["por"].toString().toInt()
+                val pis = call.parameters["pis"].toString().toInt()
+                val let = call.parameters["let"].toString().single()
+                val pro = call.parameters["pro"].toString()
+            
+
+                logger.info("\nParametros recibidos: " + "\nsup: " + sup + "\nhab: " + hab + "\npre: " + pre + "\ncal: " + cal + "\npor: " + por + "\npis: " + pis + "\nlet: " +let + "\npro: " + pro )
+                
+                val viv = Vivienda(cal, por, pis, let)
+                logger.info("\nVivienda creada\n" + viv)
+
+                val inm = Inmueble(sup, hab, pre, viv, pro)
+                logger.info("\nInmueble creado\n" + inm)
+
+                call.response.header("Location", "/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}")
+                call.response.status(HttpStatusCode.Created)
+                call.respondText("Inmueble creado con exito")
+
+            } catch (e : Exception) {
+                logger.info("\nExcepcion encontrada /addInmueble\n" + e)
+
+                call.response.header("Location", "/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}")
+                call.response.status(HttpStatusCode.InternalServerError)
+                call.respondText("Excepcion '" + e + "' --> no corresponde al formato de ruta")
+            }
+        }
     }
 }
 
