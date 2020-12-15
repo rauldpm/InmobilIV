@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 val assert_version = "3.12.2"
 val junit_version = "5.7.0"
 val ktor_version = "1.4.3"
+val logback_version = "1.2.3"
 
 // Plugins a usar
 plugins {
@@ -59,15 +60,16 @@ dependencies {
     // Usado para las aserciones de los test
     testImplementation("org.assertj:assertj-core:$assert_version")
 
-    // para kotless
+    // Para kotless serverless
     implementation("io.kotless", "kotless-lang", "0.1.6")
 
-    // framework ktor
+    // Framework ktor
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-freemarker:$ktor_version")
 
-    // loggin
-    compile("ch.qos.logback:logback-classic:1.2.3")
+    // Loggin
+    compile("ch.qos.logback:logback-classic:$logback_version")
+
 }
 
 // Configuracion para serverless
@@ -89,7 +91,7 @@ kotless {
    }
    extensions {
         local {
-            useAWSEmulation = false
+            useAWSEmulation = true
         }
     }
 }
