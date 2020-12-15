@@ -35,5 +35,20 @@ class TestInmueble {
         assertThat(inmueble.getPro()).isEqualTo("Javier")
     }
 
+    @Test
+    @DisplayName("Comprueba que se puede modificar valores")
+    fun testSetInmueble() {
+
+        inmueble.setSup(3.1)
+        inmueble.setHab(4)
+        inmueble.setPre(34.3)
+        inmueble.setPro("Luis")
+        
+        assertThat(inmueble.getSup()).isEqualTo(3.1)
+        assertThat(inmueble.getHab()).isEqualTo(4)
+        assertThat(inmueble.getPre()).isEqualTo(34.3)
+        assertThat(inmueble.getPro()).isEqualTo("Luis")
+
+    }
 
 }
