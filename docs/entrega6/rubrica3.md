@@ -4,7 +4,7 @@
 
 ---
 
-He utilizado un sistema de logs llamado "[logback](https://logback.qos.ch/)" que es un sucesor de "[SLF4J](http://www.slf4j.org/", ya que es el utilizado por el framework "Ktor".
+He utilizado un sistema de logs llamado "[logback](https://logback.qos.ch)" que es un sucesor de "[SLF4J](http://www.slf4j.org/", ya que es el utilizado por el framework "Ktor".
 
 Para utilizarlo hay que añadirlo en las dependencias del proyecto mediante la siguiente linea:
 
