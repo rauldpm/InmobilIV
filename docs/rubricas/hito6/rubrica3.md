@@ -24,11 +24,11 @@ Y donde se quiera generar un log, escribir el siguiente código:
 logger.info(mensaje)
 ```
 
-Por ejemplo, en el fichero "[Main.kt](../../app/src/main/kotlin/Main.kt)", se puede observar su uso, en concreto, en la ruta "get(/getInmuebles)", se utiliza 3 veces, primero para informar el acceso a dicha ruta y después para informar del éxito o error de la operación. 
+Por ejemplo, en el fichero "[Main.kt](../../../app/src/main/kotlin/Main.kt)", se puede observar su uso, en concreto, en la ruta "get(/getInmuebles)", se utiliza 3 veces, primero para informar el acceso a dicha ruta y después para informar del éxito o error de la operación. 
 
 En este caso, el log muestra un mensaje con los inmuebles consultados:
 
-![loggin](../img/hito6/rubrica3/loggin.png)
+![loggin](../../img/hito6/rubrica3/loggin.png)
 
 Este log utiliza el siguiente formato:
 
@@ -36,5 +36,5 @@ Este log utiliza el siguiente formato:
 fecha hora evento nivel estado respuesta
 ```
 
-Para lograr este resultado, he creado un fichero de configuración llamado [logback.xml](../../app/src/main/resources/logback.xml) donde se encuentra la configuración usada.
+Para lograr este resultado, he creado un fichero de configuración llamado [logback.xml](../../../app/src/main/resources/logback.xml) donde se encuentra la configuración usada.
 

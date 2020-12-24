@@ -8,7 +8,7 @@ El bot se puede consultar en este [repositorio](https://github.com/rauldpm/Inmob
 
 El bot lo he escrito en Go ya que Kotlin no esta soportado en Vercel.
 
-He utilizado tres structs para almacenar la información leída de un fichero json, que por el momento simula una base de datos (la idea es utilizar la API InmobilIV para gestionar todo y usar el bot de Telegram como un acceso rápido de información para los usuarios). Dicho fichero se puede consultar [aquí](../../data/data.json).
+He utilizado tres structs para almacenar la información leída de un fichero json, que por el momento simula una base de datos (la idea es utilizar la API InmobilIV para gestionar todo y usar el bot de Telegram como un acceso rápido de información para los usuarios). Dicho fichero se puede consultar [aquí](../../../app/src/main/resources/data/data.json).
 
 El bot dispone de tres comandos:
 
@@ -18,7 +18,7 @@ El bot dispone de tres comandos:
 
 La ejecución de dichas ordenes se puede ver en la siguiente imagen:
 
-![bot](../img/bot/telegram.png)
+![bot](../../img/bot/telegram.png)
 
 El despliegue lo he explicado en la rubrica 2.
 

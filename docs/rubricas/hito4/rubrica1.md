@@ -1,10 +1,12 @@
-## Hito4 R1 - Integración continua funcionando y correcta justificación de la misma. <a id="id1"></a>
+## R1 Integración continua funcionando y correcta justificación de la misma
+
+---
 
 Para esta rubrica se ha utilizado Travis CI, para ello, hay que identificarse con la cuenta de GitHub en https://travis-ci.com/.
 
 Una vez dentro habrá que enlazar el repositorio, cosa que se realiza desde GitHub, desde GitHub Apps:
 
-![repo](img/Travis/repo.png)
+![repo](../../img/Travis/repo.png)
 
 Una vez hecho esto, cuando se realize un push al repositorio de GitHub, se lanzará el test en Travis.
 
@@ -22,30 +24,10 @@ Adicionalmente, se puede observar que se han establecido varias versiones de jdk
 
 Se puede ver que algunas versiones indicadas en la primera version, no son soportadas ya que fallan:
 
-![travis taskrunner](img/Travis/travis_matrix_1.png)
+![travis taskrunner](../../img/Travis/travis_matrix_1.png)
 
 En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/199342845) se puede observar el correcto funcionamiento de Travis, pasando los test unitarios para las versiones jdk indicadas.
 
-![travis taskrunner](img/Travis/travis_matrix_3.png)
+![travis taskrunner](../../img/Travis/travis_matrix_3.png)
 
-La configuración travis para el uso de Docker se puede ver en el siguiente punto.
-
----
-## Hito 4 R4 - Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo. <a id="id4"></a>
-
-Este fichero corresponde con el fichero actual en uso, el cual se puede consultar [aquí](../.travis.yml).
-
-Para este caso, solamente habría que indicar que se va a usar Docker mediante el tag "services:" y realizar las ordenes correspondientes de docker.
-
-Para el uso de la imagen del contenedor he reutilizado la imagen subida a GHCR.
-
-En este [enlace](https://travis-ci.com/github/rauldpm/InmobilIV/builds/199334735) se puede observar el correcto funcionamiento de la integración continua utilizando Docker.
-
-En la siguiente imagen se puede ver la ejecución del comando:
-
-
-![docker run](img/Travis/travis_docker_run_1.png)
-
-Como se puede ver, pasa correctamente:
-
-![travis_docker_success](img/Travis/travis_docker_success.png)
+La configuración travis para el uso de Docker se puede ver en la [rubrica 4](rubrica4.md).

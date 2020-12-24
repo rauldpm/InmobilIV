@@ -11,7 +11,7 @@ Asi he decidido usar el plugin de kotless ya que es el oficial y que me ha permi
 
 Para realizar esto primero he tenido que registrarme indicando una tarjeta de débito/crédito (por si se sobrepasa lo gratuito) 
  
-El primer paso ha sido crear un par de funciones serverless, para ello, he creado un fichero [function_aws.kt](../../main/function_aws.kt) el cual contiene el import del plugin kotless y las funciones serverless, que en este caso devuelve un string y un json.
+El primer paso ha sido crear un par de funciones serverless, para ello, he creado un fichero [function_aws.kt](../../../app/src/main/kotlin/function_aws.kt) el cual contiene el import del plugin kotless y las funciones serverless, que en este caso devuelve un string y un json.
 
 Después de indicar la ruta en la que se sirve solamente hay que crear una función de la forma que se ve en el fichero.
 
@@ -23,17 +23,17 @@ Ahora viene la parte donde se configura AWS, esto consta de varios pasos:
 
 1. Creación de un usuario IAM
 
-![aws 1](../img/aws/aws_1.png)
-![aws 2](../img/aws/aws_2.png)
-![aws 3](../img/aws/aws_3.png)
-![aws 4](../img/aws/aws_4.png)
+![aws 1](../../img/aws/aws_1.png)
+![aws 2](../../img/aws/aws_2.png)
+![aws 3](../../img/aws/aws_3.png)
+![aws 4](../../img/aws/aws_4.png)
 
 2. Creación de un bucket S3
    
-![aws 5](../img/aws/aws_5.png)
-![aws 6](../img/aws/aws_6.png)
+![aws 5](../../img/aws/aws_5.png)
+![aws 6](../../img/aws/aws_6.png)
 
-Una vez creado el usuario y el bucket, he tenido que configurar en el taskrunner [build.gradle.kts](../../build.gradle.kts):
+Una vez creado el usuario y el bucket, he tenido que configurar en el taskrunner [build.gradle.kts](../../../app/build.gradle.kts):
 - El plugin kotless
 - El repositorio jcenter()
 - Las dependencias
@@ -46,7 +46,7 @@ También he tenido que indicar la configuración de kotless en tres apartados:
 2. El webapp para indicar el paquete
 3. Una extension mediante la cual puedo emular el despliegue tanto el local (false) como en aws (true), de esta forma evito pasarme del limite de despliegues.
 
-También he configurado un workflow de github actions llamado [aws.yml](../../.github/workflows/aws.yml) mediante el cual realiza el despliegue desde github cuando hay una modificación en el fichero con la función serverless (para que desplegar todo si solo va a usar dicha función).
+También he configurado un workflow de github actions llamado [aws.yml](../../../.github/workflows/aws.yml) mediante el cual realiza el despliegue desde github cuando hay una modificación en el fichero con la función serverless (para que desplegar todo si solo va a usar dicha función).
 
 Este workflow realiza la descarga del repositorio, se autentifica mediante una aws-actions con las credenciales almacenadas en los secretos de GitHub, se identifica en AWS y realiza el despliegue.
 
@@ -54,10 +54,10 @@ Dicho despliegue lo hace mediante el comando del taskrunner "gradle deploy", que
 
 Como se puede ver en la siguiente imagen, el despliegue se hace correctamente:
 
-![aws 7](../img/aws/aws_7.png)
+![aws 7](../../img/aws/aws_7.png)
 
 El resultado del despliegue se puede observar en la dirección web [https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1](https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1), que muestra un mensaje simple.
 
-Y en la dirección web [https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json](https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json) que muestra una cadena json, que es la que se compara con el fichero [5.json](../../5.json).
+Y en la dirección web [https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json](https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json) que muestra una cadena json, que es la que se compara con el fichero [5.json](../../../5.json).
 
-![aws 8](../img/aws/aws_8.png)
+![aws 8](../../img/aws/aws_8.png)

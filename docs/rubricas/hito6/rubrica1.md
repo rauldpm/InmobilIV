@@ -42,7 +42,7 @@ Estas tres dependencias son necesarias tanto para el uso del framework como para
    - Necesario para simular el servidor en funcionamiento y ejecutar los test de integración.
    - Aunque los test se realizan con el mismo formato que los test unitarios, mediante JUnit5, esta dependencia añade la funcionalidad necesaria para hacer peticiones get a las rutas diseñadas en el framework.
 
-Para el desarrollo de las rutas, he creado un fichero llamado "[Main.kt](../../app/src/main/kotlin/Main.kt)", el cual contiene dos métodos, el "main" como tal, el cual lanza el servidor indicando el motor, el puerto y llamando al segundo método, llamado "Application.modules()", el cual se encarga de instalar lo necesario para el funcionamiento, como las rutas o los estados de paginas.
+Para el desarrollo de las rutas, he creado un fichero llamado "[Main.kt](../../../app/src/main/kotlin/Main.kt)", el cual contiene dos métodos, el "main" como tal, el cual lanza el servidor indicando el motor, el puerto y llamando al segundo método, llamado "Application.modules()", el cual se encarga de instalar lo necesario para el funcionamiento, como las rutas o los estados de paginas.
 
 Ademas, al instalar las rutas, se hace la declaración de dichas rutas, con el siguiente formato (por ejemplo para la ruta raíz):
 
@@ -73,11 +73,11 @@ Para obtener dicho valor, se habría de la siguiente forma:
 Una vez que se haya realizado la funcionalidad en la llamada, hay que realizar una respuesta, para ello, se hace uso de la función "call.response()" y "call.respond()"
 
 - call.response()
-  - Permite responder codigos de estado, cabeceras, etc.
+  - Permite responder códigos de estado, cabeceras, etc.
 - call.respond()
   - Permite responder con ficheros html, directamente con texto html, etc.
 
-A continuación se va a ver dos ejemplos, uno respondiendo un fichero y otro respondiento codigo html directamente:
+A continuación se va a ver dos ejemplos, uno respondiendo un fichero y otro respondiendo código html directamente:
 
 ```
 call.response.header("Location", "/")
@@ -93,7 +93,7 @@ call.respondText(inmuebles.toString(), ContentType.Text.Html)
 
 En ambos casos se hace una respuesta con un código 200 (OK), en el primer caso se responde con un fichero que contiene una cadena de texto y en el segundo caso se responde con un objeto Inmuebles, que contiene los inmuebles almacenados en un fichero json. Este objeto se parsea a string para su lectura en html indicado mediante "ContentType.Text.Html".
 
-Para iniciar el servidor habría que añadir en el taskrunner que la aplicación va a tener una clase principal, de forma que cuando se haga la tarea interna "gradle run", se ejecutará dicha clase principal, para esto hay que añadir lo siguiente en el fichero [build.gradle.kts](../../app/build.gradle.kts):
+Para iniciar el servidor habría que añadir en el taskrunner que la aplicación va a tener una clase principal, de forma que cuando se haga la tarea interna "gradle run", se ejecutará dicha clase principal, para esto hay que añadir lo siguiente en el fichero [build.gradle.kts](../../../app/build.gradle.kts):
 
 ```
 application {
@@ -115,10 +115,10 @@ Y para que la petición responda con un fichero se debe llamar de la siguiente f
 call.respond(FreeMarkerContent("index.ftl", null ))
 ```
 
-Donde "null" podría ser un map de objetos a pasarle al template [index.ftl](../../app/src/main/resources/templates/index.ftl).
+Donde "null" podría ser un map de objetos a pasarle al template [index.ftl](../../../app/src/main/resources/templates/index.ftl).
 
 Al ejecutar el servidor se vería lo siguiente:
 
-![funcionando](../img/hito6/rubrica1/funcionando.png)
+![funcionando](../../img/hito6/rubrica1/funcionando.png)
 
 Pero como ya he dicho anteriormente, esto no se pide para el hito, pero lo he realizado porque con la instalación del framework, he querido dejarlo hecho.

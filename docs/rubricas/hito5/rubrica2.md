@@ -9,7 +9,7 @@ Para el despliegue en Vercel  he tenido que realizar los siguientes pasos:
 1. Darme de alta en Vercel mediante la cuenta de GitHub
 2. Realizar un deploy local del bot mediante el comando "vercel"
 
-![vercel](../img/bot/vercel.png)
+![vercel](../../img/bot/vercel.png)
 
 En dicha ejecución, indico los siguientes campos:
 
@@ -23,27 +23,27 @@ En ambos casos proporcionará un link el cual se utilizara para crear el webhook
 
 Este despliegue hará que en el Dashboard de Vercel aparezca el bot desplegado, que como se puede ver, no esta conectado a un repositorio de github.
 
-![vercel](../img/bot/vercel_1.png)
+![vercel](../../img/bot/vercel_1.png)
 
 El siguiente paso es conectarlo, para ello (y previamente) he estado desarrollando el bot en un repositorio de github, pero no lo he conectado ya que las pruebas las estaba haciendo desde local (por el limite de despliegues)
 
 Asi, indico el nombre del repositorio:
 
-![vercel](../img/bot/vercel_3.png)
+![vercel](../../img/bot/vercel_3.png)
 
 Y como se vé, se ha conectado:
 
-![vercel](../img/bot/vercel_4.png)
+![vercel](../../img/bot/vercel_4.png)
 
 Ahora cuando se realize un cambio en el repositorio se desplegará en vercel.
 
 ¿Pero como se actualiza esto? Pues bien, en GitHub se habrá instalado una GitHub App llamada Vercel que dispone de permisos de escritura y lectura.
 
-![vercel](../img/bot/vercel_git.png)
+![vercel](../../img/bot/vercel_git.png)
 
 Ademas, como se puede ver a continuación, se puede ver como el bot responde a diferentes comandos, todo ello explicado en la rubrica 4.
 
-![vercel](../img/bot/telegram.png)
+![vercel](../../img/bot/telegram.png)
 
 ---
 

@@ -61,7 +61,7 @@ Por ahora he especificado tres rutas:
 2. /getInmuebles
 3. /addInmueble
 
-La primera ruta / sirve el contenido de un fichero llamado "[index.ftl](../../app/src/main/resources/templates/index.ftl)", que contiene una sola frase: "InmobilIV Main Page", que tiene el propósito de servir la pagina principal.
+La primera ruta / sirve el contenido de un fichero llamado "[index.ftl](../../../app/src/main/resources/templates/index.ftl)", que contiene una sola frase: "InmobilIV Main Page", que tiene el propósito de servir la pagina principal.
 
 En dicha ruta primero se realiza una llamada al logger para registrar una llamada a esta ruta mediante:
 
@@ -80,7 +80,7 @@ Utilizo el código 200 porque lo único que realiza esta ruta es servir contenid
 
 Produciendo el siguiente resultado:
 
-![raiz](../img/hito6/rubrica2/llamadaRaiz.png)
+![raiz](../../img/hito6/rubrica2/llamadaRaiz.png)
 
 La segunda ruta "/getInmuebles" se encarga de realizar la lectura de todos los inmuebles registrados en la aplicación.
 
@@ -126,7 +126,7 @@ call.respondText(inmuebles.toString(), ContentType.Text.Html)
 
 Produciendo el log el siguiente resultado por pantalla:
 
-![get](../img/hito6/rubrica2/getInmuebles.png)
+![get](../../img/hito6/rubrica2/getInmuebles.png)
 
 Todo esto ocurre dentro de una sentencia try-catch, de forma que si durante la lectura o la respuesta ocurre algún error, se informará mediante el logger del error producido y creara una respuesta con código de error 500 y responderá con la excepción en vez de con los datos leidos.
 
@@ -207,7 +207,7 @@ call.respondText("Inmueble creado con exito")
 
 Todo esto crearía el siguiente resultado:
 
-![add](../img/hito6/rubrica2/addInmueble.png)
+![add](../../img/hito6/rubrica2/addInmueble.png)
 
 
 ---
@@ -219,7 +219,7 @@ Como ya indiqué en la rubrica 1, el framework elegido incorpora su propio motor
 
 Ademas, el sistema de test que he usado para la realización de tests unitarios también sirve para la realización de test de integración.
 
-Para esto he creado un fichero llamado "[testRoutes.kt](../../app/src/test/kotlin/testRoutes.kt) que contendrá tests para las rutas diseñadas mas arriba.
+Para esto he creado un fichero llamado "[testRoutes.kt](../../../app/src/test/kotlin/testRoutes.kt) que contendrá tests para las rutas diseñadas mas arriba.
 
 A diferencia de los test unitarios, hay que importar las herramientas que permitirán hacer una simulación del servidor, que son:
 
@@ -297,5 +297,5 @@ gradle test
 
 Que al ejecutarse permite ver como se pasan todos los test y se hacen las llamadas log de las rutas:
 
-![test1](../img/hito6/rubrica2/test1.png)
-![test2](../img/hito6/rubrica2/test2.png)
+![test1](../../img/hito6/rubrica2/test1.png)
+![test2](../../img/hito6/rubrica2/test2.png)
