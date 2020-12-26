@@ -1,6 +1,6 @@
 ## Hito 2
 
-- Se ha actualizado el fichero de configuración de test [iv.yaml](../iv.yaml) con los nuevos campos necesarios.
+- Se ha actualizado el fichero de configuración de test [iv.yaml](../../iv.yaml) con los nuevos campos necesarios.
 - Se ha configurado el gestor de tareas **Gradle**, como se puede ver en los ficheros:
   - [build.gradle.kts](../../app/build.gradle.kts)
   - [settings.gradle.jts](../../settings.gradle.kts)
@@ -11,14 +11,14 @@
     - gradle compileTestKotlin
 - Se han creado diversas tareas como se puede ver en el fichero:
   - [build.gradle.kts](../../app/build.gradle.kts)
-  - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aquí](../../app/src/test/kotlin/InmobilIV/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
-- Se ha añadido la clase [Inmuebles](../../app/src/main/kotlin/InmobilIV/inmuebles.kt) que agrupa un conjunto de objetos [Inmueble](../../app/src/main/kotlin/InmobilIV/inmueble.kt).
-- La clase [Inmueble](../../app/src/main/kotlin/InmobilIV/inmueble.kt) se ha modularizado dividiendo la clase en dos (una de ellas busca emular un struct, ya que en kotlin no hay). 
+  - En concreto se han creado dos tareas para probar la dependencia entre tareas, una tarea principal llamada "test" que ejecuta los tests propios del proyecto, localizados [aquí](../../app/src/test/kotlin/) y una tarea llamada "compila" que ejecuta la compilación de los ficheros del proyecto y los test a la vez.
+- Se ha añadido la clase [Inmuebles](../../app/src/main/kotlin/inmuebles.kt) que agrupa un conjunto de objetos [Inmueble](../../app/src/main/kotlin/inmueble.kt).
+- La clase [Inmueble](../../app/src/main/kotlin/inmueble.kt) se ha modularizado dividiendo la clase en dos (una de ellas busca emular un struct, ya que en kotlin no hay). 
   - Ahora hay una clase "Vivienda" que hace referencia a los datos de la vivienda (dirección, piso, letra...) y una clase "Inmueble" que referencia la Vivienda con una serie de características (superficie, precio, propietario...)
 - Se ha implementado tres clases de testeo:
-  - [testVivienda.kt](../../app/src/test/kotlin/InmobilIV/testVivienda.kt)
-  - [testInmueble.kt](../../app/src/test/kotlin/InmobilIV/testInmueble.kt)
-  - [testInmuebles.kt](../../app/src/test/kotlin/InmobilIV/testInmuebles.kt)
+  - [testVivienda.kt](../../app/src/test/kotlin/testVivienda.kt)
+  - [testInmueble.kt](../../app/src/test/kotlin/testInmueble.kt)
+  - [testInmuebles.kt](../../app/src/test/kotlin/testInmuebles.kt)
 - Se puede ver en la siguiente imagen los test realizados al ejecutar el comando **gradle test**:
 ![tests_funcionando](../img/test_funcionando.png)
 - No se han cerrado issues debido a que están aun en desarrollo.
