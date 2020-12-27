@@ -9,6 +9,9 @@ import io.ktor.http.*
 import io.ktor.server.testing.*
 import kotlin.test.*
 
+import java.io.File
+import java.io.BufferedReader
+
 
 class TestRoutes {
 
@@ -19,7 +22,11 @@ class TestRoutes {
             handleRequest(HttpMethod.Get, "/") 
         ) {
             assertEquals(HttpStatusCode.OK, response.status())
-            assertEquals("InmobilIV Main Page", response.content)
+   
+            val bufferedReader: BufferedReader = File("src/main/resources/templates/index.ftl").bufferedReader()
+            val contenidoFichero = bufferedReader.use { it.readText() }
+
+            assertEquals(contenidoFichero, response.content)
         }
     }
 
