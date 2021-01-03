@@ -73,9 +73,12 @@ dependencies {
     // Lectura/Escritura json
     implementation("com.google.code.gson:gson:2.8.5")
 
-    // Loggin
-    compile("ch.qos.logback:logback-classic:$logback_version")
+}
 
+configurations {
+    "implementation" {
+        exclude(group = "ch.qos.logback", module = "logback-classic")
+    }
 }
 
 // Configuracion para serverless
@@ -104,7 +107,7 @@ kotless {
 
 // Indica la clase principal 
 application {
-    mainClassName = "com.inmobiliv.MainKt"
+    mainClass.set("com.inmobiliv.MainKt")
 }
 
 // Tarea que ejecuta el test principal
