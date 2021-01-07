@@ -16,12 +16,26 @@ class TestVivienda {
     }
 
     @Test
-    @DisplayName("Comprueba si  el objeto Vivienda se ha creado con los valores dados por el constructor")
-    fun testClassVivienda() {
-        // Comprobacion de valores de vivienda referente al inmueble
+    @DisplayName("Test Vivienda - Comprueba valores creados por constructor")
+    fun testConstructor() {
         assertThat(vivienda.calle).isEqualTo("calle")
         assertThat(vivienda.portal).isEqualTo(4)
         assertThat(vivienda.piso).isEqualTo(5)
         assertThat(vivienda.letra).isEqualTo('A')
     }
+
+    @Test
+    @DisplayName("Test Vivienda - Comprueba setters y getters")
+    fun testSetGet() {
+        vivienda.setCal("Alhondiga")
+        vivienda.setPor(3)
+        vivienda.setPis(4)
+        vivienda.setLet('D')
+
+        assertThat(vivienda.getCal()).isEqualTo("Alhondiga")
+        assertThat(vivienda.getPor()).isEqualTo(3)
+        assertThat(vivienda.getPis()).isEqualTo(4)
+        assertThat(vivienda.getLet()).isEqualTo('D')
+    }
+
 }
