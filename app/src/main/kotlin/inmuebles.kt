@@ -19,6 +19,14 @@ class Inmuebles {
     }
 
 
+    fun existeId(id: Int): Boolean {
+        for (item in this.inmuebles) 
+            if (item.id == id) 
+                return true
+        return false
+    }
+
+
 
     fun getSize() = this.inmuebles.count()
     fun getTop() = this.tope
