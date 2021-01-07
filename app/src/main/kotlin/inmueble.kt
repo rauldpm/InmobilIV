@@ -15,9 +15,15 @@ class Vivienda {
         this.letra = letra
     }
 
-    override fun toString(): String {
-        return "[calle: ${this.calle}, portal: ${this.portal}, piso: ${this.piso}, letra: ${this.letra}]"
-    }
+    fun getCal() = this.calle
+    fun getPor() = this.portal
+    fun getPis() = this.piso
+    fun getLet() = this.letra
+
+    fun setCal(cal: String) { calle = cal }
+    fun setPor(por: Int) { portal = por }
+    fun setPis(pis: Int) { piso = pis }
+    fun setLet(let: Char) { letra = let }
 
 }
 
@@ -27,6 +33,7 @@ class Inmueble {
     var precio: Double= 0.0
     var vivienda: Vivienda
     var propietario: String = ""
+    var id: Int = 0
 
     constructor(sup: Double, hab: Int, pre: Double, vivienda: Vivienda, pro: String) {
         this.superficie = sup
@@ -36,23 +43,18 @@ class Inmueble {
         this.propietario = pro
     }
 
-    // Getters
     fun getSup() = this.superficie
     fun getHab() = this.habitaciones
     fun getPre() = this.precio
     fun getViv() = this.vivienda
     fun getPro() = this.propietario
+    fun getID()  = this.id
 
-    // Setters
     fun setSup(sup: Double) { superficie = sup }
     fun setHab(hab: Int) { habitaciones = hab }
     fun setPre(pre: Double) { precio = pre }
     fun setViv(viv: Vivienda) { vivienda = viv }
     fun setPro(pro: String) { propietario = pro }
-
-    override fun toString() : String {
-        return "[superficie: ${this.superficie}, habitaciones: ${this.habitaciones}, precio: ${this.precio}, vivienda: ${this.vivienda}, propietario: ${this.propietario}]"
-    }
-
+    fun setID(i: Int) { id = i }
 
 }
