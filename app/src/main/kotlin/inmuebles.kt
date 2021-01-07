@@ -4,42 +4,22 @@ package com.inmobiliv
 class Inmuebles {
 
     var inmuebles: MutableList<Inmueble> = ArrayList()
-    var cantidad: Int = 0
+    var tope: Int = 0
     
-    // Constructor vacio
     constructor() {}
 
     constructor(inmuebles: MutableList<Inmueble>) {
         this.inmuebles = inmuebles
-        this.cantidad = inmuebles.count()
     }
 
     fun addInmueble(inmueble: Inmueble) {
+        inmueble.setID(tope)
         this.inmuebles.add(inmueble)
-        this.cantidad++
+        tope += 1
     }
 
-    fun delInmueble(inmueble: Inmueble) {
-        this.inmuebles.remove(inmueble)
-        this.cantidad--
-    }
 
-    // Setters
-    fun setSize(size: Int) { this.cantidad = size }
-    fun setInm(inmuebles: MutableList<Inmueble>) { this.inmuebles = inmuebles}
 
-    // Getters
-    fun getSize() = this.cantidad
-    fun getInm() = this.inmuebles
-
-    override fun toString(): String {
-  
-        var arrayInmuebles : String = ""
-        
-        for (item in inmuebles) 
-            arrayInmuebles += "Inmueble: " + item.toString() + "\n"
-    
-        return arrayInmuebles
-	}
- 
+    fun getSize() = this.inmuebles.count()
+    fun getTop() = this.tope
 }
