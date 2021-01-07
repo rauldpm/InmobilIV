@@ -7,16 +7,16 @@ import org.assertj.core.api.Assertions.assertThat
 class TestFunctions {
 
     @Test
-    @DisplayName("Comprueba si el mensaje de la funcion serverless / de aws es correcto")
-    fun testClassFunAWS() {
+    @DisplayName("Test Serverless AWS - Comprueba mensaje /")
+    fun testFunAWS() {
         var mensaje = "InmobilIV Serverless Function v4"
         var mensajeServerless = serverless()
         assertThat(mensajeServerless).isEqualTo(mensaje)
     }
 
     @Test
-    @DisplayName("Comprueba si el mensaje de la funcion serverless /json de aws es correcto")
-    fun testClassFunJsonAWS() {
+    @DisplayName("Test Serverless AWS - Comprueba mensaje /json")
+    fun testFunJsonAWS() {
         var dataI = """
     {
         "inmuebles" : [
