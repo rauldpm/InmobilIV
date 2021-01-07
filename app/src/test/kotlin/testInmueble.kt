@@ -18,16 +18,8 @@ class TestInmueble {
     }
 
     @Test
-    @DisplayName("Comprueba si el objeto Inmueble se ha creado con los valores dados por el constructor")
-    fun testClassInmueble() {
-
-        // Comprobacion de valores de vivienda referente al inmueble
-        assertThat(inmueble.vivienda.calle).isEqualTo("calle")
-        assertThat(inmueble.vivienda.portal).isEqualTo(4)
-        assertThat(inmueble.vivienda.piso).isEqualTo(5)
-        assertThat(inmueble.vivienda.letra).isEqualTo('A')
-
-        // Comprobacion de valores de inmueble
+    @DisplayName("Test Inmueble - Comprueba valores creados por constructor")
+    fun testConstructor() {
         assertThat(inmueble.getSup()).isEqualTo(5.2)
         assertThat(inmueble.getHab()).isEqualTo(3)
         assertThat(inmueble.getPre()).isEqualTo(16.8)
@@ -36,19 +28,23 @@ class TestInmueble {
     }
 
     @Test
-    @DisplayName("Comprueba que se puede modificar valores")
-    fun testSetInmueble() {
+    @DisplayName("Test Inmueble - Comprueba setters y getters")
+    fun testSetGet() {
+
+        var viv = Vivienda("Alhondiga", 3, 4, 'D')
 
         inmueble.setSup(3.1)
         inmueble.setHab(4)
         inmueble.setPre(34.3)
+        inmueble.setViv(viv)
         inmueble.setPro("Luis")
-        
+        inmueble.setID(3)
+
         assertThat(inmueble.getSup()).isEqualTo(3.1)
         assertThat(inmueble.getHab()).isEqualTo(4)
         assertThat(inmueble.getPre()).isEqualTo(34.3)
         assertThat(inmueble.getPro()).isEqualTo("Luis")
-
+        assertThat(inmueble.getViv()).isEqualTo(viv)
+        assertThat(inmueble.getID()).isEqualTo(3)
     }
-
 }
