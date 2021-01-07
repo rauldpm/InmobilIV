@@ -33,14 +33,7 @@ class TestInmuebles {
         assertThat(inmuebles.getSize()).isEqualTo(1)
     }
 
-    @Test
-    @DisplayName("Test Inmuebles - Comprueba delInmuebleId(id)")
-    fun testDelInmueblesId() {
-        inmuebles.addInmueble(inmueble)
-        assertThat(inmuebles.getSize()).isEqualTo(1)
-        inmuebles.delInmuebleId(0)
-        assertThat(inmuebles.getSize()).isEqualTo(0)
-    }
+
 
     @Test
     @DisplayName("Test Inmuebles - Comprueba existeId(id)")
