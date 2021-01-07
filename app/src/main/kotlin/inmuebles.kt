@@ -18,6 +18,13 @@ class Inmuebles {
         tope += 1
     }
 
+    fun delInmuebleId(id: Int) {
+        for (item in this.inmuebles) 
+            if (item.id == id) {
+                this.inmuebles.remove(item)
+                break
+            }
+    }
 
     fun existeId(id: Int): Boolean {
         for (item in this.inmuebles) 
@@ -26,7 +33,16 @@ class Inmuebles {
         return false
     }
 
-
+    fun actualizar(inmu: Inmueble, id: Int) {
+        var pos: Int = 0
+        for (item in this.inmuebles) {
+            if (item.id == id) {
+                this.inmuebles.set(pos, inmu)
+                break
+            }
+            pos += 1
+        }
+    }
 
     fun getSize() = this.inmuebles.count()
     fun getTop() = this.tope
