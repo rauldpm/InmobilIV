@@ -6,7 +6,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 val assert_version = "3.12.2"
 val junit_version = "5.7.0"
 val ktor_version = "1.4.3"
-val logback_version = "1.2.3"
 
 // Plugins a usar
 plugins {
@@ -65,13 +64,13 @@ dependencies {
 
     // Framework ktor
     implementation("io.ktor:ktor-server-netty:$ktor_version")
-    implementation("io.ktor:ktor-freemarker:$ktor_version")
 
     // Usado para los test de integracion, simula el servidor sin iniciarlo
     testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
 
     // Lectura/Escritura json
-    implementation("com.google.code.gson:gson:2.8.5")
+    implementation("io.ktor:ktor-gson:$ktor_version")
+    implementation("org.json:json:20201115")
 
 }
 
