@@ -20,42 +20,53 @@ class TestInmuebles {
     }
 
     @Test
-    @DisplayName("Comprueba si permite añadir un objeto inmueble a la lista de inmuebles")
-    fun testClassInmueblesAdd() {
+    @DisplayName("Test Inmuebles - Comprueba constructor vacio")
+    fun testConstructorEmpty() {
+        assertThat(inmuebles.getSize()).isEqualTo(0)
+        assertThat(inmuebles.getTop()).isEqualTo(0)
+    }
+
+    @Test
+    @DisplayName("Test Inmuebles - Comprueba addInmueble(inmueble)")
+    fun testAddInmueble() {
         inmuebles.addInmueble(inmueble)
-        assertThat(inmuebles.getInm().count()).isEqualTo(1)
+        assertThat(inmuebles.getSize()).isEqualTo(1)
     }
 
     @Test
-    @DisplayName("Comprueba si el objeto añadido es el mismo que esta almacenado")
-    fun testClassInmueblesCheckIntegrity() {
+    @DisplayName("Test Inmuebles - Comprueba delInmuebleId(id)")
+    fun testDelInmueblesId() {
         inmuebles.addInmueble(inmueble)
-        assertThat(inmuebles.getInm().getOrNull(0)).isEqualTo(inmueble)
+        assertThat(inmuebles.getSize()).isEqualTo(1)
+        inmuebles.delInmuebleId(0)
+        assertThat(inmuebles.getSize()).isEqualTo(0)
     }
 
     @Test
-    @DisplayName("Comprueba si permite eliminar un inmueble")
-    fun testClassInmueblesDel() {
+    @DisplayName("Test Inmuebles - Comprueba existeId(id)")
+    fun testExisteId() {
         inmuebles.addInmueble(inmueble)
-        assertThat(inmuebles.getInm().count()).isEqualTo(1)
-        inmuebles.delInmueble(inmueble)
-        assertThat(inmuebles.getInm().count()).isEqualTo(0)
+        assertThat(inmuebles.existeId(0)).isEqualTo(true)
     }
 
     @Test
-    @DisplayName("Comprueba si el numero de inmuebles registrados corresponde con el numero real de inmuebles")
-    fun testClassInmuebles() {
-        var vivienda1 = Vivienda("avenida", 5, 3, 'C')
-        var inmueble1 = Inmueble(15.2, 4, 35.8, vivienda1, "Pepa")
-        inmuebles.addInmueble(inmueble1)
-        assertThat(inmuebles.getInm().count()).isEqualTo(inmuebles.getSize())
+    @DisplayName("Test Inmuebles - Comprueba getSize()")
+    fun testGetSize() {
+        assertThat(inmuebles.getSize()).isEqualTo(0)
+        inmuebles.addInmueble(inmueble)
+        assertThat(inmuebles.getSize()).isEqualTo(1)
     }
 
     @Test
-    @DisplayName("Comprueba si Inmuebles permite cambiar el indicador de cantidad de inmuebles")
-    fun testClassInmueblesSetSize() {
-        assertThat(inmuebles.getInm().count()).isEqualTo(0)
-        inmuebles.setSize(4)
-        assertThat(inmuebles.getSize()).isEqualTo(4)
+    @DisplayName("Test Inmuebles - Comprueba getTope()")
+    fun testGetTope() {
+        assertThat(inmuebles.getTop()).isEqualTo(0)
+        inmuebles.addInmueble(inmueble)
+        assertThat(inmuebles.getTop()).isEqualTo(1)
+        inmuebles.delInmuebleId(0)
+        assertThat(inmuebles.getTop()).isEqualTo(1)
+        inmuebles.addInmueble(inmueble)
+        assertThat(inmuebles.getSize()).isEqualTo(1)
+        assertThat(inmuebles.getTop()).isEqualTo(2)
     }
 }
