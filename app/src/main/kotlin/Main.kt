@@ -8,15 +8,14 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import io.ktor.freemarker.*
-import freemarker.cache.ClassTemplateLoader
+import io.ktor.request.*
+import io.ktor.gson.*
+
 import org.slf4j.LoggerFactory
 import com.google.gson.Gson
 import java.io.FileReader
 
 fun Application.module() {
-
-    val logger = LoggerFactory.getLogger(this::class.java.canonicalName)
 
     install(DefaultHeaders)
     install(StatusPages) {
@@ -25,70 +24,121 @@ fun Application.module() {
             throw cause 
         }
     }
-    install(FreeMarker){
-        templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
+    install(ContentNegotiation) {
+        gson {}
     }
     install(Routing) {
-        get("/") {
-            logger.info("\nLLamada /")
+         
+        val inmuebles = Inmuebles()
 
-            call.response.header("Location", "/")
-            call.response.status(HttpStatusCode.OK)
-            call.respond(FreeMarkerContent("index.ftl", null))
-        }
-        get("/getInmuebles") {
-            logger.info("\nLLamada /getInmuebles")
+        var viv = Vivienda("Maestro Faus", 4, 1, 'D')
+        var inm = Inmueble(140.0, 4, 30056.15, viv, "Javier Pecos")
+        inmuebles.addInmueble(inm)
+
+        viv = Vivienda("Pontezuelas", 6, 2, 'F')
+        inm = Inmueble(180.2, 2, 158654.21, viv, "Maria Pecos")
+        inmuebles.addInmueble(inm)
+
+        get("/") {}
+
+        rutaInmuebles(inmuebles) 
+    }
+}
+
+fun Route.rutaInmuebles(inmuebles: Inmuebles) {
+    val logger = LoggerFactory.getLogger(this::class.java.canonicalName)
+
+    route("/inmuebles") {
         
+        get {
+            logger.info("\nLLamada Get Request /inmuebles")
             try {
-                val gson = Gson()
-                val inmuebles: Inmuebles = gson.fromJson(FileReader("src/main/resources/data/data.json"), Inmuebles::class.java)
-
-                logger.info("\nInmuebles creado desde fichero\n" + inmuebles)
-
-                call.response.header("Location", "/inmuebles")
+                // Obtiene datos json de los inmuebles
+                val gson = Gson().toJson(inmuebles)
+                // Responde OK
                 call.response.status(HttpStatusCode.OK)
-                call.respondText(inmuebles.toString(), ContentType.Text.Html)
-
-            } catch (e : Exception) {
-                logger.info("\nExcepcion encontrada /inmuebles\n" + e)
-
-                call.response.header("Location", "/inmuebles")
+                // Proporciona datos
+                call.respondText(gson)
+            } 
+            // En caso de error
+            catch (e : Exception) {
+                logger.info("\nExcepcion encontrada Get Request /inmuebles\n" + e)
                 call.response.status(HttpStatusCode.InternalServerError)
                 call.respondText("Excepcion '" + e + "'")
             }
         }
-        get("/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}") {
-            logger.info("\nLLamada /addInmueble")
-
+        
+        post {
+            logger.info("\nLLamada Post Request /inmuebles")
             try {
-                val sup = call.parameters["sup"].toString().toDouble()
-                val hab = call.parameters["hab"].toString().toInt()
-                val pre = call.parameters["pre"].toString().toDouble()
-                val cal = call.parameters["cal"].toString()
-                val por = call.parameters["por"].toString().toInt()
-                val pis = call.parameters["pis"].toString().toInt()
-                val let = call.parameters["let"].toString().single()
-                val pro = call.parameters["pro"].toString()
-            
-
-                logger.info("\nParametros recibidos: " + "\nsup: " + sup + "\nhab: " + hab + "\npre: " + pre + "\ncal: " + cal + "\npor: " + por + "\npis: " + pis + "\nlet: " +let + "\npro: " + pro )
-                
-                val viv = Vivienda(cal, por, pis, let)
-                logger.info("\nVivienda creada\n" + viv)
-
-                val inm = Inmueble(sup, hab, pre, viv, pro)
-                logger.info("\nInmueble creado\n" + inm)
-
-                call.response.header("Location", "/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}")
+                // Recibe los datos json por post request
+                val inmu = call.receive<Inmueble>()
+                // Añade inmueble
+                inmuebles.addInmueble(inmu)
+                // Responde correctemente
                 call.response.status(HttpStatusCode.Created)
+                // Responde de exito
                 call.respondText("Inmueble creado con exito")
-
-            } catch (e : Exception) {
-                logger.info("\nExcepcion encontrada /addInmueble\n" + e)
-
-                call.response.header("Location", "/addInmueble/{sup}/{hab}/{pre}/{cal}/{por}/{pis}/{let}/{pro}")
+            } 
+            // En caso de error
+            catch (e : Exception) {
+                logger.info("\nExcepcion encontrada Post Request /inmuebles\n" + e)
                 call.response.status(HttpStatusCode.InternalServerError)
-                call.respondText("Excepcion '" + e + "' --> no corresponde al formato de ruta")
+                call.respondText("Error al crear inmueble " + e)
+            }
+        }
+
+        put("/{id}") {
+            logger.info("\nLLamada Put Request /inmuebles/{id}")
+            // Obtiene el id proporcionado
+            val id = call.parameters["id"].toString().toInt()
+            // Comprueba si hay elementos o no existe id
+            if (inmuebles.getSize() == 0 || !inmuebles.existeId(id)) {
+                logger.info("\nNo hay elementos")
+                call.response.status(HttpStatusCode.NotFound)
+                call.respondText("Ese elemento no existe")
+            }
+            try {
+                // Recibe los datos modificados
+                val inmu = call.receive<Inmueble>()
+                // Actualiza el inmueble segun el id
+                inmuebles.actualizar(inmu, id)
+                // Responde correctamente
+                call.response.status(HttpStatusCode.OK)
+                // Responde de exito
+                call.respondText("Inmueble modificado con exito")
+            } 
+            // En caso de error
+            catch (e : Exception) {
+                logger.info("\nExcepcion encontrada Put Request /inmuebles/{id}\n" + e)
+                call.response.status(HttpStatusCode.InternalServerError)
+                call.respondText("Error al modificar inmueble " + e)
+            }
+        }
+
+        delete("/{id}") {
+            logger.info("\nLLamada Delete Request /inmuebles/{id}")
+            // Obtiene el id proporcionado
+            val id = call.parameters["id"].toString().toInt()
+            // Comprueba si hay elementos o no existe id
+            if (inmuebles.getSize() == 0 || !inmuebles.existeId(id)) {
+                logger.info("\nNo hay elementos")
+                call.response.status(HttpStatusCode.NotFound)
+                call.respondText("Ese elemento no existe")
+            }
+            try {
+                // Elimina el inmueble
+                inmuebles.delInmuebleId(id)
+                // Responde correctamente
+                call.response.status(HttpStatusCode.OK)
+                // Responde de exito
+                call.respondText("Elemento eliminado con exito")
+            }
+            // En caso de error
+            catch(e : Exception) {
+                logger.info("\nExcepcion encontrada Delete Request /inmuebles/{id}\n" + e)
+                call.response.status(HttpStatusCode.InternalServerError)
+                call.respondText("Error eliminar inmueble " + e)
             }
         }
     }
