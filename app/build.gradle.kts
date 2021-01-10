@@ -1,6 +1,7 @@
 
 import io.kotless.plugin.gradle.dsl.kotless
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 // Versiones 
 val assert_version = "3.12.2"
@@ -9,8 +10,12 @@ val ktor_version = "1.4.3"
 
 // Plugins a usar
 plugins {
+    // Basico
     id("org.jetbrains.kotlin.jvm") version "1.4.20"
+    // Serverless
     id("io.kotless") version "0.1.6"
+    // Fat Jar
+    id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
 // Indica la estructura de archivos
@@ -71,9 +76,9 @@ dependencies {
     // Lectura/Escritura json
     implementation("io.ktor:ktor-gson:$ktor_version")
     implementation("org.json:json:20201115")
-
 }
 
+// Arregla conflicto log ktor
 configurations {
     "implementation" {
         exclude(group = "ch.qos.logback", module = "logback-classic")
@@ -105,8 +110,10 @@ kotless {
 }
 
 // Indica la clase principal 
+// Este metodo tendria que ser mainClass.set("")
+// pero shadowJar no lo reconoce (funciona con version anterior)
 application {
-    mainClass.set("com.inmobiliv.MainKt")
+    mainClassName = "com.inmobiliv.MainKt"
 }
 
 // Tarea que ejecuta el test principal
@@ -124,4 +131,15 @@ tasks {
 tasks.register("install"){
 
 }
+
+// Para crear el manifiesto del .jar
+tasks.jar {
+    manifest {
+        attributes (
+            "Main-Class" to "com.inmobiliv.MainKt"
+        )
+    }
+}
+
+
 
