@@ -41,6 +41,12 @@ fun Application.module() {
 
         get("/") {}
 
+        get("/status") {
+
+            call.response.status(HttpStatusCode.OK)
+            call.respondText("{ status: \"OK\" }")
+        }
+
         rutaInmuebles(inmuebles) 
     }
 }
@@ -57,6 +63,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 val gson = Gson().toJson(inmuebles)
                 // Responde OK
                 call.response.status(HttpStatusCode.OK)
+                call.response.header("InmobilIV", "/inmuebles")
                 // Proporciona datos
                 call.respondText(gson)
             } 
@@ -77,6 +84,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 inmuebles.addInmueble(inmu)
                 // Responde correctemente
                 call.response.status(HttpStatusCode.Created)
+                call.response.header("InmobilIV", "/inmuebles")
                 // Responde de exito
                 call.respondText("Inmueble creado con exito")
             } 
@@ -105,6 +113,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 inmuebles.actualizar(inmu, id)
                 // Responde correctamente
                 call.response.status(HttpStatusCode.OK)
+                call.response.header("InmobilIV", "/inmuebles/{id}")
                 // Responde de exito
                 call.respondText("Inmueble modificado con exito")
             } 
@@ -138,6 +147,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
             catch(e : Exception) {
                 logger.info("\nExcepcion encontrada Delete Request /inmuebles/{id}\n" + e)
                 call.response.status(HttpStatusCode.InternalServerError)
+                call.response.header("InmobilIV", "/inmuebles/{id}")
                 call.respondText("Error eliminar inmueble " + e)
             }
         }
