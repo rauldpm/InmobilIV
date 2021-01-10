@@ -1,0 +1,32 @@
+
+name: Deploy To Heroku
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+        - uses: actions/checkout@v2
+
+        - name: Genera fichero Jar y comprueba test
+          run: gradle build
+
+        - name: Login
+          env:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          run: heroku login
+
+        - name: Prepara despliegue
+          run: heroku plugins:install java
+
+        - name: Deploy
+          env:
+            HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+          run: heroku deploy:jar app/build/libs/app.jar --app inmobiliv
