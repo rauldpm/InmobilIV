@@ -1,6 +1,6 @@
 
-import io.kotless.plugin.gradle.dsl.kotless
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
+//import io.kotless.plugin.gradle.dsl.kotless
+import org.jetbrains.kotlin.gradle.dsl.*
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 // Versiones 
@@ -13,9 +13,10 @@ plugins {
     // Basico
     id("org.jetbrains.kotlin.jvm") version "1.4.20"
     // Serverless
-    id("io.kotless") version "0.1.6"
+    //id("io.kotless") version "0.1.6"
     // Fat Jar
     id("com.github.johnrengelman.shadow") version "6.1.0"
+    application
 }
 
 // Indica la estructura de archivos
@@ -65,7 +66,7 @@ dependencies {
     testImplementation("org.assertj:assertj-core:$assert_version")
 
     // Para kotless serverless
-    implementation("io.kotless", "kotless-lang", "0.1.6")
+    //implementation("io.kotless", "kotless-lang", "0.1.6")
 
     // Framework ktor
     implementation("io.ktor:ktor-server-netty:$ktor_version")
@@ -86,7 +87,7 @@ configurations {
 }
 
 // Configuracion para serverless
-kotless {
+/*kotless {
    config { 
        bucket = "mi.kotlin.bucket"
 
@@ -107,7 +108,7 @@ kotless {
             useAWSEmulation = true
         }
     }
-}
+}*/
 
 // Indica la clase principal 
 // Este metodo tendria que ser mainClass.set("")
