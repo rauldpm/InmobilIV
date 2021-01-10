@@ -141,5 +141,8 @@ tasks.jar {
     }
 }
 
-
+// Para establecer un nombre personalizado al .jar
+tasks.withType<ShadowJar>{ 
+    archiveFileName.set("app.jar")
+}
 
