@@ -16,6 +16,17 @@ import java.io.BufferedReader
 
 class TestRoutes {
 
+    @Test
+    @DisplayName("Test /status")
+    fun testStatus() = withTestApplication(Application::module){
+        with ( 
+            handleRequest(HttpMethod.Get, "/status") 
+        ) {
+            assertEquals(HttpStatusCode.OK, response.status())
+            assertEquals(response.content, "{ status: \"OK\" }")
+        }
+    } 
+
     // curl -X "GET" http://0.0.0.0:8080/inmuebles
     @Test
     @DisplayName("Test Requests HTTP - Comprueba GET")
