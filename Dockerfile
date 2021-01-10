@@ -1,6 +1,5 @@
 
 # Contenedor base
-#FROM gradle:6.7-jdk8
 FROM openjdk:8-jdk-alpine
 
 # Informacion de autor
