@@ -1,4 +1,4 @@
-package com.inmobiliv
+/*package com.inmobiliv
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.DisplayName
@@ -51,4 +51,4 @@ class TestFunctions {
         assertThat(mensajeJson).isEqualTo(dataI)
     }
 
-}
+}*/
