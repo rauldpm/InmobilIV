@@ -155,5 +155,6 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
 }
 
 fun main() {
-    embeddedServer(Netty, 8080, watchPaths = listOf("MainKt"), module = Application::module).start()
+    val port = System.getenv("PORT")?.toInt() ?: 23567
+    embeddedServer(Netty, port, watchPaths = listOf("MainKt"), module = Application::module).start()
 }
