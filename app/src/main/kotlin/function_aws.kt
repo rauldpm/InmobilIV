@@ -1,5 +1,5 @@
 
-package com.inmobiliv
+/*package com.inmobiliv
 
 import io.kotless.dsl.lang.http.Get
 
@@ -42,4 +42,4 @@ fun json(): String{
     }"""
 
     return dataI
-} 
+} */
