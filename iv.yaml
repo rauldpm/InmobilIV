@@ -18,3 +18,34 @@ taskfile: app/build.gradle.kts
 URL: https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json
 
 make: gradle
+
+Paas: https://inmobiliv.herokuapp.com/status
+
+recurso:
+  nombre: inmuebles
+  metodo: POST
+  payload:
+    - superficie: 112.2
+    - habitaciones: 3
+    - precio: 12556.36
+    - calle: Pedro Antonio
+    - portal: 3
+    - piso: 4
+    - letra: F
+    - propietario: Javier Gallego
+  IDs:
+    - 
+    nombre: inmuebles
+    metodo: PUT
+    payload:
+      - superficie: 112.2
+      - habitaciones: 3
+      - precio: 12556.36
+      - calle: Pedro Antonio
+      - portal: 3
+      - piso: 4
+      - letra: F
+      - propietario: Javier Gallego
+    IDs:
+      - 0
+      - 1
