@@ -22,19 +22,20 @@ make: gradle
 Paas: https://inmobiliv.herokuapp.com/status
 
 recurso:
-  nombre: inmuebles
-  metodo: POST
-  payload:
-    - superficie: 112.2
-    - habitaciones: 3
-    - precio: 12556.36
-    - calle: Pedro Antonio
-    - portal: 3
-    - piso: 4
-    - letra: F
-    - propietario: Javier Gallego
-  IDs:
-    - 
+  - 
+    nombre: inmuebles
+    metodo: POST
+    payload:
+      - superficie: 112.2
+      - habitaciones: 3
+      - precio: 12556.36
+      - calle: Pedro Antonio
+      - portal: 3
+      - piso: 4
+      - letra: F
+      - propietario: Javier Gallego
+    IDs:
+  -
     nombre: inmuebles
     metodo: PUT
     payload:
