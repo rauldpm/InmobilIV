@@ -3,11 +3,12 @@ name: Deploy To Heroku
 
 on:
   push:
-    paths-ignore:
-      - 'iv.yaml'
-      - 'docs'
     branches:
       - master
+    paths-ignore:
+      - 'iv.yaml'
+      - 'docs/**'
+
 
 jobs:
   build:
