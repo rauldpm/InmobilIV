@@ -37,6 +37,7 @@ class Inmuebles {
         var pos: Int = 0
         for (item in this.inmuebles) {
             if (item.id == id) {
+                inmu.setID(id)
                 this.inmuebles.set(pos, inmu)
                 break
             }
