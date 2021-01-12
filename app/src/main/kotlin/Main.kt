@@ -31,12 +31,9 @@ fun Application.module() {
          
         val inmuebles = Inmuebles()
 
-        var viv = Vivienda("Maestro Faus", 4, 1, 'D')
-        var inm = Inmueble(140.0, 4, 30056.15, viv, "Javier Pecos")
+        var inm = Inmueble(140.0, 4, 30056.15, "Maestro Faus", 4, 1, 'D', "Javier Pecos")
         inmuebles.addInmueble(inm)
-
-        viv = Vivienda("Pontezuelas", 6, 2, 'F')
-        inm = Inmueble(180.2, 2, 158654.21, viv, "Maria Pecos")
+        inm = Inmueble(180.2, 2, 158654.21, "Pontezuelas", 6, 2, 'F', "Maria Pecos")
         inmuebles.addInmueble(inm)
 
         get("/") {}
@@ -79,7 +76,33 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
             logger.info("\nLLamada Post Request /inmuebles")
             try {
                 // Recibe los datos json por post request
-                val inmu = call.receive<Inmueble>()
+                val params = call.receiveParameters()
+                var sup: Double = 0.0
+                var hab: Int = 0
+                var pre: Double = 0.0
+                var cal: String = ""
+                var por: Int = 0
+                var pis: Int= 0
+                var let: Char = 'a'
+                var pro: String = ""
+                try { 
+                    sup = params["superficie"].toString().toDouble()
+                    hab = params["habitaciones"].toString().toInt()
+                    pre = params["precio"].toString().toDouble()
+                    cal = params["calle"].toString()
+                    por = params["portal"].toString().toInt()
+                    pis = params["piso"].toString().toInt()
+                    let = params["letra"].toString().single()
+                    pro = params["propietario"].toString()
+                }
+                catch (e: Exception) { 
+                    logger.info("\nExcepcion encontrada en formato /inmuebles\n" + e)
+                    call.response.status(HttpStatusCode.BadRequest)
+                    call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
+                }
+                
+                // Crea inmueble
+                val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
                 // Añade inmueble
                 inmuebles.addInmueble(inmu)
                 // Responde correctemente
@@ -107,8 +130,32 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 call.respondText("Ese elemento no existe")
             }
             try {
-                // Recibe los datos modificados
-                val inmu = call.receive<Inmueble>()
+                val params = call.receiveParameters()
+                var sup: Double = 0.0
+                var hab: Int = 0
+                var pre: Double = 0.0
+                var cal: String = ""
+                var por: Int = 0
+                var pis: Int= 0
+                var let: Char = 'a'
+                var pro: String = ""
+                try { 
+                    sup = params["superficie"].toString().toDouble()
+                    hab = params["habitaciones"].toString().toInt()
+                    pre = params["precio"].toString().toDouble()
+                    cal = params["calle"].toString()
+                    por = params["portal"].toString().toInt()
+                    pis = params["piso"].toString().toInt()
+                    let = params["letra"].toString().single()
+                    pro = params["propietario"].toString()
+                }
+                catch (e: Exception) { 
+                    logger.info("\nExcepcion encontrada en formato /inmuebles/{id}\n" + e)
+                    call.response.status(HttpStatusCode.BadRequest)
+                    call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
+                }
+                // Crea inmueble
+                val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
                 // Actualiza el inmueble segun el id
                 inmuebles.actualizar(inmu, id)
                 // Responde correctamente
