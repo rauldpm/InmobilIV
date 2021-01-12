@@ -8,14 +8,12 @@ import org.junit.jupiter.api.BeforeEach
 
 class TestInmuebles {
 
-    private lateinit var vivienda: Vivienda
     private lateinit var inmueble: Inmueble
     private lateinit var inmuebles: Inmuebles
 
     @BeforeEach
     fun conf() {
-        vivienda = Vivienda("calle", 4, 5, 'A')
-        inmueble = Inmueble(5.2, 3, 16.8, vivienda, "Javier")
+        inmueble = Inmueble(5.2, 3, 16.8, "calle", 4, 5, 'A', "Javier")
         inmuebles = Inmuebles()
     }
 
