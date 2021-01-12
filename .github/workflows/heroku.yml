@@ -35,4 +35,3 @@ jobs:
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: gradle deployHeroku
-          #run: heroku deploy:jar app/build/libs/app.jar --app inmobiliv
