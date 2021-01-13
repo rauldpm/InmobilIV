@@ -26,7 +26,11 @@ jobs:
           run: heroku container:login
 
         - name: Push imagen
+          env:
+            HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:push web --recursive --app inmobiliv
         
         - name: Release imagen
+          env:
+            HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:release web --app inmobiliv  
