@@ -37,5 +37,6 @@ jobs:
         name: BUILD and PUSH
         uses: docker/build-push-action@v2
         with:
+          file: Dockerfile.test
           tags: ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
           push: true
