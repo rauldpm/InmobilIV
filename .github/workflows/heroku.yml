@@ -8,7 +8,7 @@ on:
     paths-ignore:
       - 'iv.yaml'
       - 'docs/**'
-      - '.github/**'
+      #- '.github/**'
 
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
 
         - name: Login
           env:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:login
 
         - name: Push imagen
