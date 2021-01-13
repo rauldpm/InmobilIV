@@ -8,7 +8,8 @@ on:
     paths-ignore:
       - 'iv.yaml'
       - 'docs/**'
-      #- '.github/**'
+      - '.github/**'
+      - 'README.md'
 
 
 jobs:
