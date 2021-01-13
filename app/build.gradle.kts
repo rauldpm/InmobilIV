@@ -2,7 +2,7 @@
 
 import org.jetbrains.kotlin.gradle.dsl.*
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-//import io.kotless.plugin.gradle.dsl.kotless
+import io.kotless.plugin.gradle.dsl.kotless
 
 // Versiones 
 val assert_version = "3.12.2"
@@ -13,11 +13,11 @@ val ktor_version = "1.4.3"
 plugins {
     // Basico
     id("org.jetbrains.kotlin.jvm") version "1.4.20"
+    // Serverless
+    id("io.kotless") version "0.1.6"
     // Fat Jar
     id("com.github.johnrengelman.shadow") version "6.1.0"
-    // Serverless
-    //id("io.kotless") version "0.1.6"
-    // Despliegue
+    // Despliegue FatJar
     id("com.heroku.sdk.heroku-gradle") version "2.0.0"
     application
 }
@@ -98,7 +98,7 @@ heroku {
 }
 
 // Configuracion para serverless
-/*kotless {
+kotless {
    config { 
        bucket = "mi.kotlin.bucket"
 
@@ -119,7 +119,7 @@ heroku {
             useAWSEmulation = true
         }
     }
-}*/
+}
 
 // Indica la clase principal 
 // Este metodo tendria que ser mainClass.set("")
@@ -141,12 +141,12 @@ tasks {
 
 // No hace nada, necesario para hito 6
 tasks.register("install"){
-
 }
 
 tasks.register("start"){
     dependsOn("run")
 }
+
 
 // Para crear el manifiesto del .jar
 tasks.jar {
@@ -161,4 +161,5 @@ tasks.jar {
 tasks.withType<ShadowJar>{ 
     archiveFileName.set("app.jar")
 }
+
 
