@@ -12,6 +12,7 @@ on:
       - 'iv.yaml'
       - 'docs/**'
       - '.github/**'
+      - 'README.md'
 
 jobs:
   build:
