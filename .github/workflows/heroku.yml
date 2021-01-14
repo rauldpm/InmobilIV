@@ -21,17 +21,26 @@ jobs:
     steps:
         - uses: actions/checkout@v2
 
-        - name: Login
+        - name: Testing
+          run: gradle test 
+
+        - name: Limpia ficheros test
+          run: gradle clean
+
+        - name: Build ficheros compilados
+          run: gradle compileKotlin
+
+        - name: Login Heroku
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:login
 
-        - name: Push imagen
+        - name: Push image
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:push web --recursive --app inmobiliv
         
-        - name: Release imagen
+        - name: Release image
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:release web --app inmobiliv  
