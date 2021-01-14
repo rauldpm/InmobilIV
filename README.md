@@ -21,12 +21,10 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
    
 2. [Descripción correcta de la configuración para despliegue automático, desde el repositorio o desde el sistema de integración continua](docs/rubricas/hito7/rubrica2.md).
    
-3. [Funcionamiento correcto del despliegue en el PaaS (no sólo el status). Es decir, no se puede devolver ningún status 500](docs/rubricas/hito7/rubrica3.md).
+3. Funcionamiento correcto del despliegue en el PaaS (no sólo el status). Es decir, no se puede devolver ningún status 500
+   - Mostrado en la rubrica 2 (final del punto 3)
    
 4. [Buenas prácticas en el diseño del API, incluyendo su correspondencia correcta con diferentes HUs](docs/rubricas/hito7/rubrica4.md).
-   
-5. [Uso correcto de bases de datos y logs dentro del PaaS, incluyendo su justificación y pruebas de prestaciones, así como avance general y grado de terminación de la aplicación](docs/rubricas/hito7/rubrica5.md).
-
 
 
 
@@ -66,6 +64,14 @@ Comandos útiles:
 > docker pull ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
 
 > docker run -t -v \`pwd\`:/test ghcr.io/rauldpm/inmobiliv/inmobiliv-con:latest
+
+---
+
+## Despliegue de la aplicación
+
+Puedes acceder a la api en el siguiente enlace:
+
+- https://inmobiliv.herokuapp.com
 
 ---
 ### Autor
