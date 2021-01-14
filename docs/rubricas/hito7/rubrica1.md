@@ -13,7 +13,7 @@ Para realizar el despliegue he considerado los siguientes PaaS:
 
 Para mi proyecto, Heroku permite el despliegue de contenedores, ademas de ficheros ejecutables como Jar*, ademas dispone de Buildpacks específicos para Gradle. Es gratuito y dispone de un plan de estudiantes mediante la cuenta de GitHub, el problema es que esta cuenta requiere introducir datos bancarios (como AWS).
 
-*La ejecución de un fichero Jar frente a un contenedor es notablemente mas rapida y estable cuando se trabaja con Gradle, pero no permite la gestión del contenedor mediante el taskrunner, cosa que si permite el contenedor.
+*La ejecución de un fichero Jar frente a un contenedor es notablemente mas rápida y estable cuando se trabaja con Gradle, pero no permite la gestión del contenedor mediante el taskrunner, cosa que si permite el contenedor.
 
 La cuenta estudiante dispone de las siguientes características:
 
@@ -27,15 +27,15 @@ El plan gratuito dispone de lo siguiente:
 - 550-1000 horas de ejecución al mes
 - 512MB RAM
 - 2 tipos de proceso
-- Modo sueño despues de 30' de inactividad
+- Modo sueño después de 30' de inactividad
 
-Respecto a IBM Bluemix, tambien permite el despliegue de contenedores y dispone del siguiente plan gratuito:
+Respecto a IBM Bluemix, también permite el despliegue de contenedores y dispone del siguiente plan gratuito:
 
 - Gratis por 30 días
 - Almacenamiento de 500MB al mes
 - Trafico de 5GB al mes
 
-No he encontrado mas información, pero si otros planes graturitos para despliegues Docker usando Kubernetes o Terraform
+No he encontrado mas información, pero si otros planes gratuitos para despliegues Docker usando Kubernetes o Terraform
 
 Respecto a OpenShift, ha sido complicado mirar los planes que tiene, no quedan claros cuales son gratuitos y cuales o sin tener que registrarme, ni siquiera información acerca de la infraestructura, asi que lo he descartado.
 
