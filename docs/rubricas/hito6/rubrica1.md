@@ -119,6 +119,6 @@ Donde "null" podría ser un map de objetos a pasarle al template [index.ftl](../
 
 Al ejecutar el servidor se vería lo siguiente:
 
-![funcionando](../../img/hito6/rubrica1/funcionando.png)
+![funcionando](../../img/entrega6/rubrica1/funcionando.png)
 
 Pero como ya he dicho anteriormente, esto no se pide para el hito, pero lo he realizado porque con la instalación del framework, he querido dejarlo hecho.

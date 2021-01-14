@@ -80,7 +80,7 @@ Utilizo el código 200 porque lo único que realiza esta ruta es servir contenid
 
 Produciendo el siguiente resultado:
 
-![raiz](../../img/hito6/rubrica2/llamadaRaiz.png)
+![raiz](../../img/entrega6/rubrica2/llamadaRaiz.png)
 
 La segunda ruta "/getInmuebles" se encarga de realizar la lectura de todos los inmuebles registrados en la aplicación.
 
@@ -126,7 +126,7 @@ call.respondText(inmuebles.toString(), ContentType.Text.Html)
 
 Produciendo el log el siguiente resultado por pantalla:
 
-![get](../../img/hito6/rubrica2/getInmuebles.png)
+![get](../../img/entrega6/rubrica2/getInmuebles.png)
 
 Todo esto ocurre dentro de una sentencia try-catch, de forma que si durante la lectura o la respuesta ocurre algún error, se informará mediante el logger del error producido y creara una respuesta con código de error 500 y responderá con la excepción en vez de con los datos leidos.
 
@@ -207,7 +207,7 @@ call.respondText("Inmueble creado con exito")
 
 Todo esto crearía el siguiente resultado:
 
-![add](../../img/hito6/rubrica2/addInmueble.png)
+![add](../../img/entrega6/rubrica2/addInmueble.png)
 
 
 ---
@@ -297,5 +297,5 @@ gradle test
 
 Que al ejecutarse permite ver como se pasan todos los test y se hacen las llamadas log de las rutas:
 
-![test1](../../img/hito6/rubrica2/test1.png)
-![test2](../../img/hito6/rubrica2/test2.png)
+![test1](../../img/entrega6/rubrica2/test1.png)
+![test2](../../img/entrega6/rubrica2/test2.png)

@@ -28,7 +28,7 @@ Por ejemplo, en el fichero "[Main.kt](../../../app/src/main/kotlin/Main.kt)", se
 
 En este caso, el log muestra un mensaje con los inmuebles consultados:
 
-![loggin](../../img/hito6/rubrica3/loggin.png)
+![loggin](../../img/entrega6/rubrica3/loggin.png)
 
 Este log utiliza el siguiente formato:
 
