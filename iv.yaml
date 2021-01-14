@@ -7,7 +7,6 @@ entidad:
 lenguaje: kotlin
 
 test:
-  - app/src/test/kotlin/testVivienda.kt
   - app/src/test/kotlin/testInmueble.kt
   - app/src/test/kotlin/testInmuebles.kt
   - app/src/test/kotlin/testFunctions.kt
