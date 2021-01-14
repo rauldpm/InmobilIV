@@ -55,69 +55,55 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
         
         get {
             logger.info("\nLLamada Get Request /inmuebles")
-            try {
-                // Obtiene datos json de los inmuebles
-                val gson = Gson().toJson(inmuebles)
-                // Responde OK
-                call.response.status(HttpStatusCode.OK)
-                call.response.header("InmobilIV", "/inmuebles")
-                // Proporciona datos
-                call.respondText(gson)
-            } 
-            // En caso de error
-            catch (e : Exception) {
-                logger.info("\nExcepcion encontrada Get Request /inmuebles\n" + e)
-                call.response.status(HttpStatusCode.InternalServerError)
-                call.respondText("Excepcion '" + e + "'")
-            }
+            // Obtiene datos json de los inmuebles
+            val gson = Gson().toJson(inmuebles)
+            // Responde OK
+            call.response.status(HttpStatusCode.OK)
+            call.response.header("InmobilIV", "/inmuebles")
+            // Proporciona datos
+            call.respondText(gson)
         }
         
         post {
             logger.info("\nLLamada Post Request /inmuebles")
-            try {
-                // Recibe los datos json por post request
-                val params = call.receiveParameters()
-                var sup: Double = 0.0
-                var hab: Int = 0
-                var pre: Double = 0.0
-                var cal: String = ""
-                var por: Int = 0
-                var pis: Int= 0
-                var let: Char = 'a'
-                var pro: String = ""
-                try { 
-                    sup = params["superficie"].toString().toDouble()
-                    hab = params["habitaciones"].toString().toInt()
-                    pre = params["precio"].toString().toDouble()
-                    cal = params["calle"].toString()
-                    por = params["portal"].toString().toInt()
-                    pis = params["piso"].toString().toInt()
-                    let = params["letra"].toString().single()
-                    pro = params["propietario"].toString()
-                }
-                catch (e: Exception) { 
-                    logger.info("\nExcepcion encontrada en formato /inmuebles\n" + e)
-                    call.response.status(HttpStatusCode.BadRequest)
-                    call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
-                }
 
-                // Crea inmueble
-                val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
-                inmu.setID(inmuebles.getTop())
-                // Añade inmueble
-                inmuebles.addInmueble(inmu)
-                // Responde correctemente
-                call.response.status(HttpStatusCode.Created)
-                call.response.header("Location", inmu.getID())
-                // Responde de exito
-                call.respondText("Inmueble creado con exito")
-            } 
-            // En caso de error
-            catch (e : Exception) {
-                logger.info("\nExcepcion encontrada Post Request /inmuebles\n" + e)
-                call.response.status(HttpStatusCode.InternalServerError)
-                call.respondText("Error al crear inmueble " + e)
+            // Recibe los datos json por post request
+            val params = call.receiveParameters()
+            var sup: Double = 0.0
+            var hab: Int = 0
+            var pre: Double = 0.0
+            var cal: String = ""
+            var por: Int = 0
+            var pis: Int= 0
+            var let: Char = 'a'
+            var pro: String = ""
+            try { 
+                sup = params["superficie"].toString().toDouble()
+                hab = params["habitaciones"].toString().toInt()
+                pre = params["precio"].toString().toDouble()
+                cal = params["calle"].toString()
+                por = params["portal"].toString().toInt()
+                pis = params["piso"].toString().toInt()
+                let = params["letra"].toString().single()
+                pro = params["propietario"].toString()
             }
+            catch (e: Exception) { 
+                logger.info("\nExcepcion encontrada en formato /inmuebles\n" + e)
+                call.response.status(HttpStatusCode.BadRequest)
+                call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
+            }
+
+            // Crea inmueble
+            val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
+            inmu.setID(inmuebles.getTop())
+            // Añade inmueble
+            inmuebles.addInmueble(inmu)
+            // Responde correctemente
+            call.response.status(HttpStatusCode.Created)
+            call.response.header("Location", inmu.getID())
+            // Responde de exito
+            call.respondText("Inmueble creado con exito")
+           
         }
 
         put("/{id}") {
@@ -130,47 +116,40 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 call.response.status(HttpStatusCode.NotFound)
                 call.respondText("Ese elemento no existe")
             }
-            try {
-                val params = call.receiveParameters()
-                var sup: Double = 0.0
-                var hab: Int = 0
-                var pre: Double = 0.0
-                var cal: String = ""
-                var por: Int = 0
-                var pis: Int= 0
-                var let: Char = 'a'
-                var pro: String = ""
-                try { 
-                    sup = params["superficie"].toString().toDouble()
-                    hab = params["habitaciones"].toString().toInt()
-                    pre = params["precio"].toString().toDouble()
-                    cal = params["calle"].toString()
-                    por = params["portal"].toString().toInt()
-                    pis = params["piso"].toString().toInt()
-                    let = params["letra"].toString().single()
-                    pro = params["propietario"].toString()
-                }
-                catch (e: Exception) { 
-                    logger.info("\nExcepcion encontrada en formato /inmuebles/{id}\n" + e)
-                    call.response.status(HttpStatusCode.BadRequest)
-                    call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
-                }
-                // Crea inmueble
-                val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
-                // Actualiza el inmueble segun el id
-                inmuebles.actualizar(inmu, id)
-                // Responde correctamente
-                call.response.status(HttpStatusCode.OK)
-                call.response.header("Location", inmu.getID())
-                // Responde de exito
-                call.respondText("Inmueble modificado con exito")
-            } 
-            // En caso de error
-            catch (e : Exception) {
-                logger.info("\nExcepcion encontrada Put Request /inmuebles/{id}\n" + e)
-                call.response.status(HttpStatusCode.InternalServerError)
-                call.respondText("Error al modificar inmueble " + e)
+
+            val params = call.receiveParameters()
+            var sup: Double = 0.0
+            var hab: Int = 0
+            var pre: Double = 0.0
+            var cal: String = ""
+            var por: Int = 0
+            var pis: Int= 0
+            var let: Char = 'a'
+            var pro: String = ""
+            try { 
+                sup = params["superficie"].toString().toDouble()
+                hab = params["habitaciones"].toString().toInt()
+                pre = params["precio"].toString().toDouble()
+                cal = params["calle"].toString()
+                por = params["portal"].toString().toInt()
+                pis = params["piso"].toString().toInt()
+                let = params["letra"].toString().single()
+                pro = params["propietario"].toString()
             }
+            catch (e: Exception) { 
+                logger.info("\nExcepcion encontrada en formato /inmuebles/{id}\n" + e)
+                call.response.status(HttpStatusCode.BadRequest)
+                call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
+            }
+            // Crea inmueble
+            val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
+            // Actualiza el inmueble segun el id
+            inmuebles.actualizar(inmu, id)
+            // Responde correctamente
+            call.response.status(HttpStatusCode.OK)
+            call.response.header("Location", inmu.getID())
+            // Responde de exito
+            call.respondText("Inmueble modificado con exito")
         }
 
         delete("/{id}") {
@@ -183,21 +162,12 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 call.response.status(HttpStatusCode.NotFound)
                 call.respondText("Ese elemento no existe")
             }
-            try {
-                // Elimina el inmueble
-                inmuebles.delInmuebleId(id)
-                // Responde correctamente
-                call.response.status(HttpStatusCode.OK)
-                // Responde de exito
-                call.respondText("Elemento eliminado con exito")
-            }
-            // En caso de error
-            catch(e : Exception) {
-                logger.info("\nExcepcion encontrada Delete Request /inmuebles/{id}\n" + e)
-                call.response.status(HttpStatusCode.InternalServerError)
-                call.response.header("InmobilIV", "/inmuebles/{id}")
-                call.respondText("Error eliminar inmueble " + e)
-            }
+            // Elimina el inmueble
+            inmuebles.delInmuebleId(id)
+            // Responde correctamente
+            call.response.status(HttpStatusCode.OK)
+            // Responde de exito
+            call.respondText("Elemento eliminado con exito")
         }
     }
 }
