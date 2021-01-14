@@ -115,19 +115,19 @@ web: app/build/libs/app.jar
 
 Ahora, al realizar la tarea de despliegue se vería lo siguiente:
 
-![deployHeroku](../../img/hito7/jar/deployHeroku.png)
+![deployHeroku](../../img/entrega7/jar/deployHeroku.png)
 
 Como se puede ver, se esta desplegando el fichero .jar y esta detectando el fichero Procfile con la orden a ejecutar.
 
 Si se mira el log de Heroku, se vera lo siguiente:
 
-![log](../../img/hito7/jar/log.png)
+![log](../../img/entrega7/jar/log.png)
 
 Donde se puede ver que no ha habido problema y que el estado es UP.
 
 Si se navega a la dirección de la app, en el recurso /status, se puede ver que funciona:
 
-![status](../../img/hito7/jar/status.png)
+![status](../../img/entrega7/jar/status.png)
 
 Ademas, he implementado un github action que realize esta tarea automáticamente desde el repositorio, se puede ver en el fichero [heroku_jar.yml](../../../.github/workflows/heroku_jar.yml)
 
@@ -135,11 +135,11 @@ Se puede ver como no realiza el despliegue en caso de que no pase los test:
 
 El log se puede ver [aquí](https://github.com/rauldpm/InmobilIV/runs/1687653686?check_suite_focus=true)
 
-![test fail](../../img/hito7/jar/test_fail.png)
+![test fail](../../img/entrega7/jar/test_fail.png)
 
 Como se puede ver en este [enlace](https://github.com/rauldpm/InmobilIV/runs/1688822411?check_suite_focus=true), el despliegue se hizo correctamente. En dicho enlace el fichero action se llama "heroku.yml" y no "heroku_jar.yml" puesto que fue modificado para despliegue con contenedor y se implemento en el fichero "heroku_jar.yml".
 
-![test correcto](../../img/hito7/jar/test_corre.png)
+![test correcto](../../img/entrega7/jar/test_corre.png)
 
 Y su log [aquí](https://github.com/rauldpm/InmobilIV/runs/1687825686?check_suite_focus=true)
 
@@ -195,9 +195,9 @@ Esto se debe a que Heroku tiene su propia variable de entorno PORT, al cual asig
 
 Volviendo al tema de contenedor, al haber renombrado el fichero Dockerfile a Dockerfile.test, hay que cambiar en Docker Hub el Dockerfile por defecto, ya que de otra forma no lo encontraría y fallaría:
 
-![dockerhub1](../../img/hito7/dockerhub/docker_hub_1.png)
+![dockerhub1](../../img/entrega7/dockerhub/docker_hub_1.png)
 
-![dockerhub](../../img/hito7/dockerhub/docker_hub.png)
+![dockerhub](../../img/entrega7/dockerhub/docker_hub.png)
 
 Como se puede ver en la segunda imagen, al realizar el build se especifica Dockerfile.test.
 
@@ -209,7 +209,7 @@ Esta orden es "gradle start" y es una tarea implementada en el fichero taskrunne
 
 Asi, al realizar un push en el repositorio de GitHub se lanzara el workflow de "heroku.yml" como se puede ver en la siguiente imagen:
 
-![workflow](../../img/hito7/container/workflow.png)
+![workflow](../../img/entrega7/container/workflow.png)
 
 Y su log [aquí](https://github.com/rauldpm/InmobilIV/runs/1702219601?check_suite_focus=true).
 
@@ -223,53 +223,53 @@ heroku logs --tail --app inmobliv
 
 Se puede observar como consigue un estado UP:
 
-![deplo](../../img/hito7/container/despliegue_gradle.png)
+![deplo](../../img/entrega7/container/despliegue_gradle.png)
 
 Se pueden ver errores de exceso de memoria de los cuales ya hablare mas tarde.
 
 Y si se visita el recurso /inmuebles de la aplicación se vería lo siguiente:
 
-![inmuebles](../../img/hito7/peticiones/web_get.png)
+![inmuebles](../../img/entrega7/peticiones/web_get.png)
 
 Asimismo, si se realiza una petición "GET" mediante curl a /inmuebles, se obtendría lo siguiente:
 
 ```
 curl -X GET http://https://inmobiliv.herokuapp.com/inmuebles
 ```
-![log_get](../../img/hito7/peticiones/log_get.png)
+![log_get](../../img/entrega7/peticiones/log_get.png)
 
 Haciendo una petición POST para crear un inmueble:
 
 ```
 curl -X POST -F superficie=112.2 -F habitaciones=3 -F precio=12556.36 -F calle="Pedro Antonio" -F portal=3 -F piso=4 -F letra=F -F propietario="Javier Iañez" https://inmobiliv.herokuapp.com/inmuebles
 ```
-![log_post](../../img/hito7/peticiones/log_post.png)
+![log_post](../../img/entrega7/peticiones/log_post.png)
 
 Se puede ver que el contenido ha cambiado visitando /inmuebles
 
-![log_post](../../img/hito7/peticiones/web_post.png)
+![log_post](../../img/entrega7/peticiones/web_post.png)
 
 Si ahora se hace una petición PUT al elemento con identificado 0:
 
 ```
 curl -X PUT -F superficie=112.2 -F habitaciones=3 -F precio=12556.36 -F calle="Pedro Antonio" -F portal=3 -F piso=4 -F letra=F -F propietario="Javier Iañez" https://inmobiliv.herokuapp.com/inmuebles/0
 ```
-![log_put](../../img/hito7/peticiones/log_put.png)
+![log_put](../../img/entrega7/peticiones/log_put.png)
 
 Se puede ver que el primer elemento ha cambiado por completo
 
-![log_put](../../img/hito7/peticiones/web_put.png)
+![log_put](../../img/entrega7/peticiones/web_put.png)
 
 Y finalmente, haciendo una petición DELETE:
 
 ```
 curl -X DELETE https://inmobiliv.herokuapp.com/inmuebles/0
 ```
-![log_delete](../../img/hito7/peticiones/log_delete.png)
+![log_delete](../../img/entrega7/peticiones/log_delete.png)
 
 Se puede ver como el elemento con identificador 0 ya no existe:
 
-![log_delete](../../img/hito7/peticiones/web_delete.png)
+![log_delete](../../img/entrega7/peticiones/web_delete.png)
 
 En estas imágenes se puede observar el log de Heroku, el cual muestra algunos mensajes de log de nuestra aplicación, identificados de color azul (app[web.1])
 
@@ -291,7 +291,7 @@ El problema principal es que este demonio no se puede desactivar por completo, s
 
 Esto en local no supone problema, ya que la tarea que mas me ha tardado ha sido 19s (compileKotlin).
 
-![scan](../../img/hito7/scan.png)
+![scan](../../img/entrega7/scan.png)
 
 El problema viene en la ejecución dentro de un contenedor, que debido a la limitación del mismo, dicha ejecución pasa a ser mucho mayor.
 
@@ -307,7 +307,7 @@ Esto he conseguido solucionarlo con la siguiente pagina:
 
 Aquí se puede seleccionar una app de Heroku y cambiarle el tiempo hasta un máximo de 180" (justo lo que necesita mi app)
 
-![time](../../img/hito7/aumento.png)
+![time](../../img/entrega7/aumento.png)
 
 Aunque ahi diga que para Java Apps es de 90", no es asi en este caso, ya que con Java Apps se esta refiriendo a aplicaciones que usan .jar, en este caso, es un contenedor.
 
@@ -319,7 +319,7 @@ Asi, como sustitución de docker-compose se utiliza un fichero de configuración
 
 Ademas, Heroku detecta que el contenedor ejecuta Gradle y lo establece automáticamente en su buildpack:
 
-![buildpack](../../img/hito7/buildpack.png)
+![buildpack](../../img/entrega7/buildpack.png)
 
 Esto permite que el fichero de configuración heroku.yml no sea necesario ni el fichero Procfile para el despliegue.
 
@@ -341,8 +341,8 @@ heroku local web
 
 Se lanzara el servidor:
 
-![local](../../img/hito7/herokulocal.png)
+![local](../../img/entrega7/herokulocal.png)
 
 Si no existiera dicho Procfile, mostraría un error:
 
-![error](../../img/hito7/noProcfile.png)
+![error](../../img/entrega7/noProcfile.png)
