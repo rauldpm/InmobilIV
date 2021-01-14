@@ -176,7 +176,7 @@ Todo esto se puede observar en el fichero [heroku.yml](../../../.github/workflow
 
 Para poder realizar este despliegue, es necesario crear un contenedor diferente al que se ha usado en otros hitos, ya que dicho contenedor realiza la ejecución de los test.
 
-Para esto he creado un nuevo Dockerfile llamado "[Dockerfile.web](../../../Dockerfile.web").
+Para esto he creado un nuevo Dockerfile llamado "[Dockerfile.web](../../../Dockerfile.web)".
 
 Este nuevo fichero realiza las mismas acciones principales que el primero, solo que ahora no monta carpeta, puesto que para mejorar el rendimiento del despliegue en Heroku, he realizado la copia de los ficheros principales de configuración y del código, junto a los ficheros compilados (se generan previamente en el GH action).
 
