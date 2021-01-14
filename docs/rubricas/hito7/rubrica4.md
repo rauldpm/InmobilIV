@@ -9,7 +9,7 @@ En este hito he creado dos issues para resolver el problema de que los usuarios 
 Ambas issues están relacionadas con la historia de usuario "#37 [HU6] Como usuario, quiero poder gestionar inmuebles":
 
  - Issue [#38 La aplicación no es accesible por los usuarios, implementar despliegue](https://github.com/rauldpm/InmobilIV/issues/38)
- - Issue [#39 El despliegue de la imagen docker en el PaaS es muy lenta, desplegar Fat Jar](https://github.com/rauldpm/InmobilIV/issues/39)
+ - Issue [#39 EDesplegar Fat Jar de la API](https://github.com/rauldpm/InmobilIV/issues/39)
 
 Para ello, cree la issue 38 que pretende solucionar dicho problema, esta issue contiene commits relacionadas con github actions, la configuración de Heroku, etc...
 
