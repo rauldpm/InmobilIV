@@ -12,19 +12,19 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Herramientas
 
-- Puedes consultar las herramientas usadas y la justificación de su elección en el siguiente [enlace](docs/rubricas/hito2/tools.md).
+- Puedes consultar las herramientas usadas y la justificación de su elección en el siguiente [enlace](docs/rubricas/entrega2/tools.md).
 
 ---
 ## Rúbricas
 
-1. [Descripción y justificación de las herramientas usadas para desplegar la aplicación en en PaaS](docs/rubricas/hito7/rubrica1.md).
+1. [Descripción y justificación de las herramientas usadas para desplegar la aplicación en en PaaS](docs/rubricas/entrega7/rubrica1.md).
    
-2. [Descripción correcta de la configuración para despliegue automático, desde el repositorio o desde el sistema de integración continua](docs/rubricas/hito7/rubrica2.md).
+2. [Descripción correcta de la configuración para despliegue automático, desde el repositorio o desde el sistema de integración continua](docs/rubricas/entrega7/rubrica2.md).
    
 3. Funcionamiento correcto del despliegue en el PaaS (no sólo el status). Es decir, no se puede devolver ningún status 500
    - Mostrado en la rubrica 2 (final del punto 3)
    
-4. [Buenas prácticas en el diseño del API, incluyendo su correspondencia correcta con diferentes HUs](docs/rubricas/hito7/rubrica4.md).
+4. [Buenas prácticas en el diseño del API, incluyendo su correspondencia correcta con diferentes HUs](docs/rubricas/entrega7/rubrica4.md).
 
 
 
@@ -33,7 +33,7 @@ Con esto pretendo proporcionar una herramienta que facilite la búsqueda de dich
 ---
 ## Documentación adicional
 
-- En este [enlace](docs/rubricas/hito0/config.md) se pueden observar las distintas configuraciones realizadas hasta el momento, entre las cuales, por ejemplo, se encuentra la configuración de claves SSH para git y GitHub.
+- En este [enlace](docs/rubricas/entrega0/config.md) se pueden observar las distintas configuraciones realizadas hasta el momento, entre las cuales, por ejemplo, se encuentra la configuración de claves SSH para git y GitHub.
 - En este [enlace](docs/codigo.md) se explica la estructura del proyecto, de los archivos principales, de tests y de configuración.
 - En este [enlace](docs/issues.md) se puede observar las issues, historias de usuario y milestones usados.
 
