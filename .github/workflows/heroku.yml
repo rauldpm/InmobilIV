@@ -21,13 +21,13 @@ jobs:
     steps:
         - uses: actions/checkout@v2
 
-        - name: Testing
+        - name: Testing # Testea la aplicacion
           run: gradle test 
 
-        - name: Limpia ficheros test
+        - name: Limpia ficheros test # Elimina ficheros generados por test
           run: gradle clean
 
-        - name: Build ficheros compilados
+        - name: Build ficheros compilados # Genera ficheros necesarios para la tarea "gradle start"
           run: gradle compileKotlin
 
         - name: Login Heroku
@@ -35,12 +35,12 @@ jobs:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:login
 
-        - name: Push image
+        - name: Push image # Sube la imagen a Heroku
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:push web --recursive --app inmobiliv
         
-        - name: Release image
+        - name: Release image # Libera la imagen en Heroku
           env:
             HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
           run: heroku container:release web --app inmobiliv  
