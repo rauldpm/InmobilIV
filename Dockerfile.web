@@ -24,7 +24,13 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
 # Establece el directorio de trabajo
 WORKDIR /prod
-COPY . .
+
+# Copia el contenido minimo necesario
+COPY settings.gradle.kts .
+COPY gradle.properties .
+COPY Procfile .
+RUN mkdir app
+COPY app/ app/
 
 # Establece la accion a realizar al ejecutar docker
-CMD gradle start 
+CMD gradle start
