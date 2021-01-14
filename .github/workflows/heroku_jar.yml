@@ -23,8 +23,11 @@ jobs:
     steps:
         - uses: actions/checkout@v2
 
-        - name: Genera fichero Jar y comprueba test
-          run: gradle build
+        - name: Testing
+          run: gradle test 
+
+        - name: Genera Jar
+          run: gradle jar
 
         - name: Login
           env:
