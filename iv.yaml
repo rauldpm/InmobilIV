@@ -19,7 +19,7 @@ URL: https://phz2ma3gok.execute-api.eu-west-2.amazonaws.com/1/json
 
 make: gradle
 
-Paas: https://inmobiliv.herokuapp.com/
+PaaS: https://inmobiliv.herokuapp.com/
 
 recurso:
   nombre: inmuebles
