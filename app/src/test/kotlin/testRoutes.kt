@@ -28,15 +28,28 @@ class TestRoutes {
     } 
     
     @Test
-    @DisplayName("Test Requests HTTP - Comprueba GET")
-    fun testRouteGet() = withTestApplication(Application::module){
+    @DisplayName("Test Requests HTTP - GET /todo")
+    fun testGetTodo() = withTestApplication(Application::module){
         with ( 
-            handleRequest(HttpMethod.Get, "/inmuebles") 
+            handleRequest(HttpMethod.Get, "/todo") 
         ) {
             assertEquals(HttpStatusCode.OK, response.status())
             assertTrue(response.contentType().toString().contains("text/plain"))
         }
     }
+
+    @Test
+    @DisplayName("Test Get Http /inmuebles/id")
+    fun testGet() = withTestApplication(Application::module){
+        with ( 
+            handleRequest(HttpMethod.Get, "/inmuebles/0") 
+        ) {
+            assertEquals(HttpStatusCode.OK, response.status())
+            assertTrue(response.contentType().toString().contains("text/plain"))
+        }
+    }
+
+
 
     @Test
     @DisplayName("Test Request HTTP - Comprueba POST")
