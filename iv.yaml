@@ -24,13 +24,17 @@ recurso:
   nombre: inmuebles
   metodo: POST
   payload:
-    superficie: 237.2
-    habitaciones: 6
-    precio: 567756.36
-    calle: Alhondiga
-    portal: 3
-    piso: 4
-    letra: F
-    propietario: Javier Gallego
-  IDs: 2
+    superficie: "237.2"
+    habitaciones: "6"
+    precio: "567756.36"
+    calle: "Alhondiga"
+    portal: "3"
+    piso: "4"
+    letra: "F"
+    propietario: "Javier Gallego"
+  IDs: 
+    - 2
+    - 3
+    - 4
+    - 5
   
