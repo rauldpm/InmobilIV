@@ -49,8 +49,8 @@ fun Application.module() {
 
 fun Route.rutaInmuebles(inmuebles: Inmuebles) {
     val logger = LoggerFactory.getLogger(this::class.java.canonicalName)
-
-    route("/todo") {
+    
+    route("/inmuebles") {
         get {
             logger.info("\nLLamada Get Request /todo")
             // Obtiene datos json de los inmuebles
@@ -59,12 +59,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
             call.response.status(HttpStatusCode.OK)
             // Proporciona datos
             call.respondText(gson)
-
         }
-    }
-
-    route("/inmuebles") {
-        
         get("/{id}") {
             logger.info("\nLLamada Get Request /inmuebles/{id}")
             val id = call.parameters["id"].toString().toInt()
