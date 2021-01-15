@@ -26,6 +26,13 @@ class Inmuebles {
             }
     }
 
+    fun getInmu(id: Int): Inmueble {
+        for (item in this.inmuebles)
+            if (item.id == id)
+                return item
+        return Inmueble()
+    }
+
     fun existeId(id: Int): Boolean {
         for (item in this.inmuebles) 
             if (item.id == id) 
