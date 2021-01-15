@@ -24,13 +24,13 @@ recurso:
   nombre: inmuebles
   metodo: POST
   payload:
-    - superficie: 112.2
-    - habitaciones: 3
-    - precio: 12556.36
-    - calle: Pedro Antonio
-    - portal: 3
-    - piso: 4
-    - letra: F
-    - propietario: Javier Gallego
-  IDs:
+    superficie: 237.2
+    habitaciones: 6
+    precio: 567756.36
+    calle: Alhondiga
+    portal: 3
+    piso: 4
+    letra: F
+    propietario: Javier Gallego
+  IDs: 2
   
