@@ -13,7 +13,6 @@ import io.ktor.gson.*
 
 import org.slf4j.LoggerFactory
 import com.google.gson.Gson
-import java.io.FileReader
 
 fun Application.module() {
 
@@ -67,34 +66,16 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
         post {
             logger.info("\nLLamada Post Request /inmuebles")
 
-            // Recibe los datos json por post request
-            val params = call.receiveParameters()
-            var sup: Double = 0.0
-            var hab: Int = 0
-            var pre: Double = 0.0
-            var cal: String = ""
-            var por: Int = 0
-            var pis: Int= 0
-            var let: Char = 'a'
-            var pro: String = ""
-            try { 
-                sup = params["superficie"].toString().toDouble()
-                hab = params["habitaciones"].toString().toInt()
-                pre = params["precio"].toString().toDouble()
-                cal = params["calle"].toString()
-                por = params["portal"].toString().toInt()
-                pis = params["piso"].toString().toInt()
-                let = params["letra"].toString().single()
-                pro = params["propietario"].toString()
+            // Recibe los datos json por post request y crea inmueble
+            var inmu: Inmueble = Inmueble()
+            try {
+                inmu = call.receive<Inmueble>()
             }
             catch (e: Exception) { 
-                logger.info("\nExcepcion encontrada en formato /inmuebles\n" + e)
+                logger.info("\nExcepcion encontrada en POST /inmuebles\n" + e)
                 call.response.status(HttpStatusCode.BadRequest)
                 call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
             }
-
-            // Crea inmueble
-            val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
             inmu.setID(inmuebles.getTop())
             // Añade inmueble
             inmuebles.addInmueble(inmu)
@@ -116,33 +97,17 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 call.response.status(HttpStatusCode.NotFound)
                 call.respondText("Ese elemento no existe")
             }
-
-            val params = call.receiveParameters()
-            var sup: Double = 0.0
-            var hab: Int = 0
-            var pre: Double = 0.0
-            var cal: String = ""
-            var por: Int = 0
-            var pis: Int= 0
-            var let: Char = 'a'
-            var pro: String = ""
-            try { 
-                sup = params["superficie"].toString().toDouble()
-                hab = params["habitaciones"].toString().toInt()
-                pre = params["precio"].toString().toDouble()
-                cal = params["calle"].toString()
-                por = params["portal"].toString().toInt()
-                pis = params["piso"].toString().toInt()
-                let = params["letra"].toString().single()
-                pro = params["propietario"].toString()
+            
+            // Recibe los datos json por post request y crea inmueble
+            var inmu: Inmueble = Inmueble()
+            try {
+                inmu = call.receive<Inmueble>()
             }
             catch (e: Exception) { 
-                logger.info("\nExcepcion encontrada en formato /inmuebles/{id}\n" + e)
+                logger.info("\nExcepcion encontrada en PUT /inmuebles\n" + e)
                 call.response.status(HttpStatusCode.BadRequest)
                 call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
             }
-            // Crea inmueble
-            val inmu = Inmueble(sup, hab, pre, cal, por, pis, let, pro)
             // Actualiza el inmueble segun el id
             inmuebles.actualizar(inmu, id)
             // Responde correctamente
