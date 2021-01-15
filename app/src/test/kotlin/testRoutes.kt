@@ -28,10 +28,10 @@ class TestRoutes {
     } 
     
     @Test
-    @DisplayName("Test Requests HTTP - GET /todo")
-    fun testGetTodo() = withTestApplication(Application::module){
+    @DisplayName("Test Requests HTTP - GET /inmuebles")
+    fun testGetInmuebles() = withTestApplication(Application::module){
         with ( 
-            handleRequest(HttpMethod.Get, "/todo") 
+            handleRequest(HttpMethod.Get, "/inmuebles") 
         ) {
             assertEquals(HttpStatusCode.OK, response.status())
             assertTrue(response.contentType().toString().contains("text/plain"))
