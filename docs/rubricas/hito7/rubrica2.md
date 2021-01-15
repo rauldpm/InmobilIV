@@ -234,25 +234,33 @@ Y si se visita el recurso /inmuebles de la aplicación se vería lo siguiente:
 Asimismo, si se realiza una petición "GET" mediante curl a /inmuebles, se obtendría lo siguiente:
 
 ```
-curl -X GET http://https://inmobiliv.herokuapp.com/inmuebles
+curl -X GET https://inmobiliv.herokuapp.com/inmuebles
 ```
-![log_get](../../img/entrega7/peticiones/log_get.png)
+![log_get_todo](../../img/entrega7/peticiones/log_get.png)
 
 Haciendo una petición POST para crear un inmueble:
 
 ```
-curl -X POST -F superficie=112.2 -F habitaciones=3 -F precio=12556.36 -F calle="Pedro Antonio" -F portal=3 -F piso=4 -F letra=F -F propietario="Javier Iañez" https://inmobiliv.herokuapp.com/inmuebles
+curl -X POST --header "Content-Type: application/json" --data '{"superficie":"122.2","habitaciones":"3","precio":"12556.36","calle":"Pedro Antorio","portal":"3","piso":"4","letra":"F","propietario":"Magdalena"}' https://inmobiliv.herokuapp.com/inmuebles
 ```
+
 ![log_post](../../img/entrega7/peticiones/log_post.png)
 
 Se puede ver que el contenido ha cambiado visitando /inmuebles
 
 ![log_post](../../img/entrega7/peticiones/web_post.png)
 
+También se puede comprobar que se ha creado accediendo directamente al recurso creado mediante:
+
+```
+curl -X GET https://inmobiliv.herokuapp.com/inmueble/2
+```
+![curl_especifico](../../img/entrega7/peticiones/curl_especifico.png)
+
 Si ahora se hace una petición PUT al elemento con identificado 0:
 
 ```
-curl -X PUT -F superficie=112.2 -F habitaciones=3 -F precio=12556.36 -F calle="Pedro Antonio" -F portal=3 -F piso=4 -F letra=F -F propietario="Javier Iañez" https://inmobiliv.herokuapp.com/inmuebles/0
+curl -X PUT --header "Content-Type: application/json" --data '{"superficie":"112.2","habitaciones":"3","precio":"12556.36","calle":"Pedro Antonio","portal":"3","piso":"4","letra":"F","propietario":"Javier Iañez"}' https://inmobiliv.herokuapp.com/inmuebles/0
 ```
 ![log_put](../../img/entrega7/peticiones/log_put.png)
 
