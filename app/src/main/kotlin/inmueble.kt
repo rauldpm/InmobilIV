@@ -12,6 +12,8 @@ class Inmueble {
     var propietario: String = ""
     var id: Int = 0
 
+    constructor() { }
+
     constructor(sup: Double, hab: Int, pre: Double, cal: String, por: Int, pis: Int, let: Char, pro: String) {
         this.superficie = sup
         this.habitaciones = hab
