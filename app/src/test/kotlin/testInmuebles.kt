@@ -41,6 +41,14 @@ class TestInmuebles {
     }
 
     @Test
+    @DisplayName("Test Inmuebles - Comprueba getInmu(id)")
+    fun testGetInmu() {
+        inmuebles.addInmueble(inmueble)
+        val inmu = inmuebles.getInmu(inmueble.getID())
+        assertThat(inmueble).isEqualTo(inmu)
+    }
+
+    @Test
     @DisplayName("Test Inmuebles - Comprueba existeId(id)")
     fun testExisteId() {
         inmuebles.addInmueble(inmueble)
