@@ -43,9 +43,9 @@ class TestRoutes {
     fun testPost() = withTestApplication(Application::module){
         with ( 
             handleRequest(HttpMethod.Post, "/inmuebles") {
-                addHeader(HttpHeaders.ContentType, ContentType.Application.FormUrlEncoded.toString())
-                setBody(listOf("superficie" to "122.2","habitaciones" to "3","precio" to "12556.36","calle" to "Pedro Antorio","portal" to "3","piso" to "4","letra" to "F","propietario" to "Magdalena").formUrlEncode())
-            }
+                addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
+                val json = JSONObject("""{"superficie":"122.2","habitaciones":"3","precio":"12556.36","calle":"Pedro Antorio","portal":"3","piso":"4","letra":"F","propietario":"Magdalena"}""")
+                setBody(json.toString())}
         ) {
             assertEquals(HttpStatusCode.Created, response.status())
             assertEquals(response.content, "Inmueble creado con exito")
@@ -57,8 +57,9 @@ class TestRoutes {
     fun testPut() = withTestApplication(Application::module){
         with ( 
             handleRequest(HttpMethod.Put, "/inmuebles/0") {
-                addHeader(HttpHeaders.ContentType, ContentType.Application.FormUrlEncoded.toString())
-                setBody(listOf("superficie" to "122.2","habitaciones" to "3","precio" to "12556.36","calle" to "Pedro Antorio","portal" to "3","piso" to "4","letra" to "F","propietario" to "Magdalena").formUrlEncode())
+                addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
+                val json = JSONObject("""{"superficie":"122.2","habitaciones":"3","precio":"12556.36","calle":"Pedro Antorio","portal":"3","piso":"4","letra":"F","propietario":"Magdalena"}""")
+                setBody(json.toString())
             }
         ) {
             assertEquals(HttpStatusCode.OK, response.status())
