@@ -86,12 +86,13 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
                 call.response.status(HttpStatusCode.BadRequest)
                 call.respondText("Error al crear inmueble, el formato no es correcto, revisa los datos")
             }
+
             inmu.setID(inmuebles.getTop())
             // Añade inmueble
             inmuebles.addInmueble(inmu)
             // Responde correctemente
             call.response.status(HttpStatusCode.Created)
-            call.response.header("Location", inmu.getID())
+            call.response.header("Location", "/inmuebles/"+inmu.getID())
             // Responde de exito
             call.respondText("Inmueble creado con exito")
            
@@ -122,7 +123,7 @@ fun Route.rutaInmuebles(inmuebles: Inmuebles) {
             inmuebles.actualizar(inmu, id)
             // Responde correctamente
             call.response.status(HttpStatusCode.OK)
-            call.response.header("Location", inmu.getID())
+            call.response.header("Location", "/inmuebles/"+inmu.getID())
             // Responde de exito
             call.respondText("Inmueble modificado con exito")
         }
