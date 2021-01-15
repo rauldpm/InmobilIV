@@ -50,17 +50,32 @@ fun Application.module() {
 fun Route.rutaInmuebles(inmuebles: Inmuebles) {
     val logger = LoggerFactory.getLogger(this::class.java.canonicalName)
 
-    route("/inmuebles") {
-        
+    route("/todo") {
         get {
-            logger.info("\nLLamada Get Request /inmuebles")
+            logger.info("\nLLamada Get Request /todo")
             // Obtiene datos json de los inmuebles
             val gson = Gson().toJson(inmuebles)
             // Responde OK
             call.response.status(HttpStatusCode.OK)
-            call.response.header("InmobilIV", "/inmuebles")
             // Proporciona datos
             call.respondText(gson)
+
+        }
+    }
+
+    route("/inmuebles") {
+        
+        get("/{id}") {
+            logger.info("\nLLamada Get Request /inmuebles/{id}")
+            val id = call.parameters["id"].toString().toInt()
+            if (inmuebles.getSize() == 0 || !inmuebles.existeId(id)) {
+                logger.info("\nNo hay elementos")
+                call.response.status(HttpStatusCode.NotFound)
+                call.respondText("Ese elemento no existe")
+            }
+            val inmu: Inmueble = inmuebles.getInmu(id)
+            call.response.status(HttpStatusCode.OK)
+            call.respondText(Gson().toJson(inmu))
         }
         
         post {
