@@ -20,3 +20,5 @@ Este proceso de configuración para generar el fichero .jar y el taskrunner, se 
 Mas tarde, el despliegue cambió para un despliegue de un contenedor que use el taskrunner, esto no supuso mucha diferencia salvo en las GH actions ya hechas, que tuvieron que ser adaptadas para desplegar un contenedor, asi como la creación de un nuevo fichero Dockerfile.web.
 
 Ademas, he actualizado el bot de Telegram para que obtenga los datos de la aplicación desplegada en vez de un fichero de datos.
+
+Se puede ver en este [fichero](https://github.com/rauldpm/InmobilIV_bot_telegram/blob/main/api/index.go), del repositorio que alberga el bot, como he añadido una función "getJson" que obtiene el body de una url especifica (linea 41) y como llamo a dicha función desde la linea 74 y 87.
